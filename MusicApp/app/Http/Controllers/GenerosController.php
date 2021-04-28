@@ -146,4 +146,14 @@ class GenerosController extends Controller
        
         return redirect()->route('generos.index');
     }
+    public function byName($generos) 
+    {
+       
+        
+        $generos= Genero::where('genero', '=', $genero)->get();
+
+        
+        $representantes = Representante::all();
+        return view('representantes.index');
+    }
 }

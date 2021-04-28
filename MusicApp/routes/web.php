@@ -21,5 +21,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('generos','GenerosController');
+Route::resource('representantes','RepresentanteController');
+Route::resource('parametros','ParametroController');
+Route::resource('eventos','EventoController');
+Route::resource('novedades','NovedadeController');
 Route::resource('users','UserController');
 Route::get('/administrador', 'UserController@admin')->name('users.admin');
+
+/*Rutas para separar artistas por genero*/
+Route::get('/generos/byName/{genero}', 'GeneroController@byName');
+
+Route::get('/representantes/byName/{genero}', 'RepresentanteController@byName');

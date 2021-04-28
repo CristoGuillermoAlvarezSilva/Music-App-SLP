@@ -1,30 +1,25 @@
 @extends('../layouts.app')
 @section('title')
-    Generos musicales
+    Eventos
 @endsection
 
 
 <!--Contenido de la pagina-->
 @section('content')
-    <h1 class="text-center">Generos</h1>
+    <h1 class="text-center">Eventos</h1>
     @guest
+
     @else
-        @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
-        <!--Administrador-->
-    <div class="d-flex justify-content-end mb-2">
-        <a href="/generos/create" class="btn btn-primary">
-            Agregar genero musical
-        <i class="fas fa-plus"></i>
+        <a class="btn btn-dark" type="button" href="/eventos/create">
+            Agregar Evento
         </a>
-    </div>
-    
-    @endif
-        @endguest
+    @endguest
+
 
     <!--Todos usuarios-->
    <div class="categoria-items row py-5">
 
-                @foreach($generos as $item)
+                @foreach($eventos as $item)
         
                     <div class="categoria-item col-12 col-md-3 pt-1">
                         <div class="car">
@@ -32,24 +27,25 @@
                                 <img src="/{{$item->path}}" alt="" width="300px" height="250px">
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <ul class="tipo justify-content-centerr">{{$item->genero}}</ul>
-                                        <!--link para ir al genero especificado-->
+                                        <ul class="tipo justify-content-center">Banda: {{$item->nombre}}</ul>
+                                        <ul class="tipo justify-content-center">Titulo del evento:{{$item->titulo}}</ul>
+                                        <ul class="tipo justify-content-center">Descripcion: {{$item->descripcion}}</ul>
+                                        <ul class="tipo justify-content-center">Lugar: {{$item->lugar}}</ul>
+                                        <ul class="tipo justify-content-center">Fecha: {{$item->fecha}}</ul>
+                                        <ul class="tipo justify-content-center">Hora: {{$item->hora}}</ul>
+                                        <ul class="tipo justify-content-center">Costo: {{$item->costo}}</ul>
                                     </div>
                                 </div>
-                                <div class="d-flex">
-                                    <a href="/representantes/byName/{{$item->genero}}" class="btn btn-info">
-                                        Ver
-                                    </a>
-                                </div>
+                               
                                 @guest
                                     @else
-                                        @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
+                                        @if(Auth::user()->id == $item->idR)
                                             <div class="d-flex">
-                                                <a href="/generos/{{$item->id}}/edit" class="btn btn-info">
+                                                <a href="/eventos/{{$item->id}}/edit" class="btn btn-info">
                                                     Editar
                                                 </a>
                                             </div>
-                                            <form action="/generos/{{$item->id}}" method="POST">
+                                            <form action="/eventos/{{$item->id}}" method="POST">
                                                 @csrf 
                                                 @method('DELETE')
                                                 <button class="btn btn-danger" type="submit">

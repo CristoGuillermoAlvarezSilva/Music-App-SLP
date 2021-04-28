@@ -34,7 +34,7 @@
                         <a class="btn btn-dark" type="button" href="/login">
                             Inicio de sesión
                         </a>
-                        <i class="fas fa-paw text-white"id="huella"></i>
+                        
                         <a class="btn btn-dark" type="button" href="/register">
                             Registrarse
                         </a>
