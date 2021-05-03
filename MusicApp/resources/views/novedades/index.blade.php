@@ -26,6 +26,19 @@
                             <div class="fon">
                                 <div class="card-body">
                                     <div class="card-title">
+
+                                        @foreach($representantes as $item2)
+                                            @guest
+                                                @else
+                                                @if($item->idR == $item2->idU)
+
+
+                                                    <ul class="tipo justify-content-center">{{$item2->nombre}}</ul>  
+
+                                                @endif
+                                            @endguest
+
+                                        @endforeach 
                                         <ul class="tipo justify-content-center">Titulo:{{$item->titulo}}</ul>
                                         <ul class="tipo justify-content-center">Descripcion: {{$item->descripcion}}</ul>
                                         <?php

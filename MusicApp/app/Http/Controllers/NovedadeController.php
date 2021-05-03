@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Novedade;
+use App\Representante;
 
 class NovedadeController extends Controller
 {
@@ -16,8 +17,8 @@ class NovedadeController extends Controller
     {
         //
         $novedades = Novedade::all();
-     
-        return view('novedades.index', compact('novedades'));
+        $representantes = Representante::all();
+        return view('novedades.index', compact('novedades', 'representantes'));
     }
 
     /**

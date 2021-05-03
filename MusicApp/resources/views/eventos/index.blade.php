@@ -24,7 +24,20 @@
                     <div class="categoria-item col-12 col-md-3 pt-1">
                         <div class="car">
                             <div class="fon">
-                                <img src="/{{$item->path}}" alt="" width="300px" height="250px">
+                                @foreach($representantes as $item2)
+                                    @guest
+                                        @else
+                                            @if($item->idR == $item2->idU)
+
+
+                                                <ul class="tipo justify-content-center">{{$item2->nombre}}</ul>
+                                                <img src="/{{$item2->path}}" alt="" width="300px" height="250px">
+                                                
+
+                                        @endif
+                                    @endguest
+
+                                @endforeach 
                                 <div class="card-body">
                                     <div class="card-title">
                                     
