@@ -27,7 +27,7 @@
                                 <img src="/{{$item->path}}" alt="" width="300px" height="250px">
                                 <div class="card-body">
                                     <div class="card-title">
-                                        <ul class="tipo justify-content-center">Banda: {{$item->nombre}}</ul>
+                                    
                                         <ul class="tipo justify-content-center">Titulo del evento:{{$item->titulo}}</ul>
                                         <ul class="tipo justify-content-center">Descripcion: {{$item->descripcion}}</ul>
                                         <ul class="tipo justify-content-center">Lugar: {{$item->lugar}}</ul>
