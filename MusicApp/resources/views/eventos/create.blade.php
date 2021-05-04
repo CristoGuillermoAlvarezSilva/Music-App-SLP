@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    <h3>Eventos</h3>
+    <h3 class="text-color:white">Eventos</h3>
    
 
     <form action="/eventos" class="form-row" method="POST" enctype="multipart/form-data">
