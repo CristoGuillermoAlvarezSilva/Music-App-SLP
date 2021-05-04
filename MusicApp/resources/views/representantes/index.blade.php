@@ -6,8 +6,7 @@
 
 <!--Contenido de la pagina-->
 @section('content')
-    <h1 class="text-center">Artistas</h1>
-
+<h1 class="card-body titulo-pags">Artistas</h1>
 
     <!--Todos los artistas-->
    <div class="categoria-items row py-5">
@@ -16,24 +15,20 @@
                     @guest
                         @else
                             @if($item->genero == $genero)
-                                <div class="categoria-item col-12 col-md-3 pt-1">
-                                    <div class="car">
-                                        <div class="fon">
-                                            <img src="/{{$item->path}}" alt="" width="300px" height="250px">
-                                            <div class="card-body">
-                                                <div class="card-title">
-                                                    <ul class="tipo justify-content-centerr">{{$item->nombre}}</ul>
-                                                    <!--link para ir al genero especificado-->
+                                <div class="categoria-item col-12 col-md-6 col-xl-3 pt-1 card artistas">
+                                    <div class="card-body">
+                                        <a href="/representantes/{{$item->id}}/edit">
+                                            <div class="img-gens">
+                                                <img src="/{{$item->path}}" class="img-gens">
+                                                <div class="caja-gens">
+                                                    <div class="titulo-gens">
+                                                        <span class="tipo justify-content-centerr">{{$item->nombre}}</span>
+                                                        <!--link para ir al genero especificado-->
+                                                    </div>
                                                 </div>
                                             </div>
-                                            
-                                            <div class="d-flex">
-                                                <a href="/representantes/{{$item->id}}/edit" class="btn btn-info">
-                                                  Ver
-                                                </a>
-                                            </div>
-                                           
-                                        </div>
+                                        </a>
+                                        
                                         
                                     </div>
                                 </div>
