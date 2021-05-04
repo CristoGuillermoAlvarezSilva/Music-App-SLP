@@ -24,6 +24,18 @@
                     <div class="categoria-item col-12 col-xs-12 col-sm-12 col-md-12 pt-1 card novedad">
                         <div class="card-body ">
                             <div>
+                                    @foreach($representantes as $item2)
+                                            @guest
+                                                @else
+                                                @if($item->idR == $item2->idU)
+
+
+                                                    <h3 class="tipo justify-content-center">{{$item2->nombre}}</h3>  
+
+                                                @endif
+                                            @endguest
+
+                                    @endforeach 
                                 <h5 class="card-title fondonegro ">{{$item->titulo}}</h5>
                                 <ul class="card-text fondonegro">{{$item->descripcion}}</ul>
                                 <?php

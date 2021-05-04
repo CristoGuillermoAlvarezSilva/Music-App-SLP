@@ -21,10 +21,21 @@
         
                 @foreach($eventos as $item)
         
-                <div class="categoria-item col-12 col-md-6 col-xl-3 pt-1 card eventos">
+                <div class="categoria-item col-12 col-md-6 col-xl-3 pt-5 card eventos">
                         <div class="card-body">
                             <div >
-                                <h3>{{$item->titulo}}</h3>
+
+                                @foreach($representantes as $item2)
+                                    @guest
+                                        @else
+                                            @if($item->idR == $item2->idU)
+                                                <h3>{{$item2->nombre}}</h3>
+                                                <img src="/{{$item2->path}}" alt="" width="100px" height="100px">
+                                        @endif
+                                    @endguest
+
+                                @endforeach 
+                                <p>{{$item->titulo}}</p>
                                 <p>{{$item->descripcion}}</p>
                                 <p> <b>Lugar:</b>  {{$item->lugar}}</p>
                                 <p> <b>Fecha:</b> {{$item->fecha}}</p>
