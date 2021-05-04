@@ -32,6 +32,16 @@
                         <a class="" href="/novedades">
                             Blog
                         </a>
+                        <span class="separador">|</span>
+                        <a class="" href="/representantes/create">
+                            Representante
+                        </a>
+
+                        <span class="separador">|</span>
+                        <a class="" href="/parametros">
+                            Parametros
+                        </a>
+
 
                         @guest
                         @else

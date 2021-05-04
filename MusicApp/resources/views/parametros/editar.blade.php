@@ -5,9 +5,10 @@
 @endsection
 
 @section('content')
-    <h3>Parametros</h3>
+    <h3 class="card-body titulo-pags">Parametros</h3>
    
-
+    <div class="card">
+   
     <form action="/parametros/{{$item->id}}" class="form-row" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
@@ -56,4 +57,5 @@
             <button class="btn btn-success" type="submit">Actualizar</button>
         </div>
     </form>
+    </div>
 @endsection

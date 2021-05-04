@@ -13,12 +13,14 @@
     </div>
     @endif
 
+    <div class="card">
+
     <form action="/representantes/{{$item->id}}" class="form-row" method="POST" enctype="multipart/form-data">
          @csrf
         @method('PUT') 
         <img src="/{{$item->path}}" alt="" width="300px" height="250px">
         <div class="form-group col-2">
-            <label for="nombre">{{$item->nombre}}</label>
+            <h3 for="nombre">{{$item->nombre}}</h3>
             <label for="tipo">{{$item->tipo}}</label>
             <label for="des">{{$item->descripcion}}</label>
            
@@ -36,6 +38,8 @@
             <button class="btn btn-success" type="submit">Actualizar</button>
 
             
+        </div>
+
         </div>
     </form>
 

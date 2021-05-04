@@ -9,7 +9,10 @@
 
 
 @section('content')
-    <h3>Editar genero</h3>
+    <h3 class="card-body titulo-pags">Editar genero</h3>
+   
+   <div class="card">
+   
    
     <form action="/generos/{{$item->id}}" class="form-row" method="POST" enctype="multipart/form-data">
          @csrf
@@ -29,6 +32,7 @@
             <button class="btn btn-success" type="submit">Actualizar</button>
         </div>
     </form>
+    </div>
 @endsection
 
 @endif
