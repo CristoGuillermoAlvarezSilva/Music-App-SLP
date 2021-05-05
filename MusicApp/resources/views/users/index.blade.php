@@ -8,31 +8,31 @@
 @endsection
 
 @section('content')
-    <h1 class="titulo-pags">Usuarios</h1>
+    <h1 class="text-center py-5">Usuarios</h1>
     
     <table class="table ">
-    <thead class="text-center py-2 white-let">
+    <thead class="py-2">
         <tr>
           
             <th>Nombre</th>
             <th>Email</th>
             <th>Rol</th>
-            <th>Opciones</th>
+            <th></th>
         </tr>
     </thead>
-    <tbody class="white-let">
+    <tbody>
     
         @foreach($users as $item)
         <tr>
-            <td  scope="row">{{$item->name}}</td>
-            <td >{{$item->email}}</td>
+            <td scope="row">{{$item->name}}</td>
+            <td>{{$item->email}}</td>
             <td>{{$item->rol}}</td>
             @guest
                 @else
                     @if(Auth::user()->rol == "super")
             <td>
                 <div class="d-flex justify-content-end mb-2">
-                    <a href="/users/{{$item->id}}/edit" class="boton-edit">
+                    <a href="/users/{{$item->id}}/edit" class="btn btn-info">
                         Editar Rol
                     </a>
                 </div>
@@ -42,7 +42,7 @@
                 <form action="/users/{{$item->id}}" method="POST">
                     @csrf 
                     @method('DELETE')
-                    <button class="boton-elim" type="submit">
+                    <button class="btn btn-danger" type="submit">
                     Eliminar
                     </button>
                 </form>

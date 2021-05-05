@@ -7,222 +7,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
- .card {
-  margin: 5px;
-  text-align: center;
-  align-items: center;
-  background-color: rgb(0, 0, 0);
-  background-clip: border-box;
-  border-radius: 0.25rem;
-}
-
-.menu {
-  font-weight: bold;
-  text-transform: capitalize;
-}
-
-.usuario {
-  width: 150px;
-  height: 50px;
-}
-
-a {
-  color: #ffffff !important;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #0077ff !important; 
-  transition: all .5s;
-}
-
-.novedad {
-  max-width: 200px;
-  height: 400px;
-  overflow: hidden;
-  color: rgb(255, 255, 255);
-  background-image: url(../img/vinilo.jpg);
-  background-size: cover;
-}
-
-.generos {
-
-  max-width: 200px;
-  height: 400px;
-  overflow: hidden;
-  color: rgb(0, 0, 0);
-}
-
-.artistas {
-  max-width: 200px;
-  height: 350px;
-  overflow: hidden;
-  color: rgb(0, 0, 0);
-}
-
-.white-let {
-  color: white;
-}
-
-.panel {
-  max-width: 200px;
-  height: 350px;
-  overflow: hidden;
-  color: rgb(0, 0, 0);
-}
-
-.eventos {
-  background-color: rgb(255, 255, 255) !important;
-  max-width: 200px;
-  height: 550px;
-  overflow: hidden;
-  color: rgb(0, 0, 0) !important;
-}
-
-.img-gens
-{
-  overflow: hidden;
-  background-size: cover;
-  width: 350px;
-  height: 300px;
-  float: right;
-}
-
-.caja-gens {
-  width: 350px;
-  height: 300px;
-  float: right;
-  transition: 1s;
-  opacity: 0;
-  background-color: rgb(0, 0, 0);
-}
-
-.titulo-pags {
-  text-align: center !important; 
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-}
-
-.titulo-gens
-{
-    position: relative;
-    top: 0px;
-    text-align: center;
-    color: rgb(255, 255, 255);
-    transition: all .3s;
-    font-weight: bold;
-}
-
-.img-gens:hover .caja-gens
-{
-  background-color: rgb(0, 0, 0);
-  opacity: 1;
-}
-
-.img-gens:hover .titulo-gens
-{
-  transition: .5s;
-  font-size: 2em;
-  position: relative;
-  top: -180px;
-}
-
-.novedad:hover {
-  color: rgb(0, 0, 0);
-  transition: all .5s;
-  transform: translate(0,-30px);
-}
-
-.novedad:hover .fondonegro{
-  
-  color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
-  transition: linear .5s;
-}
-
-.eventos:hover {
-  background-color: rgb(0, 0, 0) !important;
-  color: rgb(255, 255, 255) !important;
-  transition: linear .5s !important;
-}
-
-.titulo {
-  background-color: rgb(0, 0, 0);
-  font-weight: bold;
-  font-size: 1.5em;
-}
-
-.fondonegro {
-  background-color: rgb(0, 0, 0);
-}
-
-.ytframe {
-  position: relative;
-  align-content: flex-end;
-}
-
-.boton-gral {
-  text-decoration: none;
-  padding: 5px;
-  font-weight: bold;
-  font-size: 15px;
-  color: #000000;
-  background-color: #ffffff;
-  border-radius: 4px;
-  border: 1px solid #000000;
-}
-
-.separador {
-  word-spacing: 1px;
-  color: white;
-}
-
-a:hover { 
-  color: red i !important;
-  transition: linear .5s !important;
-}
-
-.boton-edit {
-  text-decoration: none;
-  margin-right: 5px;
-  padding: 5px;
-  font-weight: bold;
-  font-size: 15px;
-  color: #ffffff;
-  background-color: #3b4efd;
-  border-radius: 4px;
-  border: 1px solid #000000;
-}
-
-.boton-elim {
-  text-decoration: none;
-  padding: 5px;
-  font-weight: bold;
-  font-size: 15px;
-  color: #ffffff;
-  background-color: #ff0000;
-  border-radius: 4px;
-  border: 1px solid #000000;
-}
-
-.boton-gral:hover {
-  color: #000000;
-  background-color: #ffffff;
-  transition: all .5s;
-}
-
-.boton-edit:hover {
-  color: #000000;
-  background-color: #ffffff;
-  transition: all .5s;
-}
-
-.boton-elim:hover {
-  color: #000000;
-  background-color: #ffffff;
-  transition: all .5s;
-}
-
 :root {
   --blue: #3490dc;
   --indigo: #6574cd;
@@ -286,12 +70,9 @@ body {
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
-  color: #ffffff;
+  color: #212529;
   text-align: left;
-  background-image: url(../img/music2.gif) !important; 
-  background-size: 100%;
-  background-color: #000000;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #f8fafc;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -386,6 +167,17 @@ sub {
 
 sup {
   top: -0.5em;
+}
+
+a {
+  color: #3490dc;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover {
+  color: #1d68a7;
+  text-decoration: underline;
 }
 
 a:not([href]):not([class]) {
@@ -2834,7 +2626,6 @@ textarea.form-control.is-invalid {
 }
 
 .btn {
-  margin: 5px;
   display: inline-block;
   font-weight: 400;
   color: #212529;
@@ -5179,6 +4970,17 @@ input[type=button].btn-block {
   color: #fff;
 }
 
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
 
 .card > hr {
   margin-right: 0;

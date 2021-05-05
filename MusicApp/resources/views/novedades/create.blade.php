@@ -8,10 +8,7 @@
 @endsection
 
 @section('content')
-    <h3 class="card-body titulo-pags">Blog</h3>
-   
-    <div class="card">
-    
+    <h3>Blog</h3>
    
 
     <form action="/novedades" class="form-row" method="POST" enctype="multipart/form-data">
@@ -46,7 +43,5 @@
             <button class="btn btn-success" type="submit">Guardar</button>
         </div>
     </form>
-
-    </div>
 @endsection
 

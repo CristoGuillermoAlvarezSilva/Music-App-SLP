@@ -5,10 +5,9 @@
 @endsection
 
 @section('content')
-    <h3 class="card-body titulo-pags">Parámetros</h3>
+    <h3>Parametros</h3>
    
-    <div class="card">
-   
+
     <form action="/parametros/{{$item->id}}" class="form-row" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
@@ -19,7 +18,7 @@
         <div class="form-group col-4">
             <label for="precioBase">Precio Base</label>
             <input type="text" name="precioBase" class="form-control" value="{{$item->precioBase}}">
-            <label for="personasBase">Número de personas Base</label>
+            <label for="personasBase">Numero de personas Base</label>
             <input type="text" name="personasBase" class="form-control" value="{{$item->personasBase}}">
 
         </div>
@@ -27,21 +26,21 @@
         <div class="form-group col-4">
             <label for="precioMedio">Precio Medio</label>
             <input type="text" name="precioMedio" class="form-control" value="{{$item->precioMedio}}">
-            <label for="personasMedio">Número de personas Medio</label>
+            <label for="personasMedio">Numero de personas Medio</label>
             <input type="text" name="personasMedio" class="form-control" value="{{$item->personasMedio}}">
 
         </div>
         <div class="form-group col-4">
             <label for="precioAlto">Precio Alto</label>
             <input type="text" name="precioAlto" class="form-control" value="{{$item->precioAlto}}">
-            <label for="personaA">Número de personas Alto</label>
+            <label for="personaA">Numero de personas Alto</label>
             <input type="text" name="personasAlto" class="form-control" value="{{$item->personasAlto}}">
 
         </div>
         <div class="form-group col-4">
             <label for="precioMax">Precio Maximo</label>
             <input type="text" name="precioMax" class="form-control" value="{{$item->precioMax}}">
-            <label for="personasMax">Número de personas Maximo</label>
+            <label for="personasMax">Numero de personas Maximo</label>
             <input type="text" name="personasMax" class="form-control" value="{{$item->personasMax}}">
 
         </div>
@@ -57,5 +56,4 @@
             <button class="btn btn-success" type="submit">Actualizar</button>
         </div>
     </form>
-    </div>
 @endsection

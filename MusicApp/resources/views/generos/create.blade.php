@@ -11,16 +11,14 @@
 @endsection
 
 @section('content')
-    <h3 class ="card-body titulo-pags">Géneros Musicales</h3>
+    <h3>Generos Musicales</h3>
    
 
-    <div class="card">
-    
     <form action="/generos" class="form-row" method="POST" enctype="multipart/form-data">
         @csrf
         @method('POST')
         <div class="form-group col-4">
-            <labe for="genero">Género</labe>
+            <labe for="genero">Genero</labe>
             <input type="text" name="genero" class="form-control">
 
         </div>
@@ -34,7 +32,6 @@
             <button class="btn btn-success" type="submit">Guardar</button>
         </div>
     </form>
-    </div>
 @endsection
 
 @endif
