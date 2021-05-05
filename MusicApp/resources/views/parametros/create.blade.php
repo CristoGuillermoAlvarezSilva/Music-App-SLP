@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <h3 class="card-body titulo-pags">Parametros</h3>
+    <h3 class="card-body titulo-pags">Parámetros</h3>
    
     <div class="card">
     
@@ -19,7 +19,7 @@
         <div class="form-group col-4">
             <label for="precioBase">Precio Base</label>
             <input type="text" name="precioBase" class="form-control">
-            <label for="personasBase">Numero de personas Base</label>
+            <label for="personasBase">Número de personas Base</label>
             <input type="text" name="personasBase" class="form-control">
 
         </div>
@@ -27,21 +27,21 @@
         <div class="form-group col-4">
             <label for="precioMedio">Precio Medio</label>
             <input type="text" name="precioMedio" class="form-control">
-            <label for="personasMedio">Numero de personas Medio</label>
+            <label for="personasMedio">Número de personas Medio</label>
             <input type="text" name="personasMedio" class="form-control">
 
         </div>
         <div class="form-group col-4">
             <label for="precioAlto">Precio Alto</label>
             <input type="text" name="precioAlto" class="form-control">
-            <label for="personaA">Numero de personas Alto</label>
+            <label for="personaA">Número de personas Alto</label>
             <input type="text" name="personasAlto" class="form-control">
 
         </div>
         <div class="form-group col-4">
             <label for="precioMax">Precio Maximo</label>
             <input type="text" name="precioMax" class="form-control">
-            <label for="personasMax">Numero de personas Maximo</label>
+            <label for="personasMax">Número de personas Maximo</label>
             <input type="text" name="personasMax" class="form-control">
 
         </div>

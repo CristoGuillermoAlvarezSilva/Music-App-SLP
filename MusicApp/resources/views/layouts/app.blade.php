@@ -23,7 +23,7 @@
                    
                         <a class="" href="/">Inicio</a>
                         <span class="separador">|</span>
-                        <a class="" href="/generos">Generos</a>
+                        <a class="" href="/generos">Géneros</a>
                         <span class="separador">|</span>
                         <a class="" href="/eventos">
                             Eventos
@@ -39,7 +39,7 @@
 
                         <span class="separador">|</span>
                         <a class="" href="/parametros">
-                            Parametros
+                            Parámetros
                         </a>
 
 

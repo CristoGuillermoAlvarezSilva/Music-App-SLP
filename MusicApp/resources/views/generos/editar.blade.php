@@ -9,7 +9,7 @@
 
 
 @section('content')
-    <h3 class="card-body titulo-pags">Editar genero</h3>
+    <h3 class="card-body titulo-pags">Editar género</h3>
    
    <div class="card">
    
@@ -18,7 +18,7 @@
          @csrf
         @method('PUT') 
     <div class="form-group col-4">
-            <labe for="genero">Genero</labe>
+            <labe for="genero">Género</labe>
             <input type="text" name="genero" class="form-control" value="{{$item->genero}}">
 
         </div>

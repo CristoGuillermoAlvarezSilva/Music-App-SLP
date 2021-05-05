@@ -13,7 +13,7 @@
         <!--Administrador-->
     <div>
         <a href="/generos/create" class="">
-            Agregar genero
+            Agregar género
         </a>
     </div>
     
