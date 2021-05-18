@@ -17,7 +17,7 @@ class CalendarioController extends Controller
         //
         $calendarios = Calendario::all();
         $representantes = Representante::all();
-        return view('calendario.index', compact('eventos'));
+        return view('calendarios.index', compact('calendarios', 'representantes'));
 
     }
 
@@ -30,7 +30,7 @@ class CalendarioController extends Controller
     {
         //
         $error = "";
-        return view('calendario.create', compact('error'));
+        return view('calendarios.create', compact('error'));
     }
 
     /**
@@ -46,7 +46,7 @@ class CalendarioController extends Controller
         $item->idR = $request->idR;
 
         $item->save();
-        return redirect()->route('calendario.index');
+        return redirect()->route('calendarios.index');
     }
 
     /**

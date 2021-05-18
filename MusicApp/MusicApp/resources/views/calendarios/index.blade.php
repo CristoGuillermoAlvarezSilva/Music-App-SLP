@@ -48,8 +48,8 @@
                 @guest
                         @else
                             @if($ban == 0 )
-                                <a class="btn btn-dark" type="button" href="/parametros/create">
-                                    Crear Parametros
+                                <a class="btn btn-dark" type="button" href="/calendarios/create">
+                                    Crear Calendario
                                 </a>
                             @endif
                             

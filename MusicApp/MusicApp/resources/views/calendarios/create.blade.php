@@ -11,7 +11,7 @@
     <h3>Calendario</h3>
    
 
-    <form action="/eventos" class="form-row" method="POST" enctype="multipart/form-data">
+    <form action="/calendarios" class="form-row" method="POST" enctype="multipart/form-data">
         @csrf
         @method('POST')
 
