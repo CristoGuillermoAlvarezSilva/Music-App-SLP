@@ -25,6 +25,9 @@ Route::resource('representantes','RepresentanteController');
 Route::resource('parametros','ParametroController');
 Route::resource('eventos','EventoController');
 Route::resource('novedades','NovedadeController');
+
+Route::resource('calendarios','CalendarioController');
+
 Route::resource('users','UserController');
 Route::get('/administrador', 'UserController@admin')->name('users.admin');
 

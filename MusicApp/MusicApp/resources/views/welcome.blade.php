@@ -35,7 +35,7 @@
         <div class="col-xl-2 col-md-4 col-6 mt-4 mt-md-0">
           <div class="icon-box">
             <i class="ri-calendar-todo-line"></i>
-            <h3><a href="/eventos">Calendario de eventos</a></h3>
+            <h3><a href="/eventos">Eventos</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4 col-6 mt-4 mt-xl-0">
@@ -47,7 +47,7 @@
         <div class="col-xl-2 col-md-4 col-6 mt-4 mt-xl-0">
           <div class="icon-box">
             <i class="far fa-comment-dots"></i>
-            <h3><a href="/novedades">Blogs</a></h3>
+            <h3><a href="/calendarios">Calendario</a></h3>
           </div>
         </div>
       </div>
