@@ -32,3 +32,7 @@ Route::get('/administrador', 'UserController@admin')->name('users.admin');
 Route::get('/generos/byName/{genero}', 'GeneroController@byName');
 
 Route::get('/representantes/byName/{genero}', 'RepresentanteController@byName');
+
+
+Route::get('/paypal/pay', 'PaymentController@payWithPayPal');
+/*Route::get('/paypal/status', 'PaymentController@paypalStatus');*/
