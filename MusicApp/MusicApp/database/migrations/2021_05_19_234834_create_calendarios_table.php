@@ -15,7 +15,9 @@ class CreateCalendariosTable extends Migration
     {
         Schema::create('calendarios', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('idR');
+            $table->bigInteger("idR");
+            $table->date('fecha');
+            $table->string('disp');
             $table->timestamps();
         });
     }

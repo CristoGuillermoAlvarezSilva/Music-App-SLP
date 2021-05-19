@@ -7,22 +7,22 @@
 <!--Contenido de la pagina-->
 @section('content')
     <h1 class="text-center">Calendario</h1>
-   
+    @guest
+
+    @else
+        <a class="btn btn-dark" type="button" href="/calendarios/create">
+            Agregar Fecha disponible/ocupada
+        </a>
+    @endguest
     <!--Todos usuarios-->
    <div class="categoria-items row py-5">
-                <?php
-                     $ban=0;
-              
-                ?>
+               
                
                 @foreach($calendarios as $item)
                     @guest
                         @else
                             @if(Auth::user()->id == $item->idR)
-                            <?php
-                                $ban=1;
-                                  
-                            ?>
+                        
                             @foreach($representantes as $item2)
                                 @guest
                                     @else
@@ -39,20 +39,8 @@
                             @endif
                             
                         @endguest
-
-                      
-                            
-                    
                 @endforeach   
 
-                @guest
-                        @else
-                            @if($ban == 0 )
-                                <a class="btn btn-dark" type="button" href="/calendarios/create">
-                                    Crear Calendario
-                                </a>
-                            @endif
-                            
-                        @endguest
+                
     </div>
 @endsection

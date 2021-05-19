@@ -44,6 +44,8 @@ class CalendarioController extends Controller
         //
         $item = new Calendario; 
         $item->idR = $request->idR;
+        $item->fecha = $request->fecha;
+        $item->disp = $request->disp;
 
         $item->save();
         return redirect()->route('calendarios.index');
