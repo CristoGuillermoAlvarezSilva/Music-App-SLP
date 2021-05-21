@@ -30,10 +30,14 @@
    
             <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video_id ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+    </form>
 
+    <form action="/cotizar" method="GET">
+
+        <input type="text" name="idR" class="form-control" value="{{$item->idU}}" hidden>
 
         <div class="col-12 text-center">
-            <button class="btn btn-success" type="submit">Actualizar</button>
+            <button class="btn btn-success" type="submit">Cotizar </button>
         </div>
     </form>
 
