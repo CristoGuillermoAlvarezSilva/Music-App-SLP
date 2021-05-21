@@ -8,8 +8,17 @@
 @endsection
 
 @section('content')
-    <h1 class="text-center py-5">Usuarios</h1>
-    
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+        <div class="section-title">
+                <p class="py-md-5"></p>
+                <h2>Usuarios </h2>
+            
+            <p>Panel</p>
+            </div>
     <table class="table ">
     <thead class="py-2">
         <tr>
@@ -53,6 +62,18 @@
         @endforeach
     </tbody>
 </table>
+        </div>
+
+      </div>
+      <p class="py-md-5"></p>
+      <p class="py-md-5"></p>
+      <p class="py-md-5"></p>
+      <p class="py-md-5"></p>
+      <p class="py-md-5"></p>
+      <p class="py-md-5"></p>
+    </section>
+    <!-- End About Section -->
+    
 
 @endsection
 
