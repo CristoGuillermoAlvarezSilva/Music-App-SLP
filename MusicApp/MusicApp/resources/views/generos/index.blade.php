@@ -1,72 +1,168 @@
-@extends('../layouts.app')
-@section('title')
-    Generos musicales
-@endsection
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+        <section id="hero" class="d-flex align-items-center justify-content-center ">
+            
+            <!-- ======= Contact Section ======= -->
+            <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                <h2>Galeria</h2>
+                <p class="text-white">Encuentra el genero musical que prefieras!</p>
+                </div>
+
+                
+
+            </div>
+            </section><!-- End Contact Section -->
+
+            </div>
+        </section>
+        <section id="services" class="services">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <p class="py-md-5"></p>
+                @guest
+                <h2>Disponibles </h2>
+                @else
+                    @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
+                    <!--Administrador-->
+                <h2>SuperUsuario </h2>
+                
+                @endif
+                    @endguest
+            
+            <p>Generos</p>
+            @guest
+                @else
+                    @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
+                    <!--Administrador-->
+                <div class="d-flex justify-content-end mb-2">
+                    <a href="/generos/create" class="btn btn-warning">
+                        Agregar genero musical
+                    <i class="fas fa-plus"></i>
+                    </a>
+                </div>
+                
+                @endif
+                    @endguest
+            </div>
+
+            <?php
+
+$cuenta = 0;
+
+?>
 
 
-<!--Contenido de la pagina-->
-@section('content')
-    <h1 class="text-center">Generos</h1>
-    @guest
-    @else
-        @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
-        <!--Administrador-->
-    <div class="d-flex justify-content-end mb-2">
-        <a href="/generos/create" class="btn btn-primary">
-            Agregar genero musical
-        <i class="fas fa-plus"></i>
-        </a>
-    </div>
-    
-    @endif
-        @endguest
-
-    <!--Todos usuarios-->
-   <div class="categoria-items row py-5">
-
-                @foreach($generos as $item)
-        
-                    <div class="categoria-item col-12 col-md-3 pt-1">
-                        <div class="car">
-                            <div class="fon">
-                                <img src="/{{$item->path}}" alt="" width="300px" height="250px">
-                                <div class="card-body">
-                                    <div class="card-title">
-                                        <ul class="tipo justify-content-centerr">{{$item->genero}}</ul>
-                                        <!--link para ir al genero especificado-->
-                                    </div>
-                                </div>
-                                <div class="d-flex">
-                                    <a href="/representantes/byName/{{$item->genero}}" class="btn btn-info">
-                                        Ver
-                                    </a>
-                                </div>
-                                @guest
-                                    @else
-                                        @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
-                                            <div class="d-flex">
-                                                <a href="/generos/{{$item->id}}/edit" class="btn btn-info">
-                                                    Editar
-                                                </a>
-                                            </div>
-                                            <form action="/generos/{{$item->id}}" method="POST">
-                                                @csrf 
-                                                @method('DELETE')
-                                                <button class="btn btn-danger" type="submit">
-                                                Eliminar
-                                                </button>
-                                            </form>
-                                        @endif
-                                @endguest
-                            </div>
-                            
+        <div class="row">
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            @foreach($generos as $item)
+                @if($cuenta == 0)
+                
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box">
+                        <div ><img src="assets/img/group.jpg" alt="Logo" class="img-fluid" width="300" ></i></div>
+                        <h4><a href="/representantes/byName/{{$item->genero}}">{{$item->genero}}</a></h4>
+                        @guest
+                            @else
+                                @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
+                                <p><a href="/generos/{{$item->id}}/edit">Editar</a></p>
+                                <form action="/generos/{{$item->id}}" method="POST">
+                                    @csrf 
+                                    @method('DELETE')
+                                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                                </form>
+                                @endif
+                        @endguest
+                        
                         </div>
                     </div>
-                @endforeach   
+                   
+                @endif
+                @if($cuenta == 1)
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="icon-box">
+                        <div ><img src="assets/img/group.jpg" alt="Logo" class="img-fluid" width="300" ></i></div>
+                        <h4><a href="/representantes/byName/{{$item->genero}}">{{$item->genero}}</a></h4>
+                        @guest
+                            @else
+                                @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
+                                <p><a href="/generos/{{$item->id}}/edit">Editar</a></p>
+                                <form action="/generos/{{$item->id}}" method="POST">
+                                    @csrf 
+                                    @method('DELETE')
+                                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                                </form>
+                                @endif
+                        @endguest
+                        
+                        </div>
+                </div>
+                @endif
+                @if($cuenta == 2)
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="icon-box">
+                        <div ><img src="assets/img/group.jpg" alt="Logo" class="img-fluid" width="300" ></i></div>
+                        <h4><a href="/representantes/byName/{{$item->genero}}">{{$item->genero}}</a></h4>
+                        @guest
+                            @else
+                                @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
+                                <p><a href="/generos/{{$item->id}}/edit">Editar</a></p>
+                                <form action="/generos/{{$item->id}}" method="POST">
+                                    @csrf 
+                                    @method('DELETE')
+                                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                                </form>
+                                @endif
+                        @endguest
+                        
+                        </div>
+                </div>
+                @endif
+                @if($cuenta >= 3)
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="icon-box">
+                        <div ><img src="assets/img/group.jpg" alt="Logo" class="img-fluid" width="300" ></i></div>
+                        <h4><a href="/representantes/byName/{{$item->genero}}">{{$item->genero}}</a></h4>
+                        @guest
+                            @else
+                                @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
+                                <p><a href="/generos/{{$item->id}}/edit">Editar</a></p>
+                                <form action="/generos/{{$item->id}}" method="POST">
+                                    @csrf 
+                                    @method('DELETE')
+                                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                                </form>
+                                @endif
+                        @endguest
+                        
+                        </div>
+                </div>
+                @endif
+                
+                <?php
+
+$cuenta = $cuenta +1;
+
+?>
+            @endforeach
+        </div>
+
+
+
+            
+        </div>
+    </section>
+    
+    
+    
+    <!-- End Services Section -->
+    
     </div>
-@endsection
-
-
-
+  </div>
+</div>
 
  
