@@ -84,8 +84,35 @@
         @endif
         @endguest
 
+        <!--Para que el ususario edite su información-->
+        @guest 
+            @else
+                @if(Auth::user()->rol=="normal")
+                    <div class="form-group col-4">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="name" class="form-control" value="{{$item->name}}">
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="correo">Email</label>
+                        <input type="text" name="email" class="form-control" value="{{$item->email}}">
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="nombre">Contraseña</label>
+                        <input type="password" name="password" class="form-control">
+                    </div>
+
+            @endif
+        @endguest
+        @guest 
+            @else
+                @if(Auth::user()->rol=="normal")
+                <input type="text" name="rol" class="form-control" value="{{$item->rol}}" hidden>
+        
+                @endif
+        @endguest
+
         <div class="col-12 text-center">
-            <button class="btn btn-warning" type="submit">Registrar!</button>
+            <button class="btn btn-warning" type="submit">Actualizar</button>
         </div>
     </form>
 

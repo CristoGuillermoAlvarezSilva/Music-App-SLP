@@ -7,6 +7,10 @@ use DB;
 use App\User;
 use App\Representante;
 use App\Cotizacione;
+use App\Parametro;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 class UserController extends Controller
 {
     /**
@@ -85,6 +89,7 @@ class UserController extends Controller
        
         $item->name = $request->name;
         $item->email = $request->email;
+        $item->password = Hash::make($request->password);
         $respuesta = $item->save();
         
         if($respuesta == 0){
@@ -119,7 +124,7 @@ class UserController extends Controller
         //
         $representantes = Representante::all(); 
         $cotizaciones = Cotizacione::all(); 
-      
-        return view('users.perfil', compact('representantes', 'cotizaciones'));
+        $parametros = Parametro::all();
+        return view('users.perfil', compact('representantes', 'cotizaciones', 'parametros'));
     }
 }
