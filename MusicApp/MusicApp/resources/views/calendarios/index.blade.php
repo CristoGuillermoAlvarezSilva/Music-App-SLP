@@ -20,23 +20,23 @@
                     @guest
                         @else
                             @if(Auth::user()->id == $item->idR)
-                                
+                                @foreach($representantes as $item2)
+                                    @guest
+                                        @else
+                                            @if($item->idR == $item2->idU)
+                                                
+                                                
+                                            @endif
+                                    @endguest
+
+                                @endforeach 
                             @endif
                             
                         @endguest
                 @endforeach  
                                 
                         
-                            @foreach($representantes as $item2)
-                                @guest
-                                    @else
-                                        @if($item->idR == $item2->idU)
-                                            <ul class="tipo justify-content-center">{{$item2->nombre}}</ul>  
-                                            
-                                        @endif
-                                @endguest
-
-                            @endforeach 
+                            
                                <!--CODIGO CALENDARIO-->
                                <script>
                                 function busy() {
@@ -144,6 +144,7 @@
                                                 <?php
                                                     $day = null;
                                                     $dia = null;
+                                                    $prueba = "Febrero";
                                                     if(isset($_GET["dia"]))
                                                     {
                                                         $day = $_GET["dia"]; 
@@ -151,8 +152,8 @@
                                                     $dia = $day;
                                                     
                                                 ?>
-                                                Dia: <input type="text" name="dia" value="<?php echo $dia; ?>" class="form-control" disabled>
-                                                Mes: <input type="text" name="mes" value="<?php echo $mesStr; ?>" class="form-control" disabled>
+                                                Dia: <input type="text" name="dia" value="<?php echo $day; ?>"><br><br>
+                                                Mes: <input type="text" name="mes" value="<?php echo $mesStr ?>">
                                             </div>
                                             <div class="form-group col-8">
                                                 <select name="disp" class="form-control">

@@ -100,16 +100,7 @@
                                     <h3 class="text-center">  Parametros  </h3>
                                 </div>
                                 <div class="card-body">
-                                @foreach($parametros as $p)
-                                    @guest
-                                        @else
-                                            @if( Auth::user()->id == $p->idR)
-                                                
-                                                <h3><a href="/parametros">Parametros</a></h3>
-                                                    
-                                        @endif
-                                    @endguest
-                                @endforeach                            
+                                    <h3><a href="/parametros">Parametros</a></h3>                       
                                 </div>
                             </div>
                         </div>

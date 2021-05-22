@@ -1,6 +1,5 @@
 @extends('../layouts.app')
-         
-                           
+                         
 @section('title')
     Editar usuarios
 @endsection
@@ -128,6 +127,3 @@
 </div>
 
 @endsection
-
-
- 
