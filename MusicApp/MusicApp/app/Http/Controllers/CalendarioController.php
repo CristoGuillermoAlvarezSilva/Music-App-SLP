@@ -30,7 +30,7 @@ class CalendarioController extends Controller
     {
         //
         $error = "";
-        return view('calendarios.create', compact('error'));
+        return view('calendarios.index', compact('error'));
     }
 
     /**
@@ -44,7 +44,8 @@ class CalendarioController extends Controller
         //
         $item = new Calendario; 
         $item->idR = $request->idR;
-        $item->fecha = $request->fecha;
+        $item->dia = $request->dia;
+        $item->mes = $request->mes;
         $item->disp = $request->disp;
 
         $item->save();
