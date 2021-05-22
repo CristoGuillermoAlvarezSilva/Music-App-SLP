@@ -75,7 +75,7 @@
         <ul>
         <li class="drop-down"><a href=""><i class="far fa-user"></i> {{ Auth::user()->name }}</a>
               <ul>
-              <li><a href="#"><i class="fas fa-users-cog"></i> Perfil</a></li>
+              <li><a href="/perfil"><i class="fas fa-users-cog"></i> Perfil</a></li>
                 <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i><span>{{ __(' Cerrar sesión') }}</span></a></li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                   @csrf

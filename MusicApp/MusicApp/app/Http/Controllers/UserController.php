@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\User;
+use App\Representante;
+use App\Cotizacione;
 class UserController extends Controller
 {
     /**
@@ -110,5 +112,14 @@ class UserController extends Controller
     {
         //
         return view('users.admin');
+    }
+
+    public function miPerfil()
+    {
+        //
+        $representantes = Representante::all(); 
+        $cotizaciones = Cotizacione::all(); 
+      
+        return view('users.perfil', compact('representantes', 'cotizaciones'));
     }
 }

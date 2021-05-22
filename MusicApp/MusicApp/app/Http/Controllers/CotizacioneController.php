@@ -77,6 +77,9 @@ class CotizacioneController extends Controller
     public function edit($id)
     {
         //
+        $item = Cotizacione::find($id);
+        $error = "";
+        return view('cotizaciones.editar', compact('item'));
         
     }
 
@@ -101,6 +104,11 @@ class CotizacioneController extends Controller
     public function destroy($id)
     {
         //
+        Cotizacione::destroy($id);
+       
+     
+        return redirect()->route('users.index');
+
     }
     public function cotizar()
     {

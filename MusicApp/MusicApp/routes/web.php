@@ -42,3 +42,5 @@ Route::get('/paypal/pay', 'PaymentController@payWithPayPal');
 /*Route::get('/paypal/status', 'PaymentController@paypalStatus');*/
 
 Route::get('/cotizar', 'CotizacioneController@cotizar')->name('cotizaciones.cotizar');
+
+Route::get('/perfil', 'UserController@miPerfil')->name('users.pefil');
