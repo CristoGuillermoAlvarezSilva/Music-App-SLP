@@ -20,6 +20,7 @@ class CreateCotizacionesTable extends Migration
             $table->double('cotizacion', 6, 2);
             $table->bigInteger('num');
             $table->string('ciudad', 50);
+            $table->bigInteger('anticipo');
             $table->timestamps();
         });
     }

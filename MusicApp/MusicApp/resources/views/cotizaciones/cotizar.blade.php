@@ -25,19 +25,20 @@
                         @endif
                 @endguest
             @endforeach
-            <div class="form-group col-4">
-                <labeL for="num">Numero de personas:</labeL>
-                <input type="text" name="num" id="num"class="form-control">
-                <labeL for="ciudad">Ciudad:</labeL>
-                <input type="text" name="ciudad" class="form-control">
-
-            </div>
+           
             
    </form>
    <form action="/cotizaciones/create" method="GET" >
 
         <input type="text" name="idR" class="form-control" value="{{$idR}}" hidden>
-        <input type="text" name="num" class="form-control" value="{{$num}}" hidden>
+        <div class="form-group col-4">
+                <labeL for="num">Numero de personas:</labeL>
+                <input type="text" name="num" id="num"class="form-control">
+                <labeL for="ciudad">Ciudad:</labeL>
+                <input type="text" name="ciudad" class="form-control">
+
+        </div>
+
         <div class="col-12 text-center">
             <button class="btn btn-success" type="submit">Cotizar</button>
         </div>

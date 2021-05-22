@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Representante;
-use App\Parametros;
+use App\Parametro;
 use App\Cotizacione;
 class CotizacioneController extends Controller
 {
@@ -30,8 +30,10 @@ class CotizacioneController extends Controller
     public function create()
     {
         //
+        $representantes = Representante::all();
+        $parametros = Parametro::all();
         $error = "";
-        return view('cotizaciones.create', compact('error'));
+        return view('cotizaciones.create', compact('error', 'representantes', 'parametros'));
     }
 
     /**
@@ -43,6 +45,16 @@ class CotizacioneController extends Controller
     public function store(Request $request)
     {
         //
+        $item = new Cotizacione; 
+        $item->idR = $request->idR;
+        $item->idU = $request->idU;
+        $item->num = $request->num;
+        $item->ciudad = $request->ciudad;
+        $item->cotizacion = $request->cotizacion;
+        $item->anticipo = $request->anti;
+        
+        $item->save();
+        return redirect()->route('generos.index');
     }
 
     /**
