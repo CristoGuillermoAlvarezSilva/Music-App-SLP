@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-use App\User;
 use App\Representante;
+use App\Parametro;
 use App\Cotizacione;
-class UserController extends Controller
+class CotizacioneController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +16,10 @@ class UserController extends Controller
     public function index()
     {
         //
-        $users = User::all();
-        return view('users.index', compact('users'));
+        $representantes = Representante::all();
+        $parametros = Parametro::all();
+        $cotizaciones = Cotizacione::all();
+        return view('cotizaciones.index', compact('cotizaciones', 'representantes', 'parametros'));
     }
 
     /**
@@ -29,6 +30,10 @@ class UserController extends Controller
     public function create()
     {
         //
+        $representantes = Representante::all();
+        $parametros = Parametro::all();
+        $error = "";
+        return view('cotizaciones.create', compact('error', 'representantes', 'parametros'));
     }
 
     /**
@@ -40,6 +45,16 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        $item = new Cotizacione; 
+        $item->idR = $request->idR;
+        $item->idU = $request->idU;
+        $item->num = $request->num;
+        $item->ciudad = $request->ciudad;
+        $item->cotizacion = $request->cotizacion;
+        $item->anticipo = $request->anti;
+        
+        $item->save();
+        return redirect()->route('generos.index');
     }
 
     /**
@@ -51,8 +66,6 @@ class UserController extends Controller
     public function show($id)
     {
         //
-        $item = User::find($id);
-        return $item;
     }
 
     /**
@@ -64,9 +77,10 @@ class UserController extends Controller
     public function edit($id)
     {
         //
-        $item = User::find($id);
+        $item = Cotizacione::find($id);
         $error = "";
-        return view('users.editar', compact('error', 'item'));
+        return view('cotizaciones.editar', compact('item'));
+        
     }
 
     /**
@@ -79,19 +93,6 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $item = User::find($id);
-
-        $item->rol = $request->rol;
-       
-        $item->name = $request->name;
-        $item->email = $request->email;
-        $respuesta = $item->save();
-        
-        if($respuesta == 0){
-            $error= "Erros al actualizar";
-            return view('users.editar', compact('error', 'item'));
-        }
-        return redirect()->route('users.index');
     }
 
     /**
@@ -103,23 +104,16 @@ class UserController extends Controller
     public function destroy($id)
     {
         //
-        User::destroy($id);
+        Cotizacione::destroy($id);
        
+     
         return redirect()->route('users.index');
-    }
 
-    public function admin()
+    }
+    public function cotizar()
     {
         //
-        return view('users.admin');
-    }
-
-    public function miPerfil()
-    {
-        //
-        $representantes = Representante::all(); 
-        $cotizaciones = Cotizacione::all(); 
-      
-        return view('users.perfil', compact('representantes', 'cotizaciones'));
+        $representantes = Representante::all();
+        return view('cotizaciones.cotizar',compact('representantes'));
     }
 }

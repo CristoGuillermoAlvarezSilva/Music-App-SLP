@@ -117,6 +117,7 @@ class RepresentanteController extends Controller
     public function update(Request $request, $id)
     {
         //
+        
     }
 
     /**
@@ -128,18 +129,16 @@ class RepresentanteController extends Controller
     public function destroy($id)
     {
         //
+        Representante::destroy($id);
+       
+        return redirect()->route('representantes.index');
+
     }
 
     public function byName($genero) 
     {
-       
-        
         $genero;
 
-        // $color = "#43016f";
-
-        // $categorias = Categoria::where('nombre', '!=', $nombre)->where('color', $color)->get();
-    
         $representantes = Representante::all();
         return view('representantes.index', compact('genero','representantes'));
     }

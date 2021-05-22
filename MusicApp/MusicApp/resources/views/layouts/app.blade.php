@@ -40,9 +40,9 @@
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">AppMusic<span>.</span></a></h1>
+      <!--<h1 class="logo"><a href="index.html">RecFilms<span>.</span></a></h1>-->
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!--<a href="index.html" class="logo"><img src="{{asset('assets/img/logo.png')}}" alt="" class="img-fluid"></a>-->
+      <a href="index.html" class="logo"><img src="assets/img/logo.jpg" class="img-fluid" ></a> 
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
@@ -61,7 +61,7 @@
           <li><a href="index.html">Inicio</a></li>
           <li><a href="#about">Legado</a></li>
           <li><a href="#services">Eventos</a></li>
-          <li><a href="#portfolio">Blogs</a></li>
+          <li><a href="#portfolio">Calendario</a></li>
           <li><a href="#team">Subscribete</a></li>
           
 
@@ -75,7 +75,7 @@
         <ul>
         <li class="drop-down"><a href=""><i class="far fa-user"></i> {{ Auth::user()->name }}</a>
               <ul>
-              <li><a href="#"><i class="fas fa-users-cog"></i> Perfil</a></li>
+              <li><a href="/perfil"><i class="fas fa-users-cog"></i> Perfil</a></li>
                 <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i><span>{{ __(' Cerrar sesión') }}</span></a></li>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                   @csrf
@@ -137,9 +137,7 @@
       <div class="copyright">
         &copy; Copyright <strong><span>MusicAppSlp</span></strong>. All Rights Reserved
       </div>
-      <div class="credits">
-        Designed by <a href="https://github.com/CristoGuillermoAlvarezSilva">Cristo</a>
-      </div>
+      
     </div>
   </footer><!-- End Footer -->
 
