@@ -24,7 +24,7 @@
                                     @guest
                                         @else
                                             @if($item->idR == $item2->idU)
-                                                
+
                                             @endif
                                     @endguest
 
@@ -46,7 +46,12 @@
                         window.location.href = window.location.href + "&dia=" + this.id;
                     }
                 }
-                
+
+                function setColor($day) {
+                    var boton = document.getElementsById($day);
+                    boton.className += " busyColor";
+                }               
+
                 </script>
                 
                 <div class="container row">
@@ -169,7 +174,7 @@
                             </div>
                             <br>
                             <div class="col-12 text-center">
-                                <button class="btn btn-success" type="submit">Guardar</button>
+                                <button class="btn btn-warning" type="submit">Guardar</button>
                             </div>
                             </div>
                         </div>
