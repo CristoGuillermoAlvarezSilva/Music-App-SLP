@@ -1,14 +1,41 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Registro') }}</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+        <section id="hero" class="d-flex align-items-center justify-content-center ">
+            
+            <!-- ======= Contact Section ======= -->
+            <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                <div class="section-title">
+                <h2>Registro</h2>
+                <p class="text-white">Crea Una Cuenta</p>
+                </div>
+
+                
+
+            </div>
+            </section><!-- End Contact Section -->
+
+            
+        </section>
+
+    
+    </div>
+
+    <div class="col-6">
+      <section id="contact" class="contact">
+        <div class="container py-md-5" data-aos="fade-up">
+
+          <p class="py-md-5"></p>
+          <p class="py-md-5"></p>
+
+            <div class="col-lg-8 mt-5 mt-lg-0 align-self-center py-md-5">
+
+            <form method="POST" action="{{ route('register') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -63,15 +90,25 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-warning">
                                     {{ __('Registrarse') }}
                                 </button>
                             </div>
                         </div>
                     </form>
-                </div>
+
             </div>
+
+          </div>
+
         </div>
+    </section>
+
     </div>
+    
+
+
+  </div>
 </div>
+
 @endsection

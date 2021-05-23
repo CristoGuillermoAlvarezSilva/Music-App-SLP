@@ -1,14 +1,3 @@
-<style>
-    .o{
-        color:black;
-        font-size:1vw;
-        font-weight: bold;
-    }
-    .per{
-        background-color:#FAEEFC ;
-    }
-   
-</style>
 @extends('../layouts.app')
 
 @section('title')
@@ -16,27 +5,35 @@
 @endsection
 
 @section('content')
-    <h1 class="text-center py-5">Mi perfil</h1>
+<section id="services" class="services">
+        <div class="container" data-aos="fade-up">
 
-    <div class="row mx-0">
-        <div class="col-3">
-            <div class="py-5">
-                <img src="{{asset('img/logo.png')}}" alt="logo" class="img-fluid" width="350" >
-            </div>
-           
+            <div class="section-title">
+                <p class="py-md-5"></p>
+                @guest
+                @else
+                    @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
+                    <!--Administrador-->
+                <h2>SuperUsuario </h2>
+                
+                @endif
+                    @endguest
             
-        </div>
-        <div class="">
-            <div class="card py-5">
-                <div class="card-title">
-                    <h3 class="text-center">Usuario</h3>
-                </div>
-                <div class="card-body">
-                    <label class="o py-2">Nombre: {{Auth::user()->name}}</label>
-                    <div>
-                        <label class="o py-2">Correo: {{Auth::user()->email}}</label>
-                    </div>
-                    <form novalidate action="/users/{{Auth::user()->id}}/edit" >
+            <p>Perfil</p>
+            
+            </div>
+
+            <?php
+
+$cuenta = 0;
+
+?>
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+            <div ><img src="assets/img/group.jpg" alt="Logo" class="img-fluid" width="300" ></i></div>
+            <h4>Nombre: {{Auth::user()->name}}</h4>
+            <p>Correo: {{Auth::user()->email}}</p>
+            <form novalidate action="/users/{{Auth::user()->id}}/edit" >
                         <button class="btn btn-info" type="submit">Actualizar</button>
                     </form>
                     <form action="/users/{{Auth::user()->id}}" method="POST">
@@ -45,101 +42,293 @@
                         <button class="btn btn-danger" type="submit">
                         Eliminar
                         </button>
-                    </form>
-                </div>
-            
+            </form>
+                        
             </div>
         </div>
-
-        @foreach($representantes as $r)
+        <div class="section-title">
+                <p class="py-md-5"></p>
+               
+                <h2>Perfil</h2>
+                <p>Representantes</p>
+            
+        </div>
+        <div class="row">
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            @foreach($representantes as $r)
                     @guest
                         @else
                             @if( Auth::user()->id == $r->idU)
-        
-                                <div class="">
-                                    <div class="card py-5">
-                                        <div class="card-title">
-                                            <h3 class="text-center">  Representante  </h3>
-                                        </div>
-                                        <div class="card-body">
-                
-                                            <tr class="d-flex">
-                                    
-                                                <td class="col-2"><h5 class="card-title">Grupo: {{$r->nombre}}</h5>
-                                            
-                                                <img src="/{{$r->path}}" class="img-fluid" width="150">
+                                @if($cuenta == 0)
+                                
+                                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                                        <div class="icon-box">
+                                        <div ><img src="/{{$r->path}}" alt="Logo" class="img-fluid" width="300" ></i></div>
+                                        <h4>Grupo: {{$r->nombre}}</h4>
+                                        @guest
+                                            @else
+                                                @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
+                                                
+                                                <form novalidate action="/representantes/{{$r->idU}}/edit" >
+                                                    <button class="btn btn-info" type="submit">Actualizar</button>
+                                                </form>
+                                                <form action="/representantes/{{$r->id}}" method="POST">
+                                                    @csrf 
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger" type="submit">
+                                                    Eliminar
+                                                    </button>
                                         
-                                            </tr> 
-                                            <form novalidate action="/representantes/{{$r->idU}}/edit" >
-                                                <button class="btn btn-info" type="submit">Actualizar</button>
-                                            </form>
-                                            <form action="/representantes/{{$r->id}}" method="POST">
-                                                @csrf 
-                                                @method('DELETE')
-                                                <button class="btn btn-danger" type="submit">
-                                                Eliminar
-                                                </button>
-                                    
-                                            </form>
-                        
+                                                </form>
+                                                @endif
+                                        @endguest
+                                        
                                         </div>
-            
                                     </div>
+                                
+                                @endif
+                                @if($cuenta == 1)
+                                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                                        <div class="icon-box">
+                                        <div ><img src="/{{$r->path}}" alt="Logo" class="img-fluid" width="300" ></i></div>
+                                        <h4>Grupo: {{$r->nombre}}</h4>
+                                        @guest
+                                            @else
+                                                @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
+                                                <form novalidate action="/representantes/{{$r->idU}}/edit" >
+                                                    <button class="btn btn-info" type="submit">Actualizar</button>
+                                                </form>
+                                                <form action="/representantes/{{$r->id}}" method="POST">
+                                                    @csrf 
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger" type="submit">
+                                                    Eliminar
+                                                    </button>
+                                        
+                                                </form>
+                                                @endif
+                                        @endguest
+                                        
+                                        </div>
                                 </div>
+                                @endif
+                                @if($cuenta == 2)
+                                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+                                        <div class="icon-box">
+                                        <div ><img src="/{{$r->path}}" alt="Logo" class="img-fluid" width="300" ></i></div>
+                                        <h4>Grupo: {{$r->nombre}}</h4>
+                                        @guest
+                                            @else
+                                                @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
+                                                <form novalidate action="/representantes/{{$r->idU}}/edit" >
+                                                    <button class="btn btn-info" type="submit">Actualizar</button>
+                                                </form>
+                                                <form action="/representantes/{{$r->id}}" method="POST">
+                                                    @csrf 
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger" type="submit">
+                                                    Eliminar
+                                                    </button>
+                                        
+                                                </form>
+                                                @endif
+                                        @endguest
+                                        
+                                        </div>
+                                </div>
+                                @endif
+                                @if($cuenta >= 3)
+                                <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+                                        <div class="icon-box">
+                                        <div ><img src="/{{$r->path}}" alt="Logo" class="img-fluid" width="300" ></i></div>
+                                        <h4>Grupo: {{$r->nombre}}</h4>
+                                        @guest
+                                            @else
+                                                @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
+                                                <form novalidate action="/representantes/{{$r->idU}}/edit" >
+                                                    <button class="btn btn-info" type="submit">Actualizar</button>
+                                                </form>
+                                                <form action="/representantes/{{$r->id}}" method="POST">
+                                                    @csrf 
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger" type="submit">
+                                                    Eliminar
+                                                    </button>
+                                        
+                                                </form>
+                                                @endif
+                                        @endguest
+                                        
+                                        </div>
+                                </div>
+                                @endif
+                                
+                                <?php
 
-        @endif
-                        @endguest  
-                @endforeach
-        @foreach($representantes as $r)
+                $cuenta = $cuenta +1;
+
+?>
+@endif
+@endguest  
+            @endforeach
+        </div>
+        <div class="section-title">
+                <p class="py-md-5"></p>
+               
+                <h2>Perfil</h2>
+                <p>Parametros</p>
+            
+        </div>
+        <?php
+
+$cuenta2 = 0;
+
+?>
+        <div class="row">
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            @foreach($representantes as $r)
             @guest
                 @else
                     @if( Auth::user()->id == $r->idU)
-                        <div class="">
-                            <div class="card py-5">
-                                <div class="card-title">
-                                    <h3 class="text-center">  Parametros  </h3>
+                    @if($cuenta2 == 0)
+                                
+                                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                                    <div class="icon-box">
+                                    <div ><img src="" alt="Logo" class="img-fluid" width="300" ></i></div>
+                                    <h4><a href="/parametros">Parametros</a></h4>
+                                    
+                                    </div>
                                 </div>
-                                <div class="card-body">
-                                @foreach($parametros as $p)
-                                    @guest
-                                        @else
-                                            @if( Auth::user()->id == $p->idR)
-                                                
-                                                <h3><a href="/parametros">Parametros</a></h3>
-                                                    
-                                        @endif
-                                    @endguest
-                                @endforeach                            
-                                </div>
+                            
+                            @endif
+                            @if($cuenta2 == 1)
+                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="icon-box">
+                                    <div ><img src="" alt="Logo" class="img-fluid" width="300" ></i></div>
+                                    <h4><a href="/parametros">Parametros</a></h4>
+                                    
+                                    </div>
                             </div>
-                        </div>
+                            @endif
+                            @if($cuenta2 == 2)
+                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="icon-box">
+                                    <div ><img src="" alt="Logo" class="img-fluid" width="300" ></i></div>
+                                    <h4><a href="/parametros">Parametros</a></h4>
+                                    
+                                    </div>
+                            </div>
+                            @endif
+                            @if($cuenta2 >= 3)
+                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="icon-box">
+                                    <div ><img src="" alt="Logo" class="img-fluid" width="300" ></i></div>
+                                    <h4><a href="/parametros">Parametros</a></h4>
+                                    
+                                    </div>
+                            </div>
+                            @endif
+                            
+                            <?php
+
+            $cuenta2 = $cuenta2 +1;
+
+?>
                 @endif
             @endguest
         @endforeach
+        </div>
 
-        @foreach($cotizaciones as $c)
+
+
+        <div class="section-title">
+                <p class="py-md-5"></p>
+               
+                <h2>Perfil</h2>
+                <p>Parametros</p>
+            
+        </div>
+        <?php
+
+$cuenta3 = 0;
+
+?>
+
+<div class="row">
+            <!------------------------------------------------------------------------------------------------------------------------------>
+            @foreach($cotizaciones as $c)
             @guest
                 @else
                     @if(Auth::user()->id == $c->idU)
-                        <div class="">
-                            <div class="card py-5">
-                                <div class="card-title">
-                                    <h3 class="text-center">Cotizaciones</h3>
+                    @if($cuenta == 0)
+                                
+                                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                                        <div class="icon-box">
+                                        @foreach($representantes as $r)
+                                            @guest
+                                                @else
+                                                    @if($c->idR == $r->idU)
+                                                        <h4>{{$r->nombre}}</h4>
+                                                        <div ><img src="/{{$r->path}}" alt="Logo" class="img-fluid" width="300" ></i></div>
+                                                @endif
+                                            @endguest
+                                        @endforeach
+                                        <h4>Costo: {{$c->cotizacion}}</h4>
+                                        <form novalidate action="/cotizaciones/{{$c->id}}/edit" >
+                                            <button class="btn btn-info" type="submit">Ver</button>
+                                        </form>
+                                        <form action="/cotizaciones/{{$c->id}}" method="POST">
+                                            @csrf 
+                                            @method('DELETE')
+                                            <button class="btn btn-danger" type="submit">
+                                                Eliminar
+                                            </button>
+                                        </form>
+                                        
+                                        </div>
                                 </div>
-                                <div class="card-body">        
+                            
+                            @endif
+                            @if($cuenta == 1)
+                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="icon-box">
+                                        @foreach($representantes as $r)
+                                            @guest
+                                                @else
+                                                    @if($c->idR == $r->idU)
+                                                        <h4>{{$r->nombre}}</h4>
+                                                        <div ><img src="/{{$r->path}}" alt="Logo" class="img-fluid" width="300" ></i></div>
+                                                @endif
+                                            @endguest
+                                        @endforeach
+                                        <h4>Costo: {{$c->cotizacion}}</h4>
+                                        <form novalidate action="/cotizaciones/{{$c->id}}/edit" >
+                                            <button class="btn btn-info" type="submit">Ver</button>
+                                        </form>
+                                        <form action="/cotizaciones/{{$c->id}}" method="POST">
+                                            @csrf 
+                                            @method('DELETE')
+                                            <button class="btn btn-danger" type="submit">
+                                                Eliminar
+                                            </button>
+                                        </form>
+                                        
+                                        </div>
+                            </div>
+                            @endif
+                            @if($cuenta == 2)
+                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="icon-box">
                                     @foreach($representantes as $r)
                                         @guest
                                             @else
                                                 @if($c->idR == $r->idU)
-                                                    <td class="col-2"><h5 class="card-title">{{$r->nombre}}</h5>
-                                                    <img src="/{{$r->path}}" class="img-fluid" width="100">
+                                                    <h4>{{$r->nombre}}</h4>
+                                                    <div ><img src="/{{$r->path}}" alt="Logo" class="img-fluid" width="300" ></i></div>
                                             @endif
                                         @endguest
                                     @endforeach
-
-
-                                    <td class="col-2"><h5 class="card-title">Costo: {{$c->cotizacion}}</h5>    
-                                    </tr> 
+                                    <h4>Costo: {{$c->cotizacion}}</h4>
                                     <form novalidate action="/cotizaciones/{{$c->id}}/edit" >
                                         <button class="btn btn-info" type="submit">Ver</button>
                                     </form>
@@ -150,15 +339,57 @@
                                             Eliminar
                                         </button>
                                     </form>
+                                    
                                 </div>
                             </div>
-                        </div>
+                            @endif
+                            @if($cuenta >= 3)
+                            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+                                <div class="icon-box">
+                                    @foreach($representantes as $r)
+                                        @guest
+                                            @else
+                                                @if($c->idR == $r->idU)
+                                                    <h4>{{$r->nombre}}</h4>
+                                                    <div ><img src="/{{$r->path}}" alt="Logo" class="img-fluid" width="300" ></i></div>
+                                            @endif
+                                        @endguest
+                                    @endforeach
+                                    <h4>Costo: {{$c->cotizacion}}</h4>
+                                    <form novalidate action="/cotizaciones/{{$c->id}}/edit" >
+                                        <button class="btn btn-info" type="submit">Ver</button>
+                                    </form>
+                                    <form action="/cotizaciones/{{$c->id}}" method="POST">
+                                        @csrf 
+                                        @method('DELETE')
+                                        <button class="btn btn-danger" type="submit">
+                                            Eliminar
+                                        </button>
+                                    </form>
+                                    
+                                </div>
+                            </div>
+                            @endif
+                            
+                            <?php
+
+            $cuenta3 = $cuenta3 +1;
+
+?>
 
                 @endif
             @endguest
         @endforeach
 
-               
-        
-    </div>
+
+        </div>
+
+
+
+            
+        </div>
+    </section>
+
+
+
 @endsection

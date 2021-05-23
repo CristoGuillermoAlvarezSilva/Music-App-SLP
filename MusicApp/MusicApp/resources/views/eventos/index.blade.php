@@ -17,7 +17,7 @@
 
                 <div class="section-title">
                 <h2>Galeria</h2>
-                <p class="text-white">Encuentra el genero musical que prefieras!</p>
+                <p class="text-white">Encuentra el evento musical ideal!</p>
                 </div>
 
                 
@@ -25,9 +25,14 @@
             </div>
             </section><!-- End Contact Section -->
 
-            </div>
+            
         </section>
-        <section id="services" class="services">
+
+    
+    </div>
+
+    <div class="col-6">
+    <section id="services" class="services">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
@@ -42,7 +47,7 @@
                 @endif
                     @endguest
             
-            <p>Generos</p>
+            <p>Eventos</p>
             @guest
                 @else
                     @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
@@ -153,8 +158,7 @@ $cuenta = 0;
                 @endif
                 @if($cuenta >= 3)
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-                <div class="icon-box">
-                        <div ><img src="/{{$item->path}}" alt="Logo" class="img-fluid" width="300" ></i></div>
+                <div ><img src="/{{$item->path}}" alt="Logo" class="img-fluid" width="300" ></i></div>
                         <h4>{{$item->nombre}}</h4>
                         
                                         <p>Titulo del evento:{{$item->titulo}}</p>
@@ -192,18 +196,21 @@ $cuenta = $cuenta +1;
             
         </div>
     </section>
-    
-    
-    
-    <!-- End Services Section -->
-    
+
     </div>
+    
+
+
   </div>
 </div>
 
 
 
+
+
+
 @endsection
+
 
 
 

@@ -42,29 +42,33 @@
 
       <!--<h1 class="logo"><a href="index.html">RecFilms<span>.</span></a></h1>-->
       <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="index.html" class="logo"><img src="assets/img/logo.jpg" class="img-fluid" ></a> 
+      <a href="/" class="logo"><img src="assets/img/logo.jpg" class="img-fluid" ></a> 
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
+        <li><a href="/">Inicio</a></li>
           @guest
           @else
             @if(Auth::user()->rol == "super")
               <li><a href="/administrador"><i class="fas fa-cog"></i> Panel SuperUsuario</a></li>
+              <li><a href="/eventos">Eventos</a></li>
               <li><a href="/calendarios">Calendario</a></li>
+              <li><a href="#">Subscribete</a></li>
             @endif
           @endguest
           @guest
             @else
               @if(Auth::user()->rol == "Administrador")
                 <li><a href="/administrador"><i class="fas fa-cogs"></i> Panel Administrador</a></li>
+                <li><a href="/eventos">Eventos</a></li>
                 <li><a href="/calendarios">Calendario</a></li>
-
+                <li><a href="#">Subscribete</a></li>
               @endif
           @endguest
-          <li><a href="/">Inicio</a></li>
-          <li><a href="#about">Legado</a></li>
-          <li><a href="/eventos">Eventos</a></li>
-          <li><a href="#team">Subscribete</a></li>
+          
+          <li><a href="#">Legado</a></li>
+          <li><a href="/generos">Generos</a></li>
+          
           
 
         </ul>

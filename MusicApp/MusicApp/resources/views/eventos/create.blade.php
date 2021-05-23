@@ -19,8 +19,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                <h2>Eventos</h2>
-                <p class="text-white">Crea evento!</p>
+                <h2>Evento</h2>
+                <p class="text-white">Crea un Evento</p>
                 </div>
 
                 
@@ -28,9 +28,13 @@
             </div>
             </section><!-- End Contact Section -->
 
-            </div>
+            
         </section>
 
+    
+    </div>
+
+    <div class="col-6">
     <section id="contact" class="contact">
       <div class="container py-md-5" data-aos="fade-up">
 
@@ -100,8 +104,19 @@
 
       </div>
     </section>
+
     </div>
+    
+
+
   </div>
 </div>
-    
+
+
+
+
+
+
+
 @endsection
+

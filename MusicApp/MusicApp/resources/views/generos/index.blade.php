@@ -1,3 +1,11 @@
+@extends('../layouts.app')
+@section('title')
+    Generos musicales
+@endsection
+
+
+<!--Contenido de la pagina-->
+@section('content')
 <div class="container-fluid">
   <div class="row">
     <div class="col-6">
@@ -17,9 +25,14 @@
             </div>
             </section><!-- End Contact Section -->
 
-            </div>
+            
         </section>
-        <section id="services" class="services">
+
+    
+    </div>
+
+    <div class="col-6">
+    <section id="services" class="services">
         <div class="container" data-aos="fade-up">
 
             <div class="section-title">
@@ -156,13 +169,19 @@ $cuenta = $cuenta +1;
             
         </div>
     </section>
-    
-    
-    
-    <!-- End Services Section -->
-    
+
     </div>
+    
+
+
   </div>
 </div>
+
+    
+    
+@endsection
+
+
+
 
  
