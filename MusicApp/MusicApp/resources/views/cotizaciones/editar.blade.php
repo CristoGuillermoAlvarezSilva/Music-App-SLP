@@ -9,33 +9,41 @@
 @endsection
 
 @section('content')
-    <h3>Corización</h3>
-   
-
-    <form action="/cotizaciones" class="form-row" enctype="multipart/form-data">
-        @csrf
-       
-           
-        <div class="form-group col-4">
-            <label for="descripcion">Numero de personas:</label>
-            <input type="text" name="descripcion" class="form-control" value="{{$item->num}}" readonly>
-
+<section id="services" class="services">
+    <div class="container centrar" data-aos="fade-up">
+        <div class="section-title">
+            <br>
+            <h2>Cotización almacenada</h2>
+            <p>Cotización</p>
+            <h6 for="fecha">A continuación se encuentra la información de la cotización guardada</h6>
         </div>
-        <div class="form-group col-4">
-            <label for="titulo">Cotización: </label>
-            <input type="text" name="titulo" class="form-control" value="{{$item->cotizacion}}" readonly>
 
-        </div>
-       
-        <div class="form-group col-4">
-            <label for="fecha">Anticipo:</label>
-            <input type="text" name="text" class="form-control" value="{{$item->anticipo}}" readonly>
+        <form action="/cotizaciones" class="form-row" enctype="multipart/form-data">
+            @csrf
 
-        </div>
+            <div class="form-group col-4">
+                <label for="descripcion">Numero de personas:</label>
+                <input type="text" name="descripcion" class="form-control" value="{{$item->num}}" readonly>
+
+            </div>
+            <div class="form-group col-4">
+                <label for="titulo">Cotización: </label>
+                <input type="text" name="titulo" class="form-control" value="{{$item->cotizacion}}" readonly>
+
+            </div>
         
-      
-        <h3><a href="/perfil">Volver</a></h3>
+            <div class="form-group col-4">
+                <label for="fecha">Anticipo:</label>
+                <input type="text" name="text" class="form-control" value="{{$item->anticipo}}" readonly>
 
-    </form>
+            </div>
+            
+            <div class="form-group col-12">
+                <a class="btn btn-warning" href="/perfil">Volver</a>
+            </div>
+
+        </form>
+    </div>
+</section>
 @endsection
 

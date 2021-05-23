@@ -30,9 +30,13 @@
             </div>
             </section><!-- End Contact Section -->
 
-            </div>
+            
         </section>
 
+    
+    </div>
+
+    <div class="col-6">
     <section id="contact" class="contact">
       <div class="container py-md-5" data-aos="fade-up">
 
@@ -74,14 +78,16 @@
 
       </div>
     </section>
+
     </div>
+    
+
+
   </div>
 </div>
 
-@endsection
 
-@endif
-        @endguest
+@endsection
 
 @endif
         @endguest

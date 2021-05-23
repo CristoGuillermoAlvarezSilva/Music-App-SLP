@@ -8,9 +8,19 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-.titleDate {
-  color: #ffffff;
+.centrar {
   text-align: center;
+}
+
+.nameArtist {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.titleDate {
+  width: 428px;
+  height: 60px;
+  color: #000000;
   font-weight: bold;
   font-size: 2em;
   background-color: #ffc451;
