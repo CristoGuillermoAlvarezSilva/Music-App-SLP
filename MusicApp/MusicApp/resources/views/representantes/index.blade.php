@@ -7,20 +7,6 @@
 <!--Contenido de la pagina-->
 @section('content')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ======= Portfolio Section ======= -->
 <section id="portfolio" class="portfolio">
       <div class="container" data-aos="fade-up">
@@ -44,7 +30,7 @@
                     <!--Administrador-->
                 <div class="d-flex justify-content-end mb-2">
                     <a href="/representantes/create" class="btn btn-warning">
-                        Agregar representante
+                        Agregar artista
                     <i class="fas fa-plus"></i>
                     </a>
                 </div>

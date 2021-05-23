@@ -50,18 +50,20 @@
           @else
             @if(Auth::user()->rol == "super")
               <li><a href="/administrador"><i class="fas fa-cog"></i> Panel SuperUsuario</a></li>
+              <li><a href="/calendarios">Calendario</a></li>
             @endif
           @endguest
           @guest
             @else
               @if(Auth::user()->rol == "Administrador")
                 <li><a href="/administrador"><i class="fas fa-cogs"></i> Panel Administrador</a></li>
+                <li><a href="/calendarios">Calendario</a></li>
+
               @endif
           @endguest
-          <li><a href="index.html">Inicio</a></li>
+          <li><a href="/">Inicio</a></li>
           <li><a href="#about">Legado</a></li>
-          <li><a href="#services">Eventos</a></li>
-          <li><a href="#portfolio">Calendario</a></li>
+          <li><a href="/eventos">Eventos</a></li>
           <li><a href="#team">Subscribete</a></li>
           
 

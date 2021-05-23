@@ -3,10 +3,9 @@
         function generar_calendario($month,$year,$holidays = null){          
                     
             $calendar = '<table cellpadding="0" cellspacing="0" class="calendar">';
-            $mes = mesToString($month);
 
             $headings = array('L','M','Mi','J','V','S','D');
-            $calendar.= '<tr class="titleDate">'.$mes.'&nbsp;'.$year.'</tr>';
+           
             $calendar.= '<tr class="calendar-row"><td class="calendar-day-head">'.implode('</td><td class="calendar-day-head">',$headings).'</td></tr>';
         
             $running_day = date('w',mktime(0,0,0,$month,1,$year));

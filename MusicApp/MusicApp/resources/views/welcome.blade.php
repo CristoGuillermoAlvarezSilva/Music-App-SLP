@@ -22,7 +22,7 @@
         <div class="col-xl-2 col-md-4 col-6">
           <div class="icon-box">
             <i class="ri-store-line"></i>
-            <h3><a href="/parametros">Contratar</a></h3>
+            <h3><a href="/parametros/create">Establece tus precios</a></h3>
           </div>
         </div>
         <div class="col-xl-2 col-md-4 col-6 ">
@@ -31,25 +31,29 @@
             <h3><a href="/representantes/create">Registra tu Grupo</a></h3>
           </div>
         </div>
-        @endguest
-        <div class="col-xl-2 col-md-4 col-6 mt-4 mt-md-0">
-          <div class="icon-box">
-            <i class="ri-calendar-todo-line"></i>
-            <h3><a href="/calendarios">Calendario de eventos</a></h3>
-          </div>
-        </div>
+        
         <div class="col-xl-2 col-md-4 col-6 mt-4 mt-xl-0">
           <div class="icon-box">
-            <i class="ri-bar-chart-box-line"></i>
-            <h3><a href="">Subscribete</a></h3>
-          </div>
-        </div>
-        <div class="col-xl-2 col-md-4 col-6 mt-4 mt-xl-0">
-          <div class="icon-box">
-            <i class="far fa-comment-dots"></i>
+            <i class="far fa-calendar"></i>
             <h3><a href="/calendarios">Calendario</a></h3>
           </div>
         </div>
+        @endguest
+        
+        <div class="col-xl-2 col-md-4 col-6 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="ri-calendar-todo-line"></i>
+            <h3><a href="/eventos">Eventos</a></h3>
+          </div>
+        </div>
+
+        <div class="col-xl-2 col-md-4 col-6 mt-4 mt-md-0">
+          <div class="icon-box">
+            <i class="fas fa-compact-disc"></i>
+            <h3><a href="/generos">Generos</a></h3>
+          </div>
+        </div>
+        
       </div>
 
     </div>
