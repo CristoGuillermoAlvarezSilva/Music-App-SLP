@@ -8,6 +8,7 @@ use App\User;
 use App\Representante;
 use App\Cotizacione;
 use App\Parametro;
+use App\Calendario;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -125,6 +126,8 @@ class UserController extends Controller
         $representantes = Representante::all(); 
         $cotizaciones = Cotizacione::all(); 
         $parametros = Parametro::all();
-        return view('users.perfil', compact('representantes', 'cotizaciones', 'parametros'));
+        $calendarios = Calendario::all();
+ 
+        return view('users.perfil', compact('representantes', 'cotizaciones', 'parametros', 'calendarios'));
     }
 }

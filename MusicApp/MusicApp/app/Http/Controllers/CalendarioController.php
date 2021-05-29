@@ -15,9 +15,7 @@ class CalendarioController extends Controller
     public function index()
     {
         //
-        $calendarios = Calendario::all();
-        $representantes = Representante::all();
-        return view('calendarios.index', compact('calendarios', 'representantes'));
+        
 
     }
 
@@ -30,7 +28,7 @@ class CalendarioController extends Controller
     {
         //
         $error = "";
-        return view('calendarios.index', compact('error'));
+        return view('calendarios.create', compact('error'));
     }
 
     /**
@@ -44,12 +42,13 @@ class CalendarioController extends Controller
         //
         $item = new Calendario; 
         $item->idR = $request->idR;
-        $item->dia = $request->dia;
-        $item->mes = $request->mes;
+        $item->fecha = $request->fecha;
+        $item->inicio = $request->inicio;
+        $item->fin = $request->fin;
         $item->disp = $request->disp;
 
         $item->save();
-        return redirect()->route('calendarios.index');
+        return redirect()->route('generos.index');
     }
 
     /**
@@ -72,6 +71,11 @@ class CalendarioController extends Controller
     public function edit($id)
     {
         //
+        $item = Calendario::find($id);
+
+        $error = "";
+        return view('calendarios.editar', compact('error', 'item'));
+
     }
 
     /**
@@ -84,6 +88,16 @@ class CalendarioController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $item = Calendario::find($id); 
+        $item->idR = $request->idR;
+        $item->fecha = $request->fecha;
+        $item->inicio = $request->inicio;
+        $item->fin = $request->fin;
+        $item->disp = $request->disp;
+
+        $item->save();
+        return redirect()->route('generos.index');
+
     }
 
     /**
@@ -95,5 +109,8 @@ class CalendarioController extends Controller
     public function destroy($id)
     {
         //
+        Calendario::destroy($id);
+       
+        return redirect()->route('generos.index');
     }
 }

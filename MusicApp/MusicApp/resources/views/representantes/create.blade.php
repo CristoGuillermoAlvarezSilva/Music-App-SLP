@@ -88,6 +88,11 @@
                     <input type="text" name="video" class="form-control">
 
                 </div>
+                <div class="form-group col-10">
+                    <label for="telefono">Número de telefono para contactar</label>
+                    <input type="text" name="telefono" class="form-control">
+
+                </div>
                 <div class="col-12 text-center">
                     <button class="btn btn-warning" type="submit">Registrar!</button>
                 </div>

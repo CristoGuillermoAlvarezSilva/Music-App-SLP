@@ -4,7 +4,7 @@
             @extends('../layouts.app')
 
 @section('title')
-   Usuarios
+   Representantes
 @endsection
 
 @section('content')
@@ -15,7 +15,7 @@
         <div class="row">
         <div class="section-title">
                 <p class="py-md-5"></p>
-                <h2>Usuarios </h2>
+                <h2>Representantes </h2>
             
             <p>Panel</p>
             </div>
@@ -24,32 +24,19 @@
         <tr>
           
             <th>Nombre</th>
-            <th>Email</th>
-            <th>Rol</th>
+            <th>Telefono</th>
+            <th>Agrupación/Solista</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
     
-        @foreach($users as $item)
+        @foreach($representantes as $item)
         <tr>
-            <td scope="row">{{$item->name}}</td>
-            <td>{{$item->email}}</td>
-            <td>{{$item->rol}}</td>
-            @guest
-                @else
-                    @if(Auth::user()->rol == "super")
-            <td>
-                <div class="d-flex justify-content-end mb-2">
-                    <a href="/users/{{$item->id}}/edit" class="btn btn-info">
-                        Editar Rol
-                    </a>
-                </div>
-                
-            </td>
-         
-            @endif
-         @endguest
+            <td scope="row">{{$item->nombre}}</td>
+            <td>{{$item->telefono}}</td>
+            <td>{{$item->tipo}}</td>
+      
         </tr>
         @endforeach
     </tbody>

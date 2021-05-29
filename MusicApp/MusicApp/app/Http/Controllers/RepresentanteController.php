@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Genero;
 use App\Representante;
 use App\User;
+use App\Calendario;
 
 class RepresentanteController extends Controller
 {
@@ -72,6 +73,13 @@ class RepresentanteController extends Controller
          
             $item->video = " ";
         }
+        $item->telefono = $request->telefono;
+        if($item->telefono == ""){
+         
+            $item->telefono = " ";
+            echo "<script>alert('Poner una breve descripción');</script>";
+            return view('representantes.create');
+        }
         
         $item->save();
         return redirect()->route('generos.index');
@@ -103,8 +111,9 @@ class RepresentanteController extends Controller
         //
         $generos = Genero::all();
         $item = Representante::find($id);
+        $calendarios = Calendario::all();
         $error = "";
-        return view('representantes.editar', compact('generos','error', 'item'));
+        return view('representantes.editar', compact('generos','error', 'item', 'calendarios'));
     }
 
     /**
@@ -117,6 +126,47 @@ class RepresentanteController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $item = Representante::find($id);
+        $item->idU = $request->idU;
+        $item->genero = $request->genero;
+      
+        $item->tipo = $request->tipo;
+        $item->nombre = $request->nombre;
+        if($item->nombre == ""){
+         
+            echo "<script>alert('El nombre de la banda no puede estar vacio');</script>";
+            return view('representantes.editar');
+        }
+        $item->descripcion = $request->descripcion;
+        if($item->descripcion == ""){
+         
+            echo "<script>alert('Poner una breve descripción');</script>";
+            return view('representantes.editar');
+        }
+        if($imagen = $request->file('imagen')){
+            $nombre_imagen = $item->nombre . "_" . date("Y_m_d_H_i_s") . "." . $imagen->extension();
+             $imagen->move("imgenes", $nombre_imagen);
+             $item->path = "imgenes/" . $nombre_imagen;
+        }
+        $item->video = $request->video;
+        if($item->video == ""){
+         
+            $item->video = " ";
+            echo "<script>alert('Poner una breve descripción');</script>";
+            return view('representantes.editar');
+        }
+        $item->telefono = $request->telefono;
+        if($item->telefono == ""){
+         
+            $item->telefono = " ";
+            echo "<script>alert('Poner una breve descripción');</script>";
+            return view('representantes.editar');
+        }
+        
+        
+        $item->save();
+        return redirect()->route('generos.index');
+ 
         
     }
 
@@ -131,7 +181,7 @@ class RepresentanteController extends Controller
         //
         Representante::destroy($id);
        
-        return redirect()->route('representantes.index');
+        return redirect()->route('generos.index');
 
     }
 
@@ -141,5 +191,11 @@ class RepresentanteController extends Controller
 
         $representantes = Representante::all();
         return view('representantes.index', compact('genero','representantes'));
+    }
+    public function inde()
+    {
+        //
+        $representantes = Representante::all();
+        return view('representantes.inde', compact('representantes'));
     }
 }
