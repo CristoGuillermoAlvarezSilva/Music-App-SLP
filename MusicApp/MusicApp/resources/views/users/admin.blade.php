@@ -37,6 +37,13 @@
               <p>Administra los Generos registrados en la plataforma!</p>
             </div>
           </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-slideshow"></i></div>
+              <h4><a href="/inde">Representantes</a></h4>
+              <p>Ver a todos los representantes de la página</p>
+            </div>
+          </div>
 
 
         </div>

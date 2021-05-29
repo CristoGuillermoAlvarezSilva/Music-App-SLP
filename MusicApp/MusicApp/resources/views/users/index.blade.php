@@ -47,15 +47,7 @@
                 </div>
                 
             </td>
-            <td>
-                <form action="/users/{{$item->id}}" method="POST">
-                    @csrf 
-                    @method('DELETE')
-                    <button class="btn btn-danger" type="submit">
-                    Eliminar
-                    </button>
-                </form>
-            </td>
+         
             @endif
          @endguest
         </tr>

@@ -38,9 +38,11 @@
                         <div class="col-4"></div>
                         <div class="col-4 section-title">
                             <p for="fecha">{{$item->nombre}}</p>
+                            <label for="telefono">Telefono para contactar el grupo: {{$item->telefono}}</label>
                             <img src="/{{$item->path}}" width="300px" height="200px">
                             <label for="titulo">Cotización para {{$num}} personas</label>
                             <label for="titulo">En la ciudad de {{$ciudad}}</label>
+                            
         
                         @endif
                 @endguest
