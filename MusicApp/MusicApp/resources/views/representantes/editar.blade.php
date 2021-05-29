@@ -45,9 +45,13 @@
                         
                 </form>
 
+                
+
                 <form action="/cotizar" method="GET">
                     <input type="text" name="idR" class="form-control" value="{{$item->idU}}" hidden>
                     <div class="col-12 text-center">
+
+                        <a href="/calendarios" class="btn btn-warning">Ir a Agenda</a><br><br>
                         <button class="btn btn-warning" type="submit">Cotizar evento</button>
                     </div>
                 </form>

@@ -8,8 +8,17 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+.carruselSize {
+  width: 800px;
+  height: 400px;
+}
+
 .centrar {
   text-align: center;
+}
+
+.showInfo {
+  border: 0;
 }
 
 .nameArtist {

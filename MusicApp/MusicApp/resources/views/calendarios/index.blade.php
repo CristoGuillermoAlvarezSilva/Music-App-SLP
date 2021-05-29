@@ -45,12 +45,7 @@
                         function capturar(){
                         window.location.href = window.location.href + "&dia=" + this.id;
                     }
-                }
-
-                function setColor($day) {
-                    var boton = document.getElementsById($day);
-                    boton.className += " busyColor";
-                }               
+                }       
 
                 </script>
                 
@@ -64,7 +59,7 @@
                         <div class="section-title">
                                 <br>
                                 <h2>Calendario</h2>
-                                <p>Calendario</p>
+                                <p>Agenda</p>
                         </div>
                         <div class="section-title">
                                         <h6 for="fecha">Selecciona mes/año para ver la agenda</h6>
@@ -163,8 +158,9 @@
                                     $dia = $day;
                                     
                                 ?>
-                                Dia: <input type="text" name="dia" value="<?php echo $day; ?>"><br><br>
-                                Mes: <input type="text" name="mes" value="<?php echo $mesStr ?>">
+                                Dia: <input class="showInfo" type="text" name="dia" value="<?php echo $day; ?>" readonly><br>
+                                Mes: <input class="showInfo" type="text" name="mes" value="<?php echo $mesStr ?>" readonly><br>
+
                             </div>
                             <div class="form-group col-8">
                                 <select name="disp" class="form-control">

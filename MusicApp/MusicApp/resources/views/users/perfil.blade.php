@@ -50,7 +50,7 @@ $cuenta = 0;
                 <p class="py-md-5"></p>
                
                 <h2>Perfil</h2>
-                <p>Representantes</p>
+                <p>Artista / grupo</p>
             
         </div>
         <div class="row">
@@ -176,7 +176,7 @@ $cuenta = 0;
                 <p class="py-md-5"></p>
                
                 <h2>Perfil</h2>
-                <p>Parametros</p>
+                <p>Mis parametros</p>
             
         </div>
         <?php
@@ -194,7 +194,7 @@ $cuenta2 = 0;
                                 
                                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                                     <div class="icon-box">
-                                    <div ><img src="" alt="Logo" class="img-fluid" width="300" ></i></div>
+                                    <div ><img src="/img/logo.png" alt="logo" class="img-fluid" width="300" ></i></div>
                                     <h4><a href="/parametros">Parametros</a></h4>
                                     
                                     </div>
@@ -204,7 +204,7 @@ $cuenta2 = 0;
                             @if($cuenta2 == 1)
                             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
                             <div class="icon-box">
-                                    <div ><img src="" alt="Logo" class="img-fluid" width="300" ></i></div>
+                                    <div ><img src="/img/logo.png" alt="Logo" class="img-fluid" width="300" ></i></div>
                                     <h4><a href="/parametros">Parametros</a></h4>
                                     
                                     </div>
@@ -213,7 +213,7 @@ $cuenta2 = 0;
                             @if($cuenta2 == 2)
                             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
                             <div class="icon-box">
-                                    <div ><img src="" alt="Logo" class="img-fluid" width="300" ></i></div>
+                                    <div ><img src="/img/logo.png" alt="Logo" class="img-fluid" width="300" ></i></div>
                                     <h4><a href="/parametros">Parametros</a></h4>
                                     
                                     </div>
@@ -222,7 +222,7 @@ $cuenta2 = 0;
                             @if($cuenta2 >= 3)
                             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
                             <div class="icon-box">
-                                    <div ><img src="" alt="Logo" class="img-fluid" width="300" ></i></div>
+                                    <div ><img src="/img/logo.png" alt="Logo" class="img-fluid" width="300" ></i></div>
                                     <h4><a href="/parametros">Parametros</a></h4>
                                     
                                     </div>
@@ -245,7 +245,7 @@ $cuenta2 = 0;
                 <p class="py-md-5"></p>
                
                 <h2>Perfil</h2>
-                <p>Parametros</p>
+                <p>Cotizaciones</p>
             
         </div>
         <?php
