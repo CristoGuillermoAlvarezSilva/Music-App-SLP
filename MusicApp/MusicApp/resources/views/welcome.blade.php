@@ -38,12 +38,13 @@
             <h3><a href="/eventos">Eventos</a></h3>
           </div>
         </div>
-        <div class="col-xl-2 col-md-4 col-6 mt-4 mt-xl-0">
+        <div class="col-xl-2 col-md-4 col-6 mt-4 mt-md-0">
           <div class="icon-box">
-            <i class="far fa-comment-dots"></i>
-            <h3><a href="/calendarios">Agenda</a></h3>
+            <i class="fas fa-compact-disc"></i>
+            <h3><a href="/generos">Generos</a></h3>
           </div>
         </div>
+        
       </div>
 
     </div>
@@ -54,12 +55,13 @@
 
   <main id="main" class="bg-black">
      <!-- ======= Cta Section ======= -->
-     <section id="cta" class="cta">
+     <section id="cta" class="cta suscribete">
       <div class="container" data-aos="zoom-in">
 
         <div class="text-center">
-          <h3>Subscribete</h3>
-          <p> Accede a los beneficios de AppMusic y logra inscribir tu grupo para organizar eventos,darte a conocer, y obtener ingresos por contratacion.</p>
+          <br><br><br><br>
+          <h1 class="susTitle">Subscribete</h1>
+          <p class="susDesc"> Accede a los beneficios de LSMXRecfilms y logra inscribir a tu grupo para organizar eventos, darte a conocer y obtener ingresos por contratacion.</p>
           <a class="cta-btn" href="#">Subscripcion</a>
         </div>
 
@@ -67,7 +69,7 @@
     </section>
     <!-- End Cta Section -->
    
-
+<!-- End Portfolio Details Section
    
 
     <section id="portfolio-details" class="portfolio-details">
@@ -88,7 +90,7 @@
         
 
       </div>
-    </section><!-- End Portfolio Details Section -->
+    </section> -->
 
     
     

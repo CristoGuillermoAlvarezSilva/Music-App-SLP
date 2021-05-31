@@ -4,14 +4,33 @@
     Cotizar 
 @endsection
 @section('content')
-<section id="services" class="services">
-    <div class="container centrar" data-aos="fade-up">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+        <section id="hero" class="d-flex align-items-center justify-content-center ">
+            
+            <!-- ======= Contact Section ======= -->
+            <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                <h2>Cotizacion</h2>
+                <p class="text-white">Ingresa los datos solicitados</p>
+                </div>
+
+            </div>
+            
+            </section><!-- End Contact Section --> 
+        </section>
+    </div>
+
+    <div class="col-6">
+
+    <section id="services" class="services">
+    <div class="container" data-aos="fade-up">
 
     <div class="section-title">
-        <br>
-        <h2>Ingreso de datos</h2>
-        <p>Cotizacion</p>
-        <h6 for="fecha">Ingresa los siguientes datos para cotizar el siguiente artista</h6>
+        
     </div>
     <div class="row">
         <div class="col-4"></div>
@@ -62,6 +81,9 @@
     </div>
 </div>
 </section>
+</div>
+</div>
+</div>
 @endsection
 
 

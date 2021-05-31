@@ -9,14 +9,33 @@
 @endsection
 
 @section('content')
-<section id="services" class="services">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+        <section id="hero" class="d-flex align-items-center justify-content-center ">
+            
+            <!-- ======= Contact Section ======= -->
+            <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                <h2>Resultado de la cotización</h2>
+                <p class="text-white">Contacta a su representante</p>
+                </div>
+
+            </div>
+            
+            </section><!-- End Contact Section --> 
+        </section>
+    </div>
+
+    <div class="col-6">
+
+    <section id="services" class="services">
     <div class="container centrar" data-aos="fade-up">
 
     <div class="section-title">
-        <br>
-        <h2>Resultado de la cotización</h2>
-        <p>Cotizacion</p>
-        <h6 for="fecha">A continuación se encuentra el costo y el porcentaje de anticipo para la contratación del artista</h6>
+      
     </div>
    
     <div>
@@ -117,6 +136,9 @@
     
 </div>
 </section>
+</div>
+</div>
+</div>
 @endsection
 
 

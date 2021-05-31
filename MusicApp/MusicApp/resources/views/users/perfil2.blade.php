@@ -7,7 +7,12 @@
 @section('content')
 <section id="services" class="services">
         <div class="container" data-aos="fade-up">
-
+        <div class="section-title">
+            <p class="py-md-5"></p>
+            <p class="py-md-5"></p>
+          <h2>SuperUsuario </h2>
+          <p>Panel</p>
+        </div>
             <div class="section-title">
                 <p class="py-md-5"></p>
                 @guest

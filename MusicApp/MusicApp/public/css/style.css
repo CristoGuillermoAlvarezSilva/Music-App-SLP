@@ -8,6 +8,97 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+.panelLink {
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+}
+
+.panel:hover .panelLink{
+  color: #ffffff !important;
+}
+
+.textParams {
+  width: 150px;
+  justify-content: start;
+}
+
+.margen {
+  margin: auto;
+}
+
+.paramCard {
+  width: fit-content;
+  height: 397px;
+}
+
+.fechaOcupada {
+  width: fit-content;
+  height: 310px;
+  margin:auto;
+}
+
+.repCard {
+  width: fit-content;
+  height: 397px;
+}
+
+.aliEnd {
+  text-align: end;
+}
+
+.aliStart {
+  text-align: start;
+}
+
+.suscribete {
+  height: 500px;
+}
+
+.susTitle{
+  color: white;
+}
+
+.susDesc {
+  font-size: 1.5em;
+}
+
+.perfilCard {
+  width: 400px;
+  height: fit-content;
+  border-color: #ffc451;
+}
+
+.perfilCard:hover, .repCard:hover, .paramCard:hover, .fechaOcupada:hover, .panel:hover {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  transition: linear .3s !important;
+}
+
+.gensCard{
+  margin-bottom: 25px;
+  margin-right: 10px;
+  width: 200px;
+  height: 100px;
+  background-color: #616060 !important;
+  border-color: #ffc451;
+  color: white !important;
+}
+
+.gensCard:hover {
+  background-color: #ffc451 !important;
+  color: black !important;
+  transition: linear .3s !important;
+}
+
+.gensLink {
+  color: white !important;
+  text-transform: uppercase;
+}
+
+.gensLink:hover {
+  color: #000000 !important;
+}
+
 .carruselSize {
   width: 800px;
   height: 400px;
@@ -25,63 +116,6 @@
   font-size: 2em;
   font-weight: bold;
 }
-
-.titleDate {
-  width: 428px;
-  height: 60px;
-  color: #000000;
-  font-weight: bold;
-  font-size: 2em;
-  background-color: #ffc451;
-  border: solid 1px rgb(160, 159, 159);
-}
-
-.calendar { 
-  text-align: center;
-  border: 1px solid rgb(160, 159, 159);
-  background-color: rgb(255, 255, 255);
-}
-
-.calendar-day {
-  border: 1px solid rgb(160, 159, 159);
-  width: 60px;
-  height: 60px;
-}
-
-.calendar-day-head {
-  background: rgb(221, 221, 221);
-  border: 1px solid rgb(160, 159, 159);
-}
-
-.noDisp {
-  width: 50%;
-  background-color: rgb(255, 0, 0);
-}
-
-.disp {
-  width: 50%;
-  background-color: rgb(0, 255, 0);
-  border-color: black;
-}
-
-.calendarDate {
-  color: #151515;
-  font-weight: bold;
-}
-
-.dateDay {
-  border-color: transparent;
-  width: 60px;
-  height: 60px;
-  background-color: rgb(255, 255, 255);
-  padding: 5px;
-}
-
-.dateDay:hover {
-  background-color: #ffc451;
-  transition: ease-in-out .5s;
-}
-
 
 body {
   font-family: "Open Sans", sans-serif;

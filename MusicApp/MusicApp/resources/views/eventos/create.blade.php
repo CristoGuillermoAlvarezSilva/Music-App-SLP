@@ -23,14 +23,10 @@
                 <p class="text-white">Crea un Evento</p>
                 </div>
 
-                
-
             </div>
             </section><!-- End Contact Section -->
 
-            
         </section>
-
     
     </div>
 
@@ -56,7 +52,9 @@
         @method('POST')
 
             <input type="text" name="idR" class="form-control" value="{{Auth::user()->id}}" hidden>
-       
+        <div class="row">
+            
+        
         <div class="form-group col-4">
             <labe for="titulo">Nombre del evento:</labe>
             <input type="text" name="titulo" class="form-control">
@@ -94,7 +92,8 @@
 
         </div>
         <div class="col-12 text-center">
-            <button class="btn btn-warning" type="submit">Registrar!</button>
+            <button class="btn btn-warning" type="submit">Crear evento</button>
+        </div>
         </div>
     </form>
 

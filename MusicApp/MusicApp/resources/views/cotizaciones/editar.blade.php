@@ -9,13 +9,31 @@
 @endsection
 
 @section('content')
-<section id="services" class="services">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+        <section id="hero" class="d-flex align-items-center justify-content-center ">
+            
+            <!-- ======= Contact Section ======= -->
+            <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                <h2>Cotización guardada</h2>
+                <p class="text-white">Información de la cotización</p>
+                </div>
+
+            </div>
+            
+            </section><!-- End Contact Section --> 
+        </section>
+    </div>
+
+    <div class="col-6">
+    <section id="services" class="services">
     <div class="container centrar" data-aos="fade-up">
         <div class="section-title">
-            <br>
-            <h2>Cotización almacenada</h2>
-            <p>Cotización</p>
-            <h6 for="fecha">A continuación se encuentra la información de la cotización guardada</h6>
+            
         </div>
 
         <form action="/cotizaciones" class="form-row" enctype="multipart/form-data">
@@ -45,5 +63,8 @@
         </form>
     </div>
 </section>
+</div>
+</div>
+</div>
 @endsection
 

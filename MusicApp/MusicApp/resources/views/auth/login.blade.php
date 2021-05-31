@@ -16,20 +16,14 @@
                 <p class="text-white">Ingresa a tu cuenta</p>
                 </div>
 
-                
-
             </div>
             </section><!-- End Contact Section -->
-
-            
         </section>
-
-    
     </div>
 
     <div class="col-6">
       <section id="contact" class="contact">
-        <div class="container py-md-5" data-aos="fade-up">
+        <div class="container " data-aos="fade-up">
 
           <p class="py-md-5"></p>
           <p class="py-md-5"></p>

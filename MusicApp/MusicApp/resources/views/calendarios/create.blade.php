@@ -15,58 +15,56 @@
                 <div class="container" data-aos="fade-up">
 
                     <div class="section-title">
-                        <h2>Calendario</h2>
+                        <h2>Agenda</h2>
                         <p class="text-white">Registra una fecha ocupada</p>
                     </div>
                 </div>
             </section><!-- End Contact Section -->
 
-    </div>
+    
         </section>
-
+    </div>
+    
+    <div class="col-6">
         <section id="contact" class="contact">
-            <div class="container py-md-5" data-aos="fade-up">
-
+            <div class="container" data-aos="fade-up">
+                
                 <div class="row mt-5">
 
-                    <div class="col-lg-2">
-                        <div class="info">
-                            <div class="address">
-                                <img src="assets/img/group.jpg" class="img-fluid" alt="">
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-8 mt-5 mt-lg-0 align-self-center py-md-5">
+                <div class="section-title">
+                    <br>
+                    <p>Selecciona los datos</p>
+                </div>
+                    <div class="col-lg-8 mt-5 mt-lg-0 align-self-center">
 
                         <form action="/calendarios" class="form-row" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('POST')
-                        
-                           
-                            <label>Guardar fecha ocupada en calendario</label>
-                            <input type="text" name="idR" class="form-control" value="{{Auth::user()->id}}" hidden>
-                            <input type="text" name="disp" class="form-control" value="Ocupado" hidden>
-
-                            <div class="form-group col-4">
-                                <label for="fecha">Fecha ocupada</label>
-                                <input type="date" name="fecha" class="form-control">
-
+                            <div>
+                                <input type="text" name="idR" class="form-control" value="{{Auth::user()->id}}" hidden>
+                                <input type="text" name="disp" class="form-control" value="Ocupado" hidden>
                             </div>
-                            <div class="form-grup col-4">
-                                <label for="inicio">Inicio</label>
-                                <input type="time" name="inicio" class="form-control">
+                            <div class="row">
+                                <div class="form-group col-4">
+                                    <label for="fecha">Fecha ocupada</label>
+                                    <input type="date" name="fecha" class="form-control">
+                                </div>
 
-                            </div>
-                            <div class="form-grup col-4">
-                                <label for="fin">Fin</label>
-                                <input type="time" name="fin" class="form-control">
-                                
-                            </div>
+                                <div class="form-grup col-4">
+                                    <label for="inicio">Inicio</label>
+                                    <input type="time" name="inicio" class="form-control">
+                                </div>
 
+                                <div class="form-grup col-4">
+                                    <label for="fin">Fin</label>
+                                    <input type="time" name="fin" class="form-control">
+                                </div>
+                            </div>
+                            
+                            
                             <div class="col-12 text-center">
-                                <button class="btn btn-warning" type="submit">Guardar Fecha</button>
+                            <br>
+                                <button class="btn btn-warning" type="submit">Guardar fecha</button>
                             </div>
                         </form>
 

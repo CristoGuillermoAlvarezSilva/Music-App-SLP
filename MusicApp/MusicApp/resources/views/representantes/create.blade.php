@@ -16,33 +16,26 @@
 
                 <div class="section-title">
                 <h2>Representante</h2>
-                <p class="text-white">Registra un Grupo!</p>
+                <p class="text-white">Registra un Grupo/Artista</p>
                 </div>
 
                 
 
             </div>
             </section><!-- End Contact Section -->
-
-            </div>
+ 
         </section>
+    </div>
 
+    <div class="col-6">   
     <section id="contact" class="contact">
-      <div class="container py-md-5" data-aos="fade-up">
+      <div class="container" data-aos="fade-up">
 
-
-        <div class="row mt-5">
-
-                <div class="col-lg-2">
-                <div class="info">
-                    <div class="address">
-                    <img src="assets/img/group.jpg" class="img-fluid" alt="">
-                    </div>
-                </div>
-
-            </div>
-
-          <div class="col-lg-8 mt-5 mt-lg-0 align-self-center py-md-5">
+        <div class="section-title">
+            <br>
+            <p>Ingresa los datos</p>
+        </div>
+      
 
           <form action="/representantes" class="form-row" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -94,7 +87,7 @@
 
                 </div>
                 <div class="col-12 text-center">
-                    <button class="btn btn-warning" type="submit">Registrar!</button>
+                    <button class="btn btn-warning" type="submit">Registrar</button>
                 </div>
             </form>
 

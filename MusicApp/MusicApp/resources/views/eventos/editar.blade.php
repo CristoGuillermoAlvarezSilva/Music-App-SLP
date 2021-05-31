@@ -23,15 +23,9 @@
                 <p class="text-white">Editar evento!</p>
                 </div>
 
-                
-
             </div>
             </section><!-- End Contact Section -->
-
-            
         </section>
-
-    
     </div>
 
     <div class="col-6">

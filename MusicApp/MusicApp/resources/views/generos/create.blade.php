@@ -22,7 +22,7 @@
 
                 <div class="section-title">
                 <h2>Generos</h2>
-                <p class="text-white">Crea un Genero!</p>
+                <p class="text-white">Crea un Genero</p>
                 </div>
 
                 
@@ -68,7 +68,7 @@
 
         </div>
         <div class="col-12 text-center">
-            <button class="btn btn-warning" type="submit">Registrar!</button>
+            <button class="btn btn-warning" type="submit">Registrar</button>
         </div>
     </form>
 

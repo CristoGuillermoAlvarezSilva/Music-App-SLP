@@ -21,15 +21,9 @@
                 <p class="text-white">Edita la Cuenta</p>
                 </div>
 
-                
-
             </div>
             </section><!-- End Contact Section -->
-
-            
         </section>
-
-    
     </div>
 
     <div class="col-6">

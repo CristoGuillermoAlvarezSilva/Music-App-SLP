@@ -52,7 +52,6 @@
             @if(Auth::user()->rol == "super")
               <li><a href="/administrador"><i class="fas fa-cog"></i> Panel SuperUsuario</a></li>
               <li><a href="/eventos">Eventos</a></li>
-              <li><a href="/calendarios">Calendario</a></li>
               <li><a href="#">Subscribete</a></li>
             @endif
           @endguest
@@ -61,7 +60,6 @@
               @if(Auth::user()->rol == "Administrador")
                 <li><a href="/administrador"><i class="fas fa-cogs"></i> Panel Administrador</a></li>
                 <li><a href="/eventos">Eventos</a></li>
-                <li><a href="/calendarios">Calendario</a></li>
                 <li><a href="#">Subscribete</a></li>
               @endif
           @endguest
@@ -127,7 +125,7 @@
 
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Subscripción</h4>
+            <h4>Inscríbete con tu correo</h4>
             <p>Recibe novedades de los proximos eventos en SLP</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
@@ -141,7 +139,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>MusicAppSlp</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>LSMXRecfilms</span></strong>. All Rights Reserved
       </div>
       
     </div>
