@@ -1,69 +1,100 @@
 @extends('../layouts.app')
 @section('title')
-    Novedades
+    Pago
 @endsection
 
 
 <!--Contenido de la pagina-->
 @section('content')
-    <h1 class="text-center">Blog</h1>
-    @guest
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+        <section id="hero" class="d-flex align-items-center justify-content-center ">
+            
+            <!-- ======= Contact Section ======= -->
+            <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
 
-    @else
-        <a class="btn btn-dark" type="button" href="/novedades/create">
-            Agregar alguna novedad
-        </a>
-    @endguest
+                <div class="section-title">
+                <h2>Subscripcion</h2>
+                <p class="text-white">Obten los beneficios de subscripcion!</p>
+                </div>
 
+                
 
-    <!--Todos usuarios-->
-   <div class="categoria-items row py-5">
+            </div>
+            </section><!-- End Contact Section -->
 
-                @foreach($novedades as $item)
-        
-                    <div class="categoria-item col-12 col-md-3 pt-1">
-                        <div class="car">
-                            <div class="fon">
-                                <div class="card-body">
-                                    <div class="card-title">
-                                        <ul class="tipo justify-content-center">Titulo:{{$item->titulo}}</ul>
-                                        <ul class="tipo justify-content-center">Descripcion: {{$item->descripcion}}</ul>
-                                        <?php
-                                            $video_id = $item->video;
-                                        ?>
-   
-                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video_id ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+        </section>
 
-                                        
-                                        <ul class="tipo justify-content-center">Fecha: {{$item->fecha}}</ul>
-                                        
-                                    </div>
-                                </div>
-                               
-                                @guest
-                                    @else
-                                        @if(Auth::user()->id == $item->idR)
-                                            <div class="d-flex">
-                                                <a href="/novedades/{{$item->id}}/edit" class="btn btn-info">
-                                                    Editar
-                                                </a>
-                                            </div>
-                                            <form action="/novedades/{{$item->id}}" method="POST">
-                                                @csrf 
-                                                @method('DELETE')
-                                                <button class="btn btn-danger" type="submit">
-                                                Eliminar
-                                                </button>
-                                            </form>
-                                        @endif
-                                @endguest
-                            </div>
-                            
-                        </div>
-                    </div>
-                @endforeach   
+    
     </div>
+
+    <div class="col-6">
+    <section id="services" class="services">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <p class="py-md-5"></p>
+                <h2>Pago </h2>
+                
+            
+            <p>Subscripcion</p>
+            
+            </div>
+
+            <div id="smart-button-container">
+      <div style="text-align: center;">
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=MXN" data-sdk-integration-source="button-factory"></script>
+  <script>
+    function initPayPalButton() {
+      paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'vertical',
+          label: 'pay',
+          
+        },
+
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"amount":{"currency_code":"MXN","value":58,"breakdown":{"item_total":{"currency_code":"MXN","value":50},"shipping":{"currency_code":"MXN","value":0},"tax_total":{"currency_code":"MXN","value":8}}}}]
+          });
+        },
+
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(details) {
+            alert('Transaccion completa por ' + details.payer.name.given_name + '!');
+          });
+        },
+
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+  </script>
+
+
+
+            
+        </div>
+    </section>
+
+    </div>
+    
+
+
+  </div>
+</div>
 @endsection
+
 
 
 
