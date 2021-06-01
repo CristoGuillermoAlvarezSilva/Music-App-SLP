@@ -24,7 +24,7 @@ Route::resource('generos','GenerosController');
 Route::resource('representantes','RepresentanteController');
 Route::resource('parametros','ParametroController');
 Route::resource('eventos','EventoController');
-Route::resource('novedades','NovedadeController');
+Route::resource('pago','NovedadeController');
 Route::resource('cotizaciones','CotizacioneController');
 
 Route::resource('calendarios','CalendarioController');
