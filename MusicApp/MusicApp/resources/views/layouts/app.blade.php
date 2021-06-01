@@ -52,7 +52,7 @@
             @if(Auth::user()->rol == "super")
               <li><a href="/administrador"><i class="fas fa-cog"></i> Panel SuperUsuario</a></li>
               <li><a href="/eventos">Eventos</a></li>
-              <li><a href="#">Subscribete</a></li>
+              <li><a href="/pago">Subscribete</a></li>
             @endif
           @endguest
           @guest
