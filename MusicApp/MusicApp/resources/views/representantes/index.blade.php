@@ -7,21 +7,27 @@
 <!--Contenido de la pagina-->
 @section('content')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ======= Portfolio Section ======= -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+        <section id="hero" class="d-flex align-items-center justify-content-center ">
+            
+            <!-- ======= Contact Section ======= -->
+            <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                <h2>Grupos/Artistas</h2>
+                <p class="text-white">Conoce los artistas </p>
+                </div>
+            </div>
+            </section><!-- End Contact Section -->
+
+        </section>
+    </div>
+
+    <div class="col-6">
+
 <section id="portfolio" class="portfolio">
       <div class="container" data-aos="fade-up">
 
@@ -86,7 +92,7 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-
+</div></div></div>
 
 
 

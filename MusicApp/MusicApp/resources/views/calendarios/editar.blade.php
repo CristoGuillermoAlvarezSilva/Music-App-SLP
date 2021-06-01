@@ -8,14 +8,33 @@
 @endsection
 
 @section('content')
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-6">
+        <section id="hero" class="d-flex align-items-center justify-content-center ">
+            
+            <!-- ======= Contact Section ======= -->
+            <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                <h2>Fecha registrada</h2>
+                <p class="text-white">Actualiza los datos de la fecha</p>
+                </div>
+
+            </div>
+            
+            </section><!-- End Contact Section --> 
+        </section>
+    </div>
+
+    <div class="col-6">
+
 <section id="services" class="services">
     <div class="container centrar" data-aos="fade-up">
         <div class="section-title">
-            <br>
-            <h2>Calendario</h2>
            
         </div>
-        <label>Actualizar Fecha</label>
         <form action="/calendarios/{{$item->id}}" class="form-row"  method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT') 
@@ -44,5 +63,6 @@
         </form>
     </div>
 </section>
+</div></div></div>
 @endsection
 

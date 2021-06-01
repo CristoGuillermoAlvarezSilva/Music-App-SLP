@@ -15,15 +15,9 @@
                 <p class="text-white">Crea Una Cuenta</p>
                 </div>
 
-                
-
             </div>
             </section><!-- End Contact Section -->
-
-            
         </section>
-
-    
     </div>
 
     <div class="col-6">

@@ -8,71 +8,183 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+/*
+body {
+    background: #e8cbc0;
+    background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
+    background: linear-gradient(to right, #e8cbc0, #636fa4);
+    min-height: 100vh;
+}*/
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.foAgenda {
+  position: relative;
+  top: -70px;
+}
+
+.foSAgenda {
+  width: fit-content;
+  height: 150px;
+  margin: auto;
+}
+
+.foSAgenda:hover {
+  border: solid 3px !important; 
+  border-color: #ffc451 !important;
+}
+
+.foCoti {
+  position: relative;
+}
+
+.foSCotiza {
+  width: fit-content;
+  height: 350px;
+  margin: auto;
+}
+
+.people {
+  padding:50px 0;
+}
+
+.item {
+  text-align:center;
+}
+
+.item .box {
+  text-align:center;
+  padding:30px;
+  background-color:#ffffff;
+  margin-bottom:30px;
+}
+
+.item .name {
+  font-weight:bold;
+  margin-top:28px;
+  margin-bottom:8px;
+  color:inherit;
+}
+
+.item .title {
+  text-transform:uppercase;
+  font-weight:bold;
+  color:#d0d0d0;
+  letter-spacing:2px;
+  font-size:13px;
+}
+
+.item .description {
+  font-size:15px;
+  margin-top:15px;
+  margin-bottom:20px;
+}
+
+.item img {
+  max-width:160px;
+}
+
+.panelLink {
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+}
+
+.panel:hover .panelLink{
+  color: #ffffff !important;
+}
+
+.textParams {
+  width: 150px;
+  justify-content: start;
+}
+
+.margen {
+  margin: auto;
+}
+
+.paramCard {
+  width: fit-content;
+  height: 397px;
+}
+
+.fechaOcupada {
+  width: fit-content;
+  height: 250px;
+  margin:auto;
+}
+
+.foRelat {
+  position: relative;
+  
+}
+
+.repCard {
+  width: fit-content;
+  height: 397px;
+}
+
+.aliEnd {
+  text-align: end;
+}
+
+.aliStart {
+  text-align: start;
+}
+
+.suscribete {
+  height: 500px;
+}
+
+.susTitle{
+  color: white;
+}
+
+.susDesc {
+  font-size: 1.5em;
+}
+
+.perfilCard {
+  width: 400px;
+  height: fit-content;
+  border-color: #ffc451;
+}
+
+.fechaOcupada:hover {
+  border: solid 3px #ffc451;;
+  transition: linear .3s !important;
+}
+
+.gensCard{
+  margin: 10px;
+  width: 200px;
+  height: 100px;
+  border-color: #ffc451;
+  text-transform: uppercase;
+}
+
+.gensLink:hover {
+  color: #000000 !important;
+}
+
+.carruselSize {
+  width: 800px;
+  height: 400px;
+}
+
 .centrar {
   text-align: center;
+}
+
+.showInfo {
+  border: 0;
 }
 
 .nameArtist {
   font-size: 2em;
   font-weight: bold;
 }
-
-.titleDate {
-  width: 428px;
-  height: 60px;
-  color: #000000;
-  font-weight: bold;
-  font-size: 2em;
-  background-color: #ffc451;
-  border: solid 1px rgb(160, 159, 159);
-}
-
-.calendar { 
-  text-align: center;
-  border: 1px solid rgb(160, 159, 159);
-  background-color: rgb(255, 255, 255);
-}
-
-.calendar-day {
-  border: 1px solid rgb(160, 159, 159);
-  width: 60px;
-  height: 60px;
-}
-
-.calendar-day-head {
-  background: rgb(221, 221, 221);
-  border: 1px solid rgb(160, 159, 159);
-}
-
-.noDisp {
-  width: 50%;
-  background-color: rgb(255, 0, 0);
-}
-
-.disp {
-  width: 50%;
-  background-color: rgb(0, 255, 0);
-  border-color: black;
-}
-
-.calendarDate {
-  color: #151515;
-  font-weight: bold;
-}
-
-.dateDay {
-  border-color: transparent;
-  width: 60px;
-  height: 60px;
-  background-color: rgb(255, 255, 255);
-  padding: 5px;
-}
-
-.dateDay:hover {
-  background-color: #ffc451;
-  transition: ease-in-out .5s;
-}
-
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -717,6 +829,11 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+#services {
+  height: 100vh;
+  overflow-y: auto;
+}
+
 .services .icon-box {
   text-align: center;
   border: 1px solid #ebebeb;

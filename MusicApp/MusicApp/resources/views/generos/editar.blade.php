@@ -20,7 +20,7 @@
 
                 <div class="section-title">
                 <h2>Genero</h2>
-                <p class="text-white">Editar genero!</p>
+                <p class="text-white">Editar genero</p>
                 </div>
 
                 

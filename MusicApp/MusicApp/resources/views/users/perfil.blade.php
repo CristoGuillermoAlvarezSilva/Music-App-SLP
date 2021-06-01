@@ -1,14 +1,3 @@
-<style>
-    .o{
-        color:black;
-        font-size:1vw;
-        font-weight: bold;
-    }
-    .per{
-        background-color:#FAEEFC ;
-    }
-   
-</style>
 @extends('../layouts.app')
 
 @section('title')
@@ -16,128 +5,147 @@
 @endsection
 
 @section('content')
-    <h1 class="text-center py-5">Mi perfil</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+        <section id="hero" class="">
+            <div class="container">
+            <!-- ======= Contact Section ======= -->
+            <section id="services" class="services">
+            <div class="container row" data-aos="fade-up">
 
-    <div class="row mx-0">
-        
-        <div class="">
-            <div class="card py-5">
-                <div class="card-title">
-                    <h3 class="text-center">Usuario</h3>
-                </div>
-                <div class="card-body">
-                    <label class="o py-2">Nombre: {{Auth::user()->name}}</label>
-                    <div>
-                        <label class="o py-2">Correo: {{Auth::user()->email}}</label>
+                <div class="section-title">
+                <h2>Información del usuario</h2>
+                <h2>{{Auth::user()->name}}</h2>
+
+                    <div class="row">
+                        <div class="col-8">
+                            <label><b>Correo electrónico:&nbsp;</b></label><label>{{Auth::user()->email}}</label>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-6">
+                                <form novalidate action="/users/{{Auth::user()->id}}/edit" >
+                                    <button class="btn btn-warning" type="submit"><i class="far fa-edit"></i></button>
+                                </form>
+                            </div>
+
+                            <div class="col-6">
+                                <form action="/users/{{Auth::user()->id}}" method="POST">
+                                @csrf 
+                                @method('DELETE')
+                                    <button class="btn btn-danger" type="submit"><i class="fas fa-times"></i></button>
+                                </form>
+                            </div>         
+                        </div>
                     </div>
-                    <form novalidate action="/users/{{Auth::user()->id}}/edit" >
-                        <button class="btn btn-info" type="submit">Actualizar</button>
-                    </form>
-                    <form action="/users/{{Auth::user()->id}}" method="POST">
-                        @csrf 
-                        @method('DELETE')
-                        <button class="btn btn-danger" type="submit">
-                        Eliminar
-                        </button>
-                    </form>
-                </div>
-            
-            </div>
         </div>
+    </div>
+                    
 
+    <div class="container">
+        
         @foreach($representantes as $r)
                     @guest
                         @else
                             @if( Auth::user()->id == $r->idU)
         
-                                <div class="">
-                                    <div class="card py-5">
+                                <div class="margen">
+                                    <div class="icon-box">
                                         <div class="card-title">
-                                            <h3 class="text-center">  Representante  </h3>
+                                            <h3>{{$r->nombre}}</h3>
                                         </div>
                                         <div class="card-body">
-                
-                                            <tr class="d-flex">
-                                    
-                                                <td class="col-2"><h5 class="card-title">Grupo: {{$r->nombre}}</h5>
+                                            <img src="/{{$r->path}}" class="img-fluid" width="300">
+                                            @foreach($representantes as $r)
+                                                @guest
+                                                    @else
+                                                        @if( Auth::user()->id == $r->idU)
+                                                            <div class="margen">
+                                                            <br>
+                                                                <a class="btn btn-warning" href="/parametros">Parámetros</a>     
+                                                            </div>
+                                                    @endif
+                                                @endguest
+                                            @endforeach
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <form novalidate action="/representantes/{{$r->idU}}/edit" >
+                                                    <br>
+                                                    <button class="btn btn-warning" type="submit"><i class="far fa-edit"></i></button>
+                                                    </form>
+                                                </div>
+                                                <div class="col-6">
+                                                    <form action="/representantes/{{$r->id}}" method="POST">
+                                                        @csrf 
+                                                        @method('DELETE')
+                                                        <br>
+                                                        <button class="btn btn-danger" type="submit">
+                                                        <i class="fas fa-times"></i>
+                                                        </button>
                                             
-                                                <img src="/{{$r->path}}" class="img-fluid" width="150">
-                                        
-                                            </tr> 
-                                            <form novalidate action="/representantes/{{$r->idU}}/edit" >
-                                                <button class="btn btn-info" type="submit">Actualizar</button>
-                                            </form>
-                                            <form action="/representantes/{{$r->id}}" method="POST">
-                                                @csrf 
-                                                @method('DELETE')
-                                                <button class="btn btn-danger" type="submit">
-                                                Eliminar
-                                                </button>
-                                    
-                                            </form>
-                        
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </div>
-            
                                     </div>
                                 </div>
 
         @endif
                         @endguest  
                 @endforeach
-        @foreach($representantes as $r)
-            @guest
-                @else
-                    @if( Auth::user()->id == $r->idU)
-                        <div class="">
-                            <div class="card py-5">
-                                <div class="card-title">
-                                    <h3 class="text-center">  Parametros  </h3>
-                                </div>
-                                <div class="card-body">
-                                    <h3><a href="/parametros">Parametros</a></h3>     
-                                </div>
-                            </div>
-                        </div>
-                @endif
-            @endguest
-        @endforeach
+    </div>
 
         @foreach($representantes as $r)
             @guest
                 @else
                     @if( Auth::user()->id == $r->idU)
-
-
-                        <div class="">
-                            <div class="card py-5">
+                       
+                        <div class="container">
+                        <br>
+                            <div class="icon-box">
                                 <div class="card-title">
-                                    <h3 class="text-center">  Calendario  </h3>
+                                    <h3 class="text-center">  Agenda  </h3>
                                 </div>
+                                <div class="container row">
                                 @foreach($calendarios as $cale)
                                     @guest  
                                         @else
                                             @if(Auth::user()->id == $cale->idR )
-                                                <h4>Fecha y hora ocupada</h4>
-                                                <label>Fecha: {{$cale->fecha}}</label>
-                                                <label>Hora inicio: {{$cale->inicio}}</label>
-                                                <label>Hora fin: {{$cale->fin}}</label>
-
-                                                <form novalidate action="/calendarios/{{$cale->id}}/edit" >
-                                                    <button class="btn btn-info" type="submit">Modificar</button>
-                                                </form>
-                                                <form action="/calendarios/{{$cale->id}}" method="POST">
-                                                    @csrf 
-                                                    @method('DELETE')
-                                                    <button class="btn btn-danger" type="submit">
-                                                    Eliminar
-                                                    </button>
-                                        
-                                                </form>
+                                                
+                                                <div class="icon-box fechaOcupada">
+                                                    <div class="foRelat">
+                                                        <h4>Fecha ocupada</h4>
+                                                        <label><b>Fecha:&nbsp;</b></label><label >{{$cale->fecha}}</label><br>
+                                                        <label><b>Hora inicio:&nbsp;</b></label><label >{{$cale->inicio}}</label><br>
+                                                        <label><b>Hora fin:&nbsp;</b></label><label >{{$cale->fin}}</label><br>
+                                                    
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <form novalidate action="/calendarios/{{$cale->id}}/edit" >
+                                                                    <button class="btn btn-warning" type="submit"><i class="far fa-edit"></i></button>
+                                                                </form>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <form action="/calendarios/{{$cale->id}}" method="POST">
+                                                                @csrf 
+                                                                @method('DELETE')
+                                                                    <button class="btn btn-danger" type="submit">
+                                                                    <i class="fas fa-times"></i>
+                                                                    </button>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                                
                                         @endif
                                     @endguest
                                 @endforeach
+                                </div>
                                 <div class="card-body">
-                                    <label><a href="/calendarios/create">Agregar Fecha ocupada</a></label>
+                                    <label><a class="btn btn-warning" href="/calendarios/create">Agregar fecha</a></label>
                                 </div>
                             </div>
                         </div>
@@ -145,49 +153,58 @@
             @endguest
         @endforeach
 
-        @foreach($cotizaciones as $c)
-            @guest
-                @else
-                    @if(Auth::user()->id == $c->idU)
-                        <div class="">
-                            <div class="card py-5">
-                                <div class="card-title">
-                                    <h3 class="text-center">Cotizaciones</h3>
-                                </div>
-                                <div class="card-body">        
+        <div class="container margen">
+            <div class="icon-box">
+                <h3 class="text-center">Cotizaciones</h3>
+                    <div class="container row">
+                    @foreach($cotizaciones as $c)
+                        @guest
+                            @else
+                                @if(Auth::user()->id == $c->idU)
+                        
+                            <div class="icon-box foSCotiza">
+                                <div class="foCoti">
                                     @foreach($representantes as $r)
                                         @guest
                                             @else
                                                 @if($c->idR == $r->idU)
-                                                    <td class="col-2"><h5 class="card-title">{{$r->nombre}}</h5>
-                                                    <img src="/{{$r->path}}" class="img-fluid" width="100">
-                                                    <td class="col-2"><label class="card-title">Telefono para contactar:{{$r->telefono}}</label>
+
+                                                    <h3 class="card-title">{{$r->nombre}}</h3><br>
+                                                    <img src="/{{$r->path}}" class="img-fluid" width="150"><br><br>
+                                                    <label class="card-title"><b>Telefono de contacto: </b>{{$r->telefono}}</label>
                                             @endif
                                         @endguest
                                     @endforeach
 
-
-                                    <td class="col-2"><h5 class="card-title">Costo: {{$c->cotizacion}}</h5>    
-                                    </tr> 
-                                    <form novalidate action="/cotizaciones/{{$c->id}}/edit" >
-                                        <button class="btn btn-info" type="submit">Ver</button>
-                                    </form>
-                                    <form action="/cotizaciones/{{$c->id}}" method="POST">
-                                        @csrf 
-                                        @method('DELETE')
-                                        <button class="btn btn-danger" type="submit">
-                                            Eliminar
-                                        </button>
-                                    </form>
+                                    <h5 class="card-title"><b>Costo: </b> {{$c->cotizacion}}</h5>    
+                                    
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <form novalidate action="/cotizaciones/{{$c->id}}/edit" >
+                                                <button class="btn btn-warning" type="submit"><i class="fas fa-info-circle"></i></button>
+                                            </form>
+                                        </div>
+                                        <div class="col-6">
+                                            <form action="/cotizaciones/{{$c->id}}" method="POST">
+                                            @csrf 
+                                            @method('DELETE')
+                                                <button class="btn btn-danger" type="submit">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </form>
+                                        </div>
                                 </div>
                             </div>
-                        </div>
-
+                    </div>                  
                 @endif
             @endguest
         @endforeach
+                </div>
+            </div><br><br><br><br>
+        </section><!-- End Contact Section -->
+</div>
 
-               
-        
-    </div>
+</div>
+</div>
+</div>
 @endsection

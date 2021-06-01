@@ -5,13 +5,32 @@
 
 <!--Contenido de la pagina-->
 @section('content')
-<section id="services" class="services">
-    <div class="container centrar" data-aos="fade-up">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+        <section id="hero" class="d-flex align-items-center justify-content-center ">
+            
+            <!-- ======= Contact Section ======= -->
+            <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                <h2>Precios establecidos</h2>
+                <p class="text-white">Clic en el botón para configurarlos</p>
+                </div>
+
+            </div>
+            
+            </section><!-- End Contact Section --> 
+        </section>
+    </div>
+
+    <div class="col-6">
+    <section id="services" class="services">
+    <div class="container" data-aos="fade-up">
     <div class="section-title">
         <br>
-        <h2>Vista de parámetros</h2>
         <p>Parámetros</p>
-        <h6 for="fecha">Parametros establecido para cotizaciones</h6>
     </div>
     <!--Todos usuarios-->
    <div class="row">
@@ -25,7 +44,6 @@
                             <?php
                                 $ban=1;
                             ?>
-                            
                                         <div class="form-group col-3">
                                             <label for="precioBase">Precio Base</label>
                                             <input type="text" name="precioBase" class="form-control" value="{{$item->precioBase}}" readonly>
@@ -82,13 +100,17 @@
                 @guest
                         @else
                             @if($ban == 0 )
-                                <a class="btn btn-dark" type="button" href="/parametros/create">
-                                    Crear Parametros
+                            <div class="container">
+                                <a class="btn btn-warning" type="button" href="/parametros/create">
+                                    Configurar
                                 </a>
+                            </div>
                             @endif
                             
                         @endguest
     </div>
-</div>
 </section>
+</div>
+</div>
+</div>
 @endsection
