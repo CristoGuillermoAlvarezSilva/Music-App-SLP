@@ -8,27 +8,12 @@
 @section('content')
 <div class="container-fluid">
   <div class="row">
-    <div class="col-6">
+    <div class="col-12">
         <section id="hero" class="d-flex align-items-center justify-content-center ">
             
             <!-- ======= Contact Section ======= -->
-            <section id="contact" class="contact">
+            <section id="services" class="services">
             <div class="container" data-aos="fade-up">
-
-                <div class="section-title">
-                <h2>Galeria</h2>
-                <p class="text-white">Elige el genero musical que prefieras</p>
-                </div>
-
-            </div>
-
-            </section><!-- End Contact Section -->
-        </section>
-    </div>
-
-    <div class="col-6">
-    <section id="services" class="services">
-        <div class="container" data-aos="fade-up">
 
             <div class="section-title">
                 <p class="py-md-3"></p>
@@ -48,7 +33,7 @@
                     <!--Administrador-->
                 <div class="d-flex justify-content-end mb-2">
                     <a href="/generos/create" class="btn btn-warning">
-                        Agregar genero
+                        Agregar
                     <i class="fas fa-plus"></i>
                     </a>
                 </div>
@@ -64,8 +49,8 @@
                 
                     <div class="" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon-box gensCard">
-
-                        <h4><a class="gensLink" href="/representantes/byName/{{$item->genero}}">{{$item->genero}}</a></h4>
+                        <br>
+                        <h4><a class="" href="/representantes/byName/{{$item->genero}}">{{$item->genero}}</a></h4>
                         @guest
                             @else
                                 @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
@@ -98,6 +83,13 @@
         </div>
     </section>
 
+
+            </section><!-- End Contact Section -->
+        </section>
+    </div>
+
+    <div class="col-6">
+    
     </div>
     
 

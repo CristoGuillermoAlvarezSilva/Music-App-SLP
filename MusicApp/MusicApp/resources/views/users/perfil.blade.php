@@ -5,79 +5,74 @@
 @endsection
 
 @section('content')
-<section id="services" class="services">
-    <div class="container" data-aos="fade-up">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+        <section id="hero" class="">
+            <div class="container">
+            <!-- ======= Contact Section ======= -->
+            <section id="services" class="services">
+            <div class="container row" data-aos="fade-up">
 
-    <div class="section-title">
-            <p class="py-md-5"></p>
-            <p class="py-md-3"></p>
-          <h2>Información del usuario</h2>
-          <p>Mi perfil</p>
-    </div>
-
-    <div class="row">
-        
-        <div class="margen">
-            <div class="icon-box perfilCard">
-                <div class="card-title">
-                    <h3>Usuario</h3>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-4 aliStart">
-                            <label ><b>Nombre:&nbsp;</b></label><br>
-                            <label ><b>Correo electrónico:&nbsp;</b></label>
-                        </div>
-                        <div class="col-4 aliStart">
-                            <label >{{Auth::user()->name}}</label><br>
-                            <label >{{Auth::user()->email}}</label>
-                        </div>
-                    </div>
-                    <br>
+                <div class="section-title">
+                <h2>Información del usuario</h2>
+                <h2>{{Auth::user()->name}}</h2>
 
                     <div class="row">
-                        <div class="col-6">
-                            <form novalidate action="/users/{{Auth::user()->id}}/edit" >
-                                <button class="btn btn-warning" type="submit">Actualizar</button>
-                            </form>
+                        <div class="col-8">
+                            <label><b>Correo electrónico:&nbsp;</b></label><label>{{Auth::user()->email}}</label>
                         </div>
-                        <div class="col-6">
-                            <form action="/users/{{Auth::user()->id}}" method="POST">
-                            @csrf 
-                            @method('DELETE')
-                                <button class="btn btn-danger" type="submit">
-                                    Eliminar
-                                </button>
-                            </form>
+                        
+                        <div class="row">
+                            <div class="col-6">
+                                <form novalidate action="/users/{{Auth::user()->id}}/edit" >
+                                    <button class="btn btn-warning" type="submit"><i class="far fa-edit"></i></button>
+                                </form>
+                            </div>
+
+                            <div class="col-6">
+                                <form action="/users/{{Auth::user()->id}}" method="POST">
+                                @csrf 
+                                @method('DELETE')
+                                    <button class="btn btn-danger" type="submit"><i class="fas fa-times"></i></button>
+                                </form>
+                            </div>         
                         </div>
                     </div>
-              
-                   
-                    
-                </div>
-            
-            </div>
         </div>
+    </div>
+                    
 
+    <div class="container">
+        
         @foreach($representantes as $r)
                     @guest
                         @else
                             @if( Auth::user()->id == $r->idU)
         
                                 <div class="margen">
-                                    <div class="icon-box repCard">
+                                    <div class="icon-box">
                                         <div class="card-title">
-                                            <h3>  Representante  </h3>
+                                            <h3>{{$r->nombre}}</h3>
                                         </div>
                                         <div class="card-body">
-                                            <label><b>Grupo:&nbsp;</b></label><label >{{$r->nombre}}</label><br>
-                                            <img src="/{{$r->path}}" class="img-fluid" width="150">
-                                            
+                                            <img src="/{{$r->path}}" class="img-fluid" width="300">
+                                            @foreach($representantes as $r)
+                                                @guest
+                                                    @else
+                                                        @if( Auth::user()->id == $r->idU)
+                                                            <div class="margen">
+                                                            <br>
+                                                                <a class="btn btn-warning" href="/parametros">Parámetros</a>     
+                                                            </div>
+                                                    @endif
+                                                @endguest
+                                            @endforeach
                                             <div class="row">
                                                 <div class="col-6">
                                                     <form novalidate action="/representantes/{{$r->idU}}/edit" >
                                                     <br>
-                                                    <button class="btn btn-warning" type="submit">Actualizar</button>
+                                                    <button class="btn btn-warning" type="submit"><i class="far fa-edit"></i></button>
                                                     </form>
                                                 </div>
                                                 <div class="col-6">
@@ -86,92 +81,71 @@
                                                         @method('DELETE')
                                                         <br>
                                                         <button class="btn btn-danger" type="submit">
-                                                            Eliminar
+                                                        <i class="fas fa-times"></i>
                                                         </button>
                                             
                                                     </form>
                                                 </div>
-                                                
                                             </div>
-                                            
-                        
                                         </div>
-            
                                     </div>
                                 </div>
 
         @endif
                         @endguest  
                 @endforeach
-        @foreach($representantes as $r)
-            @guest
-                @else
-                    @if( Auth::user()->id == $r->idU)
-                        <div class="margen">
-                            <div class="icon-box paramCard">
-                                <div class="card-title">
-                                    <h3>  Parametros  </h3>
-                                </div>
-                                <div class="card-body">
-                                    <p class="textParams">Da clic en el siguiente botón para ir a la sección de parámetros</p>
-                                    <br>
-                                    <a class="btn btn-warning" href="/parametros">Ir a sección</a>     
-                                </div>
-                            </div>
-                        </div>
-                @endif
-            @endguest
-        @endforeach
+    </div>
 
         @foreach($representantes as $r)
             @guest
                 @else
                     @if( Auth::user()->id == $r->idU)
-
-
+                       
                         <div class="container">
-                            <div class="card">
+                        <br>
+                            <div class="icon-box">
                                 <div class="card-title">
-                                    <br><br>
                                     <h3 class="text-center">  Agenda  </h3>
                                 </div>
-                                <div class="row">
+                                <div class="container row">
                                 @foreach($calendarios as $cale)
                                     @guest  
                                         @else
                                             @if(Auth::user()->id == $cale->idR )
-
+                                                
                                                 <div class="icon-box fechaOcupada">
-                                                    <h4>Fecha ocupada</h4>
-                                                    <label><b>Fecha:&nbsp;</b></label><label >{{$cale->fecha}}</label><br>
-                                                    <label><b>Hora inicio:&nbsp;</b></label><label >{{$cale->inicio}}</label><br>
-                                                    <label><b>Hora fin:&nbsp;</b></label><label >{{$cale->fin}}</label><br>
-
-                                                    <div class="row">
-                                                        <div class="col-6">
-                                                            <form novalidate action="/calendarios/{{$cale->id}}/edit" >
-                                                                <button class="btn btn-warning" type="submit">Modificar</button>
-                                                            </form>
-                                                        </div>
-                                                        <div class="col-6">
-                                                            <form action="/calendarios/{{$cale->id}}" method="POST">
-                                                            @csrf 
-                                                            @method('DELETE')
-                                                                <button class="btn btn-danger" type="submit">
-                                                                    Eliminar
-                                                                </button>
-                                                            </form>
+                                                    <div class="foRelat">
+                                                        <h4>Fecha ocupada</h4>
+                                                        <label><b>Fecha:&nbsp;</b></label><label >{{$cale->fecha}}</label><br>
+                                                        <label><b>Hora inicio:&nbsp;</b></label><label >{{$cale->inicio}}</label><br>
+                                                        <label><b>Hora fin:&nbsp;</b></label><label >{{$cale->fin}}</label><br>
+                                                    
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <form novalidate action="/calendarios/{{$cale->id}}/edit" >
+                                                                    <button class="btn btn-warning" type="submit"><i class="far fa-edit"></i></button>
+                                                                </form>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <form action="/calendarios/{{$cale->id}}" method="POST">
+                                                                @csrf 
+                                                                @method('DELETE')
+                                                                    <button class="btn btn-danger" type="submit">
+                                                                    <i class="fas fa-times"></i>
+                                                                    </button>
+                                                                </form>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                    
-
                                                 </div>
+                                            
+                                                
                                         @endif
                                     @endguest
                                 @endforeach
                                 </div>
                                 <div class="card-body">
-                                    <label><a class="btn btn-warning" href="/calendarios/create">Agregar otra fecha</a></label>
+                                    <label><a class="btn btn-warning" href="/calendarios/create">Agregar fecha</a></label>
                                 </div>
                             </div>
                         </div>
@@ -179,48 +153,58 @@
             @endguest
         @endforeach
 
-        @foreach($cotizaciones as $c)
-            @guest
-                @else
-                    @if(Auth::user()->id == $c->idU)
-                        <div class="margen">
-                            <div class="icon-box">
-                                <div class="card-title">
-                                    <h3 class="text-center">Cotizaciones</h3>
-                                </div>
-                                <div class="card-body">        
+        <div class="container margen">
+            <div class="icon-box">
+                <h3 class="text-center">Cotizaciones</h3>
+                    <div class="container row">
+                    @foreach($cotizaciones as $c)
+                        @guest
+                            @else
+                                @if(Auth::user()->id == $c->idU)
+                        
+                            <div class="icon-box foSCotiza">
+                                <div class="foCoti">
                                     @foreach($representantes as $r)
                                         @guest
                                             @else
                                                 @if($c->idR == $r->idU)
-                                                    <td class="col-2"><h5 class="card-title">{{$r->nombre}}</h5>
-                                                    <img src="/{{$r->path}}" class="img-fluid" width="100">
-                                                    <td class="col-2"><label class="card-title">Telefono para contactar:{{$r->telefono}}</label>
+
+                                                    <h3 class="card-title">{{$r->nombre}}</h3><br>
+                                                    <img src="/{{$r->path}}" class="img-fluid" width="150"><br><br>
+                                                    <label class="card-title"><b>Telefono de contacto: </b>{{$r->telefono}}</label>
                                             @endif
                                         @endguest
                                     @endforeach
 
-
-                                    <td class="col-2"><h5 class="card-title">Costo: {{$c->cotizacion}}</h5>    
-                                    </tr> 
-                                    <form novalidate action="/cotizaciones/{{$c->id}}/edit" >
-                                        <button class="btn btn-warning" type="submit">Ver</button>
-                                    </form>
-                                    <form action="/cotizaciones/{{$c->id}}" method="POST">
-                                        @csrf 
-                                        @method('DELETE')
-                                        <button class="btn btn-danger" type="submit">
-                                            Eliminar
-                                        </button>
-                                    </form>
+                                    <h5 class="card-title"><b>Costo: </b> {{$c->cotizacion}}</h5>    
+                                    
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <form novalidate action="/cotizaciones/{{$c->id}}/edit" >
+                                                <button class="btn btn-warning" type="submit"><i class="fas fa-info-circle"></i></button>
+                                            </form>
+                                        </div>
+                                        <div class="col-6">
+                                            <form action="/cotizaciones/{{$c->id}}" method="POST">
+                                            @csrf 
+                                            @method('DELETE')
+                                                <button class="btn btn-danger" type="submit">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </form>
+                                        </div>
                                 </div>
                             </div>
-                        </div>
-
+                    </div>                  
                 @endif
             @endguest
         @endforeach
-    </div>
-    </div>
-</section>
+                </div>
+            </div><br><br><br><br>
+        </section><!-- End Contact Section -->
+</div>
+
+</div>
+</div>
+</div>
 @endsection

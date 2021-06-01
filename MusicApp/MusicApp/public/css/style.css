@@ -8,6 +8,84 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+/*
+body {
+    background: #e8cbc0;
+    background: -webkit-linear-gradient(to right, #e8cbc0, #636fa4);
+    background: linear-gradient(to right, #e8cbc0, #636fa4);
+    min-height: 100vh;
+}*/
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.foAgenda {
+  position: relative;
+  top: -70px;
+}
+
+.foSAgenda {
+  width: fit-content;
+  height: 150px;
+  margin: auto;
+}
+
+.foSAgenda:hover {
+  border: solid 3px !important; 
+  border-color: #ffc451 !important;
+}
+
+.foCoti {
+  position: relative;
+}
+
+.foSCotiza {
+  width: fit-content;
+  height: 350px;
+  margin: auto;
+}
+
+.people {
+  padding:50px 0;
+}
+
+.item {
+  text-align:center;
+}
+
+.item .box {
+  text-align:center;
+  padding:30px;
+  background-color:#ffffff;
+  margin-bottom:30px;
+}
+
+.item .name {
+  font-weight:bold;
+  margin-top:28px;
+  margin-bottom:8px;
+  color:inherit;
+}
+
+.item .title {
+  text-transform:uppercase;
+  font-weight:bold;
+  color:#d0d0d0;
+  letter-spacing:2px;
+  font-size:13px;
+}
+
+.item .description {
+  font-size:15px;
+  margin-top:15px;
+  margin-bottom:20px;
+}
+
+.item img {
+  max-width:160px;
+}
+
 .panelLink {
   color: rgb(0, 0, 0);
   text-transform: uppercase;
@@ -33,8 +111,13 @@
 
 .fechaOcupada {
   width: fit-content;
-  height: 310px;
+  height: 250px;
   margin:auto;
+}
+
+.foRelat {
+  position: relative;
+  
 }
 
 .repCard {
@@ -68,30 +151,16 @@
   border-color: #ffc451;
 }
 
-.perfilCard:hover, .repCard:hover, .paramCard:hover, .fechaOcupada:hover, .panel:hover {
-  background-color: #000000 !important;
-  color: #ffffff !important;
+.fechaOcupada:hover {
+  border: solid 3px #ffc451;;
   transition: linear .3s !important;
 }
 
 .gensCard{
-  margin-bottom: 25px;
-  margin-right: 10px;
+  margin: 10px;
   width: 200px;
   height: 100px;
-  background-color: #616060 !important;
   border-color: #ffc451;
-  color: white !important;
-}
-
-.gensCard:hover {
-  background-color: #ffc451 !important;
-  color: black !important;
-  transition: linear .3s !important;
-}
-
-.gensLink {
-  color: white !important;
   text-transform: uppercase;
 }
 
@@ -760,6 +829,11 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+#services {
+  height: 100vh;
+  overflow-y: auto;
+}
+
 .services .icon-box {
   text-align: center;
   border: 1px solid #ebebeb;

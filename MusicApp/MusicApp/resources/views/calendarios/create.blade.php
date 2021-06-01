@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid centrar">
   <div class="row">
     <div class="col-6">
         <section id="hero" class="d-flex align-items-center justify-content-center ">
@@ -27,15 +27,15 @@
     
     <div class="col-6">
         <section id="contact" class="contact">
-            <div class="container" data-aos="fade-up">
+            <div class="container col-12" data-aos="fade-up">
                 
-                <div class="row mt-5">
+                <div class="row">
 
                 <div class="section-title">
                     <br>
                     <p>Selecciona los datos</p>
                 </div>
-                    <div class="col-lg-8 mt-5 mt-lg-0 align-self-center">
+                    <div class="align-self-center">
 
                         <form action="/calendarios" class="form-row" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -45,17 +45,17 @@
                                 <input type="text" name="disp" class="form-control" value="Ocupado" hidden>
                             </div>
                             <div class="row">
-                                <div class="form-group col-4">
+                                <div class="col-4">
                                     <label for="fecha">Fecha ocupada</label>
                                     <input type="date" name="fecha" class="form-control">
                                 </div>
 
-                                <div class="form-grup col-4">
+                                <div class="col-4">
                                     <label for="inicio">Inicio</label>
                                     <input type="time" name="inicio" class="form-control">
                                 </div>
 
-                                <div class="form-grup col-4">
+                                <div class="col-4">
                                     <label for="fin">Fin</label>
                                     <input type="time" name="fin" class="form-control">
                                 </div>

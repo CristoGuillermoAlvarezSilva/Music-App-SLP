@@ -21,8 +21,8 @@
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                <h2>Artista registrado</h2>
-                <p class="text-white">Actualiza la información de tu artista</p>
+                <h2>Artista</h2>
+                <p class="text-white">Conoce el artista</p>
                 </div>
 
             </div>
@@ -33,9 +33,9 @@
 
     <div class="col-6">
     <section id="services" class="services">
-        <div class="section-title">
 
-        </div>
+    <div class="section-title">
+    </div>
 
     <div class="container centrar" data-aos="fade-up">
         <div>
@@ -45,47 +45,53 @@
                 @guest  
                     @else
                         @if( Auth::user()->id != $item->idU)
-                            <div class='row '>
-                                <div class="col-12 section-title">
-                                    <br>
-                                    <h2>{{$item->tipo}} </h2>
-                                    <p>{{$item->nombre}}</p>
-                                </div>
+                            <div class='container'>
+                                    <div class="row people">
+                                    <div class="col-1"></div>
+                                        <div class="col-10 item">
+                                            <div class="box">
+                                                <img class="rounded-circle" src="/{{$item->path}}">
+                                                <h3 class="name">{{$item->nombre}}</h3>
+                                                <p class="title">{{$item->tipo}}</p>
+                                                <p class="description">{{$item->descripcion}}</p>
 
-                                <div class='col-12 section-title'>
-                                    <img src="/{{$item->path}}" alt="" width="300px" height="250px">
-                                    <br><br><br>
-                                    <h5 for="des">{{$item->descripcion}}</h1>
-                                </div>
-                                
-                                <?php
-                                    $video_id = $item->video;
-                                ?>
+                                                <?php
+                                                    $video_id = $item->video;
+                                                ?>
 
-                                <div class="col-12 section-title">
-                                    <h6>Si quieres conocer la banda o artista, ve el siguiente video</h6><br>
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video_id ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                </div>
-
-                                <div>
-                                        <label>Fechas Ocupadas</label>
-                                        @foreach($calendarios as $cale)
-                                        @guest  
-                                            @else
-                                                @if( $item->idU == $cale->idR)
-                                                    <h4>Fechas ocupadas</h4>
-                                                    <label>Fecha: {{$cale->fecha}}</label>
-                                                    <label>Hora inicio: {{$cale->inicio}}</label>
-                                                    <label>Hora fin: {{$cale->fin}}</label>
-
-                                                    
-                                            @endif
-                                        @endguest
-                                    @endforeach
-                                </div>
+                                                <div class="col-12 section-title">
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video_id ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
+                                                <div class="container">
+                                                    <br>
+                                                    <h3>Agenda</h3>
+                                                    <br>
+                                                    <div class="row">
+                                                    @foreach($calendarios as $cale)
+                                                                @guest  
+                                                                    @else
+                                                                        @if( $item->idU == $cale->idR)
+                                                                        <div class="icon-box foSAgenda">
+                                                                            <div class="foAgenda">
+                                                                                <h4>Fecha ocupada</h4>
+                                                                                <label><b>Fecha:&nbsp;</b></label><label >{{$cale->fecha}}</label><br>
+                                                                                <label><b>Hora inicio:&nbsp;</b></label><label >{{$cale->inicio}}</label><br>
+                                                                                <label><b>Hora fin:&nbsp;</b></label><label >{{$cale->fin}}</label><br>
+                                                                            </div>
+                                                                            
+                                                                        </div>   
+                                                                        @endif
+                                                                @endguest
+                                                            @endforeach
+ 
+                                                    </div>
+                                                </div>     
                             </div>
+            </div>                         
+    </div>
+    
+</div>
                         
-           
                     @endif
                 @endguest
                                 

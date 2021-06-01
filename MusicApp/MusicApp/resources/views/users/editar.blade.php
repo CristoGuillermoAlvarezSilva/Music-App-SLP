@@ -31,7 +31,7 @@
       <div class="container py-md-5" data-aos="fade-up">
 
 
-        <div class="row mt-5">
+        <div class="row">
 
                 <div class="col-lg-2">
                 <div class="info">
@@ -42,42 +42,39 @@
 
             </div>
 
-          <div class="col-lg-8 mt-5 mt-lg-0 align-self-center py-md-5">
+          <div class="col-lg-8 align-self-center">
 
           @if($error != "")
-        <div class="alert alert-danger" role="alert">
-            {{$error}}
-        </div>
-    @endif
-    <form action="/users/{{$item->id}}" class="form-row" method="POST" enctype="multipart/form-data">
-         @csrf
-        @method('PUT') 
-      
+            <div class="alert alert-danger" role="alert">
+                {{$error}}
+            </div>
+            @endif
+            <form action="/users/{{$item->id}}" class="form-row" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT') 
+            
       
         
         @guest
             @else
                 @if(Auth::user()->rol == "super")
-                <div class="form-group col-4">
-                   
+                    <div class="form-group col-1">
                         <input type="text" name="name" class="form-control" value="{{$item->name}}" hidden>
                     </div>
-                    <div class="form-group col-4">
-           
+                    <div class="form-group col-1">
                         <input type="text" name="email" class="form-control" value="{{$item->email}}" hidden>
                     </div>
-                    <div class="form-group col-4">
-               
+                    <div class="form-group col-1">
                         <input type="password" name="password" class="form-control" hidden>
                     </div>
-            <div class="form-group col-4">
-                <label for="rol">Rol: </label>
-                <select name="rol" class="form-control">
-                    <option >Normal</option>
-                    <option >Administrador</option>
-                </select>
+                    <div class="form-group col-6">
+                        <label for="rol">Rol: </label>
+                        <select name="rol" class="form-control">
+                            <option >Normal</option>
+                            <option >Administrador</option>
+                        </select>
 
-            </div>
+                    </div>
 
         @endif
         @endguest
@@ -114,18 +111,11 @@
             <button class="btn btn-warning" type="submit">Actualizar</button>
         </div>
     </form>
-
           </div>
-
         </div>
-
       </div>
     </section>
-
     </div>
-    
-
-
   </div>
 </div>
 

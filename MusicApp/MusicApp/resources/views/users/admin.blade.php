@@ -23,24 +23,24 @@
 
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box panel">
+            <div class="icon-box">
               <div class="icon"><i class="fas fa-users"></i></div>
-              <h4><a class="panelLink" href="/users">Usuarios</a></h4>
+              <h4><a class="" href="/users">Usuarios</a></h4>
               <p>Administra los Usuarios registrados en la plataforma!</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box panel">
+            <div class="icon-box">
               <div class="icon"><i class="fas fa-compact-disc"></i></div>
-              <h4><a class="panelLink" href="/generos">Generos</a></h4>
+              <h4><a class="" href="/generos">Generos</a></h4>
               <p>Administra los Generos registrados en la plataforma!</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box panel">
+            <div class="icon-box">
               <div class="icon"><i class="fas fa-music"></i></div>
-              <h4><a class="panelLink" href="/inde">Representantes</a></h4>
+              <h4><a class="" href="/inde">Representantes</a></h4>
               <p>Ver a todos los representantes de la página</p>
             </div>
           </div>

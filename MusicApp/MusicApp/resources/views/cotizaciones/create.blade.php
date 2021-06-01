@@ -53,9 +53,8 @@
                 @guest
                     @else
                         @if($item->idU == $idR)
-                        
-                        <div class="col-4"></div>
-                        <div class="col-4 section-title">
+                    
+                        <div class="col-6 section-title">
                             <p for="fecha">{{$item->nombre}}</p>
                             <label for="telefono">Telefono para contactar el grupo: {{$item->telefono}}</label>
                             <img src="/{{$item->path}}" width="300px" height="200px">
@@ -76,7 +75,7 @@
                                     @if($num <= $item->personasBase)
                                      
                                             <label for="titulo">Costo:</label>
-                                            <input type="text" name="cotizacion" class="form-control" value="{{$item->precioBase}}.00" readonly>
+                                            <input type="text" name="cotizacion" class="form-control" value="{{$item->precioBase}}" readonly>
                                             <label for="titulo">Porcentaje de anticipo:</label>
                                             <input type="text" name="anti" class="form-control" value="{{$item->anticipo}}" readonly>  
                                         
@@ -127,7 +126,8 @@
             <input type="text" name="idR" class="form-control" value="{{$idR}}" hidden>
             <input type="text" name="num" class="form-control" value="{{$num}}" hidden>
             <input type="text" name="ciudad" class="form-control" value="{{$ciudad}}" hidden><br>
-            <button class="btn btn-warning" type="submit">Guardar Cotización</button>
+            
+            <button class="btn btn-warning" type="submit">Guardar cotización</button>
         
         </div>
         
