@@ -19,16 +19,11 @@
       <div class="row mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
         @guest
         @else
-        <div class="col-xl-2 col-md-4 col-6">
-          <div class="icon-box">
-            <i class="ri-store-line"></i>
-            <h3><a href="/parametros">Parametros</a></h3>
-          </div>
-        </div>
+       
         <div class="col-xl-2 col-md-4 col-6 ">
           <div class="icon-box">
             <i class="ri-database-2-line"></i>
-            <h3><a href="/representantes/create">Mi grupo</a></h3>
+            <h3><a href="/pago">Suscribete</a></h3>
           </div>
         </div>
         @endguest
@@ -41,7 +36,7 @@
         <div class="col-xl-2 col-md-4 col-6 mt-4 mt-md-0">
           <div class="icon-box">
             <i class="fas fa-compact-disc"></i>
-            <h3><a href="/generos">Generos</a></h3>
+            <h3><a href="/generos">Artisas</a></h3>
           </div>
         </div>
         
@@ -61,8 +56,12 @@
         <div class="text-center">
           <br><br><br><br>
           <h1 class="susTitle">Subscribete</h1>
-          <p class="susDesc"> Accede a los beneficios de LSMXRecfilms y logra inscribir a tu grupo para organizar eventos, darte a conocer y obtener ingresos por contratacion.</p>
-          <a class="cta-btn" href="#">Subscripcion</a>
+          <p class="susDesc"> Accede a los beneficios de MusicApp SLP y logra inscribir a tu grupo para organizar eventos, darte a conocer y obtener ingresos por contratacion.</p>
+            
+          @guest
+          @else
+            <a class="cta-btn" href="/pago">Subscripción</a>
+            @endguest
         </div>
 
       </div>
