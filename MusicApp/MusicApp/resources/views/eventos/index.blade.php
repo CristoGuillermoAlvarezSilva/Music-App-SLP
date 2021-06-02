@@ -60,15 +60,7 @@
             <!------------------------------------------------------------------------------------------------------------------------------>
             @foreach($eventos as $item)
 
-                @foreach($representantes as $item2)
-                    @guest
-                        @else
-                            @if($item->idR == $item2->idU)
-                                    <ul class="tipo justify-content-center">{{$item2->nombre}}</ul>
-                                    <img src="/{{$item2->path}}" alt="" width="300px" height="250px">
-                            @endif
-                        @endguest
-                @endforeach 
+              
 
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon-box eventCard">
@@ -76,14 +68,15 @@
                         @guest
                         @else
                             @if($item->idR == $item2->idU)
-                                    <ul class="tipo justify-content-center">{{$item2->nombre}}</ul>
-                                    <img src="/{{$item2->path}}" alt="" width="300px" height="250px">
+                                   
+                                    <h5>{{$item2->nombre}}</h5>
+                                    <img src="/{{$item2->path}}" alt="" width="150px" height="100px">
                             @endif
                         @endguest
                 @endforeach 
-                        <div ><img src="/{{$item->path}}" alt="Logo" class="img-fluid" width="150" ></i></div>
-                        <h4>{{$item->nombre}}</h4>
+                    
                         <div class="form-row">
+                            
                             <label><b>Titulo del evento: &nbsp;</b></label><p>{{$item->titulo}}</p>
                             <label><b>Descripcion: &nbsp;</b></label><p>{{$item->descripcion}}</p>
                             <label><b>Lugar: &nbsp;</b></label><p>{{$item->lugar}}</p>
