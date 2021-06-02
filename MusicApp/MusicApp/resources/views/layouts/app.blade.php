@@ -64,8 +64,7 @@
               @endif
           @endguest
           
-          <li><a href="#">Legado</a></li>
-          <li><a href="/generos">Generos</a></li>
+          <li><a href="/generos">Artistas</a></li>
           
           
 

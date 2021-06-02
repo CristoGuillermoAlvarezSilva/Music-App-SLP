@@ -139,8 +139,10 @@
                                                             @endforeach
  
                                                     </div>
-                                                </div>     
+                                                </div>
                             </div>
+                            <h3>Actualiza los datos de tu artista</h3>
+
                             <input type="text" name="idU" class="form-control" value="{{Auth::user()->id}}" hidden>
                             <div class="form-group col-4">
                                 <label for="tipo">Solista o Agrupación</label>

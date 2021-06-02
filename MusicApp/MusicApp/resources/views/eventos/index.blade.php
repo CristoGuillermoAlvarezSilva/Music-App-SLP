@@ -56,7 +56,7 @@
                     @endforeach 
             </div>
 
-        <div class="row">
+        <div class="row ">
             <!------------------------------------------------------------------------------------------------------------------------------>
             @foreach($eventos as $item)
 
@@ -71,18 +71,32 @@
                                    
                                     <h5>{{$item2->nombre}}</h5>
                                     <img src="/{{$item2->path}}" alt="" width="150px" height="100px">
+                                    <br>
+                                    <br>
                             @endif
                         @endguest
                 @endforeach 
-                    
-                        <div class="form-row">
+                        
+                        <div class="form-row ">
+                            <div class="row">
+                                <label><b>Titulo del evento: &nbsp;</b></label><p>{{$item->titulo}}</p>
+                            </div>
+                            <div class="row">
+                                <label><b>Descripción: &nbsp;</b></label><p>{{$item->descripcion}}</p>
+                            </div>
+                            <div class="row">
+                                <label><b>Lugar: &nbsp;</b></label><p>{{$item->lugar}}</p>
+                            </div>
                             
-                            <label><b>Titulo del evento: &nbsp;</b></label><p>{{$item->titulo}}</p>
-                            <label><b>Descripcion: &nbsp;</b></label><p>{{$item->descripcion}}</p>
-                            <label><b>Lugar: &nbsp;</b></label><p>{{$item->lugar}}</p>
-                            <label><b>Fecha: &nbsp;</b></label><p>{{$item->fecha}}</p>
-                            <label><b>Hora: &nbsp;</b></label><p>{{$item->hora}}</p>
-                            <label><b>Costo: &nbsp;</b></label><p>${{$item->costo}} MXN</p>
+                            
+                                    
+                            
+                            
+                            <div class="row">
+                                <label><b>Hora: &nbsp;</b></label><p>{{$item->hora}}</p>
+                                &nbsp;<label><b>Costo: &nbsp;</b></label><p>${{$item->costo}} MXN</p>
+                            </div>
+                            
                         @guest
                             @else
                                 @if(Auth::user()->id == $item->idR)

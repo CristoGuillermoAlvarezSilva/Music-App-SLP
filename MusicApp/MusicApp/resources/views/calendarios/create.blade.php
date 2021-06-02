@@ -64,7 +64,7 @@
                             
                             <div class="col-12 text-center">
                             <br>
-                                <button class="btn btn-warning" type="submit">Guardar fecha</button>
+                                <button class="btn btn-warning" type="submit">Guardar</button>
                             </div>
                         </form>
 

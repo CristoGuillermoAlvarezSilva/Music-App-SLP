@@ -45,7 +45,7 @@
             <!------------------------------------------------------------------------------------------------------------------------------>
             @foreach($generos as $item)
                 
-                    <div class="" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="margen" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon-box gensCard">
                         <br>
                         <h4><a class="" href="/representantes/byName/{{$item->genero}}">{{$item->genero}}</a></h4>
@@ -53,7 +53,7 @@
                             @else
                                 @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
                                 <br>
-                                <div class="row">
+                                <div class="row ">
                                     <div class="col-6">
                                         <p><a class="btn btn-info" href="/generos/{{$item->id}}/edit"><i class="fas fa-pencil-alt"></i></a></p>
                                     </div>
@@ -65,8 +65,7 @@
                                         </form>
                                     </div>
                                 </div>
-                                
-                                
+                                                        
                                 @endif
                         @endguest
                         
@@ -74,13 +73,11 @@
                     </div>
             @endforeach
         </div>
+        
 
-
-
-            
         </div>
     </section>
-
+    
 
             </section><!-- End Contact Section -->
         </section>

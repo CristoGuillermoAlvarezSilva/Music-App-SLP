@@ -20,7 +20,7 @@
 
                 <div class="section-title">
                 <h2>Evento</h2>
-                <p class="text-white">Crea un Evento</p>
+                <p class="text-white">Crea un evento</p>
                 </div>
 
             </div>
@@ -59,7 +59,7 @@
 
         </div>
         <div class="form-group col-4">
-            <labe for="descripcion">Descripcion del evento:</labe>
+            <labe for="descripcion">Descripción del evento:</labe>
             <input type="text" name="descripcion" class="form-control">
 
         </div>

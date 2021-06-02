@@ -22,7 +22,7 @@
 
                 <div class="section-title">
                 <h2>Generos</h2>
-                <p class="text-white">Crea un Genero</p>
+                <p class="text-white">Crea un genero</p>
                 </div>
 
                 
