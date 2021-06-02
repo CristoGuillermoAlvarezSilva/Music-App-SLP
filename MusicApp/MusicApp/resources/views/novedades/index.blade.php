@@ -91,9 +91,8 @@
             },
 
             onApprove: function(data, actions) {
-              return actions.order.capture().then(function(details) {
-                alert('Transaccion completa por ' + details.payer.name.given_name + '!');
-              });
+                 location.href = "/representantes/create";
+
             },
 
             onError: function(err) {
