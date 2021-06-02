@@ -17,7 +17,7 @@ class CreateCotizacionesTable extends Migration
             $table->id();
             $table->bigInteger('idU');
             $table->bigInteger('idR');
-            $table->double('cotizacion', 6, 2);
+            $table->double('cotizacion', 15, 2);
             $table->bigInteger('num');
             $table->string('ciudad', 50);
             $table->bigInteger('anticipo');

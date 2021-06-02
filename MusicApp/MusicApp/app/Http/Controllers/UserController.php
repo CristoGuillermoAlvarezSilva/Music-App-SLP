@@ -130,4 +130,11 @@ class UserController extends Controller
  
         return view('users.perfil', compact('representantes', 'cotizaciones', 'parametros', 'calendarios'));
     }
+
+    public function welcome()
+    {
+        $representantes = Representante::all(); 
+        $users = User::all();
+        return view('welcome', compact('representantes, users'));
+    }
 }
