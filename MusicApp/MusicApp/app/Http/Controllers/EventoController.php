@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Evento;
+use App\Representante;
 
 class EventoController extends Controller
 {
@@ -16,8 +17,8 @@ class EventoController extends Controller
     {
         //
         $eventos = Evento::all();
-     
-        return view('eventos.index', compact('eventos'));
+        $representantes = Representante::all();
+        return view('eventos.index', compact('eventos', 'representantes'));
     }
 
     /**
@@ -82,12 +83,7 @@ class EventoController extends Controller
 
 
 
-        if($imagen = $request->file('imagen')){
-            $nombre_imagen = $item->nombre . "_" . date("Y_m_d_H_i_s") . "." . $imagen->extension();
-             $imagen->move("imgenes", $nombre_imagen);
-             $item->path = "imgenes/" . $nombre_imagen;
-        }
-
+      
         $respuesta = $item->save();
         
         if($respuesta == 0){
@@ -171,14 +167,6 @@ class EventoController extends Controller
         if($item->costo == ""){
          
             $item->costo = '0';
-        }
-
-
-
-        if($imagen = $request->file('imagen')){
-            $nombre_imagen = $item->nombre . "_" . date("Y_m_d_H_i_s") . "." . $imagen->extension();
-             $imagen->move("imgenes", $nombre_imagen);
-             $item->path = "imgenes/" . $nombre_imagen;
         }
 
         $respuesta = $item->save();

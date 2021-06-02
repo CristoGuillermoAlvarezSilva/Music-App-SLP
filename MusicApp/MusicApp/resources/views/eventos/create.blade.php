@@ -84,11 +84,7 @@
 
         </div>
        
-        <div class="form-group col-10">
-            <labe for="imagen">Imagen</labe>
-            <input type="file" name="imagen" class="form-control">
-
-        </div>
+        
         <div class="col-12 text-center">
             <button class="btn btn-warning" type="submit">Crear evento</button>
         </div>

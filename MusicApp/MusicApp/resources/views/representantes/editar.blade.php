@@ -50,7 +50,7 @@
                                     <div class="col-1"></div>
                                         <div class="col-10 item">
                                             <div class="box">
-                                                <img src="/{{$item->path}}" width="150">
+                                                <img class="rounded-circle" src="/{{$item->path}}" width="150">
                                                 <h3 class="name">{{$item->nombre}}</h3>
                                                 <p class="title">{{$item->tipo}}</p>
                                                 <p class="description">{{$item->descripcion}}</p>
@@ -98,6 +98,49 @@
                 @guest 
                     @else                      
                         @if(Auth::user()->id == $item->idU)
+
+                            <div class='container'>
+                                    <div class="row people">
+                                    <div class="col-1"></div>
+                                        <div class="col-10 item">
+                                            <div class="box">
+                                                <img class="rounded-circle" src="/{{$item->path}}" width="150">
+                                                <h3 class="name">{{$item->nombre}}</h3>
+                                                <p class="title">{{$item->tipo}}</p>
+                                                <p class="description">{{$item->descripcion}}</p>
+
+                                                <?php
+                                                    $video_id = $item->video;
+                                                ?>
+
+                                                <div class="col-12 section-title">
+                                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video_id ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                </div>
+                                                <div class="container">
+                                                    <br>
+                                                    <h3>Agenda</h3>
+                                                    <br>
+                                                    <div class="row">
+                                                    @foreach($calendarios as $cale)
+                                                                @guest  
+                                                                    @else
+                                                                        @if( $item->idU == $cale->idR)
+                                                                        <div class="icon-box foSAgenda">
+                                                                            <div class="foAgenda">
+                                                                                <h4>Fecha ocupada</h4>
+                                                                                <label><b>Fecha:&nbsp;</b></label><label >{{$cale->fecha}}</label><br>
+                                                                                <label><b>Hora inicio:&nbsp;</b></label><label >{{$cale->inicio}}</label><br>
+                                                                                <label><b>Hora fin:&nbsp;</b></label><label >{{$cale->fin}}</label><br>
+                                                                            </div>
+                                                                            
+                                                                        </div>   
+                                                                        @endif
+                                                                @endguest
+                                                            @endforeach
+ 
+                                                    </div>
+                                                </div>     
+                            </div>
                             <input type="text" name="idU" class="form-control" value="{{Auth::user()->id}}" hidden>
                             <div class="form-group col-4">
                                 <label for="tipo">Solista o Agrupación</label>
