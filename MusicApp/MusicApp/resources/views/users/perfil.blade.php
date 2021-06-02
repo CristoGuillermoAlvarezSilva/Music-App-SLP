@@ -12,33 +12,34 @@
             <div class="container">
             <!-- ======= Contact Section ======= -->
             <section id="services" class="services">
-            <div class="container row" data-aos="fade-up">
+            <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
-                <h2>Información del usuario</h2>
-                <h2>{{Auth::user()->name}}</h2>
+                    <div class="row">
+                        <h2>Información del usuario</h2>
+                    </div>
 
                     <div class="row">
-                        <div class="col-8">
+                        <p class="whiteClr">{{Auth::user()->name}}</p>
+                    </div>
+                        
+                    <div class="col-6">
+                        <div class="row whiteClr">
                             <label><b>Correo electrónico:&nbsp;</b></label><label>{{Auth::user()->email}}</label>
                         </div>
-                        
-                        <div class="row">
-                            <div class="col-6">
-                                <form novalidate action="/users/{{Auth::user()->id}}/edit" >
-                                    <button class="btn btn-warning" type="submit"><i class="far fa-edit"></i></button>
-                                </form>
-                            </div>
-
-                            <div class="col-6">
-                                <form action="/users/{{Auth::user()->id}}" method="POST">
-                                @csrf 
-                                @method('DELETE')
-                                    <button class="btn btn-danger" type="submit"><i class="fas fa-times"></i></button>
-                                </form>
-                            </div>         
-                        </div>
-                    </div>
+                    
+                    <div class="row">
+                        <form novalidate action="/users/{{Auth::user()->id}}/edit" >
+                            <button class="btn btn-info" type="submit"><i class="far fa-edit"></i></button>
+                        </form>
+                        &nbsp;
+                        <form action="/users/{{Auth::user()->id}}" method="POST">
+                        @csrf 
+                        @method('DELETE')
+                            <button class="btn btn-danger" type="submit"><i class="fas fa-times"></i></button>
+                        </form>
+                    </div>          
+                </div>
         </div>
     </div>
                     
@@ -56,7 +57,7 @@
                                             <h3>{{$r->nombre}}</h3>
                                         </div>
                                         <div class="card-body">
-                                            <img src="/{{$r->path}}" class="img-fluid" width="300">
+                                            <img src="/{{$r->path}}" class="img-fluid" width="300" height="300">
                                             @foreach($representantes as $r)
                                                 @guest
                                                     @else
@@ -72,7 +73,7 @@
                                                 <div class="col-6">
                                                     <form novalidate action="/representantes/{{$r->idU}}/edit" >
                                                     <br>
-                                                    <button class="btn btn-warning" type="submit"><i class="far fa-edit"></i></button>
+                                                    <button class="btn btn-info" type="submit"><i class="far fa-edit"></i></button>
                                                     </form>
                                                 </div>
                                                 <div class="col-6">
@@ -123,7 +124,7 @@
                                                         <div class="row">
                                                             <div class="col-6">
                                                                 <form novalidate action="/calendarios/{{$cale->id}}/edit" >
-                                                                    <button class="btn btn-warning" type="submit"><i class="far fa-edit"></i></button>
+                                                                    <button class="btn btn-info" type="submit"><i class="far fa-edit"></i></button>
                                                                 </form>
                                                             </div>
                                                             <div class="col-6">
@@ -181,7 +182,7 @@
                                     <div class="row">
                                         <div class="col-6">
                                             <form novalidate action="/cotizaciones/{{$c->id}}/edit" >
-                                                <button class="btn btn-warning" type="submit"><i class="fas fa-info-circle"></i></button>
+                                                <button class="btn btn-info" type="submit"><i class="fas fa-info-circle"></i></button>
                                             </form>
                                         </div>
                                         <div class="col-6">

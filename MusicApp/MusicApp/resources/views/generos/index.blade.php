@@ -3,7 +3,6 @@
     Generos musicales
 @endsection
 
-
 <!--Contenido de la pagina-->
 @section('content')
 <div class="container-fluid">
@@ -26,15 +25,14 @@
                 @endif
                     @endguest
             
-                <p>Generos</p>
+                <p class="whiteClr">Generos</p>
             @guest
                 @else
                     @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
                     <!--Administrador-->
                 <div class="d-flex justify-content-end mb-2">
                     <a href="/generos/create" class="btn btn-warning">
-                        Agregar
-                    <i class="fas fa-plus"></i>
+                        <i class="fas fa-plus"></i>
                     </a>
                 </div>
                 
@@ -56,14 +54,14 @@
                                 @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
                                 <br>
                                 <div class="row">
-                                    <div class="col-5">
-                                        <p><a class="btn btn-warning" href="/generos/{{$item->id}}/edit">Editar</a></p>
+                                    <div class="col-6">
+                                        <p><a class="btn btn-info" href="/generos/{{$item->id}}/edit"><i class="fas fa-pencil-alt"></i></a></p>
                                     </div>
                                     <div class="col-6">
                                         <form action="/generos/{{$item->id}}" method="POST">
                                             @csrf 
                                             @method('DELETE')
-                                            <button class="btn btn-danger" type="submit">Eliminar</button>
+                                            <button class="btn btn-danger" type="submit"><i class="fas fa-times"></i></button>
                                         </form>
                                     </div>
                                 </div>

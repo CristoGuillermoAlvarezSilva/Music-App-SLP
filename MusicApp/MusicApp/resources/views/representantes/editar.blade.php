@@ -50,7 +50,7 @@
                                     <div class="col-1"></div>
                                         <div class="col-10 item">
                                             <div class="box">
-                                                <img class="rounded-circle" src="/{{$item->path}}">
+                                                <img class="rounded-circle" src="/{{$item->path}}" width="150">
                                                 <h3 class="name">{{$item->nombre}}</h3>
                                                 <p class="title">{{$item->tipo}}</p>
                                                 <p class="description">{{$item->descripcion}}</p>

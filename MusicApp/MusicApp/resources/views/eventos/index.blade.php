@@ -46,8 +46,7 @@
                     <!--Administrador-->
                 <div class="d-flex justify-content-end mb-2">
                     <a href="/eventos/create" class="btn btn-warning">
-                        Agregar evento musical
-                    <i class="fas fa-plus"></i>
+                        <i class="fas fa-plus"></i>
                     </a>
                 </div>
                 
