@@ -58,6 +58,11 @@
         <div class="form-group col-4">
             <labe for="titulo">Nombre del evento:</labe>
             <input type="text" name="titulo" class="form-control">
+            @error('titulo')
+            <span class="invalid-feedback" role="alert">
+                <strong>Debe agregar un titulo</strong>
+            </span>
+            @enderror
 
         </div>
         <div class="form-group col-4">

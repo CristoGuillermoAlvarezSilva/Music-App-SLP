@@ -63,7 +63,7 @@
                     @endif
                   @endguest
                 @endforeach
-
+                
                 @guest
                   @else
                     @if($ban == 0 )
