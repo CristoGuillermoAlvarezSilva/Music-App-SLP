@@ -10,8 +10,28 @@
 @endsection
 
 @section('content')
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-6">
+        <section id="hero" class="d-flex align-items-center justify-content-center ">
+            
+            <!-- ======= Contact Section ======= -->
+            <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
 
-<section id="services" class="services">
+                <div class="section-title">
+                <h2>Conoce tu página</h2>
+                <p class="text-white">Panel de administración</p>
+                </div>
+
+            </div>
+            
+            </section><!-- End Contact Section --> 
+        </section>
+    </div>
+
+    <div class="col-6">
+    <section id="services" class="services">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -55,9 +75,9 @@
             <p class="py-md-5"></p>
       </div>
     </section><!-- End Services Section -->
-
-
-
+</div>
+</section>
+<div></div></div>
 
 
 @endsection
