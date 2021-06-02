@@ -40,9 +40,10 @@
                     @endguest
             
             <p>Eventos</p>
+            @foreach($representantes as $item)
             @guest
                 @else
-                    @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
+                    @if(Auth::user()->id == $item->idU)
                     <!--Administrador-->
                 <div class="d-flex justify-content-end mb-2">
                     <a href="/eventos/create" class="btn btn-warning">
@@ -52,14 +53,34 @@
                 
                 @endif
                     @endguest
+                    @endforeach 
             </div>
 
         <div class="row">
             <!------------------------------------------------------------------------------------------------------------------------------>
             @foreach($eventos as $item)
 
+                @foreach($representantes as $item2)
+                    @guest
+                        @else
+                            @if($item->idR == $item2->idU)
+                                    <ul class="tipo justify-content-center">{{$item2->nombre}}</ul>
+                                    <img src="/{{$item2->path}}" alt="" width="300px" height="250px">
+                            @endif
+                        @endguest
+                @endforeach 
+
                     <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
                         <div class="icon-box eventCard">
+                        @foreach($representantes as $item2)
+                        @guest
+                        @else
+                            @if($item->idR == $item2->idU)
+                                    <ul class="tipo justify-content-center">{{$item2->nombre}}</ul>
+                                    <img src="/{{$item2->path}}" alt="" width="300px" height="250px">
+                            @endif
+                        @endguest
+                @endforeach 
                         <div ><img src="/{{$item->path}}" alt="Logo" class="img-fluid" width="150" ></i></div>
                         <h4>{{$item->nombre}}</h4>
                         <div class="form-row">
@@ -71,7 +92,7 @@
                             <label><b>Costo: &nbsp;</b></label><p>${{$item->costo}} MXN</p>
                         @guest
                             @else
-                                @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
+                                @if(Auth::user()->id == $item->idR)
                                 <div class="row">
                                     <div class="col-5">
                                         <p><a class="btn btn-warning" href="/eventos/{{$item->id}}/edit">Editar</a></p></div>
