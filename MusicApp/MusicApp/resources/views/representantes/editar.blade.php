@@ -125,9 +125,9 @@
                                                                 @guest  
                                                                     @else
                                                                         @if( $item->idU == $cale->idR)
-                                                                        <div class="icon-box foSAgenda">
-                                                                            <div class="foAgenda">
-                                                                                <h4>Fecha ocupada</h4>
+                                                                        <div class="iconbox busyDate">
+                                                                            <div class="">
+                                                                                <h10>Fecha ocupada</h10><br>
                                                                                 <label><b>Fecha:&nbsp;</b></label><label >{{$cale->fecha}}</label><br>
                                                                                 <label><b>Hora inicio:&nbsp;</b></label><label >{{$cale->inicio}}</label><br>
                                                                                 <label><b>Hora fin:&nbsp;</b></label><label >{{$cale->fin}}</label><br>

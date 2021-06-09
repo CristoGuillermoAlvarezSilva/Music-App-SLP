@@ -19,7 +19,12 @@ body {
 .editIcon i{
   font-size: 15px !important;
   color: #ffffff !important;
-  
+}
+
+.busyDate {
+  height: 120px;
+  margin: 5px;
+  border: 3px dotted black;
 }
 
 /*
@@ -29,6 +34,8 @@ body {
   padding-bottom: 0px !important;
 }
 */
+
+
 .whiteClr {
   color: white !important;
 }
@@ -126,12 +133,6 @@ body {
 .paramCard {
   width: fit-content;
   height: 397px;
-}
-
-.fechaOcupada {
-  width: fit-content;
-  height: 250px;
-  margin:auto;
 }
 
 .foRelat {
