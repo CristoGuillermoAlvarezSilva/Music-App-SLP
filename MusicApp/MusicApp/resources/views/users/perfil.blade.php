@@ -52,9 +52,9 @@
                             @if( Auth::user()->id == $r->idU)
         
                                 <div class="margen">
-                                    <div class="icon-box">
+                                    <div class="">
                                         <div class="card-title">
-                                            <h3>{{$r->nombre}}</h3>
+                                            <h3 class="whiteClr">{{$r->nombre}}</h3>
                                         </div>
                                         <div class="card-body">
                                             <img src="/{{$r->path}}" class="img-fluid" width="300" height="300">
@@ -104,9 +104,9 @@
                        
                         <div class="container">
                         <br>
-                            <div class="icon-box">
+                            <div class="">
                                 <div class="card-title">
-                                    <h3 class="text-center">  Agenda  </h3>
+                                    <h3 class="text-center whiteClr">  Agenda  </h3>
                                 </div>
                                 <div class="container row">
                                 @foreach($calendarios as $cale)
@@ -157,8 +157,8 @@
         @endforeach
 
         <div class="container margen">
-            <div class="icon-box">
-                <h3 class="text-center">Cotizaciones</h3>
+            <div class="">
+                <h3 class="text-center whiteClr">Cotizaciones</h3>
                     <div class="container row">
                     @foreach($cotizaciones as $c)
                         @guest
@@ -179,7 +179,7 @@
                                         @endguest
                                     @endforeach
 
-                                    <h5 class="card-title"><b>Costo: </b> {{$c->cotizacion}}</h5>    
+                                    <h5 class="card-title"><b>Costo: </b> ${{$c->cotizacion}}.00 MXN</h5>    
                                     
                                     <div class="row">
                                         <div class="col-6">
@@ -196,7 +196,7 @@
                                                 </button>
                                             </form>
                                         </div>
-                                </div>
+                                </div> 
                             </div>
                     </div>                  
                 @endif

@@ -62,7 +62,7 @@
 
               
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="10">
                         <div class="icon-box eventCard">
                         @foreach($representantes as $item2)
                         @guest
@@ -101,16 +101,17 @@
                             @else
                                 @if(Auth::user()->id == $item->idR)
                                 <div class="row">
-                                    <div class="col-5">
+                                    <div class="col-4"></div>
+                                    <div class="col-4">
                                         <p><a class="btn btn-info editIcon" href="/eventos/{{$item->id}}/edit"><i class="fas fa-pencil-alt"></i></a></p></div>
-                                    <div class="col-2">
+                                    <div class="col-4">
                                         <form action="/eventos/{{$item->id}}" method="POST">
                                             @csrf 
                                             @method('DELETE')
                                             <button class="btn btn-danger editIcon" type="submit"><i class="fas fa-times"></i></button>
                                         </form>
                                     </div>
-                                    
+                                    <div class="col-2"></div>
                                     
                                 </div>
                                 @endif

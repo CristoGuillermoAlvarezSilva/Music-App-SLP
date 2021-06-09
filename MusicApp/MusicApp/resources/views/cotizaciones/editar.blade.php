@@ -46,13 +46,13 @@
             </div>
             <div class="form-group col-4">
                 <label for="titulo">Cotización: </label>
-                <input type="text" name="titulo" class="form-control" value="{{$item->cotizacion}}" readonly>
+                <input type="text" name="titulo" class="form-control" value="${{$item->cotizacion}}.00 MXN" readonly>
 
             </div>
         
             <div class="form-group col-4">
                 <label for="fecha">Anticipo:</label>
-                <input type="text" name="text" class="form-control" value="{{$item->anticipo}}" readonly>
+                <input type="text" name="text" class="form-control" value="{{$item->anticipo}}%" readonly>
 
             </div>
             

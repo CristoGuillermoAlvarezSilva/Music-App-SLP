@@ -75,9 +75,9 @@
                                     @else
                                         @if($num <= $item->personasBase)
                                             
-                                                <label for="titulo">Costo:</label>
+                                                <label for="titulo">Costo: (MXN pesos)</label>
                                                 <input type="text" name="cotizacion" class="form-control" value="{{$item->precioBase}}.00" readonly><br>
-                                                <label for="titulo">Porcentaje de anticipo:</label>
+                                                <label for="titulo">Porcentaje de anticipo (%):</label>
                                                 <input type="text" name="anti" class="form-control" value="{{$item->anticipo}}" readonly>  
                                             
                                     @endif
@@ -87,9 +87,9 @@
                                     @else
                                         @if($num > $item->personasBase && $num <= $item->personasMedio)
                                     
-                                                <label for="titulo">Costo:</label>
+                                                <label for="titulo">Costo: (MXN pesos)</label>
                                                 <input type="text" name="cotizacion" class="form-control" value="{{$item->precioMedio}}.00" readonly><br>
-                                                <label for="titulo">Porcentaje de anticipo:</label>
+                                                <label for="titulo">Porcentaje de anticipo (%):</label>
                                                 <input type="text" name="anti" class="form-control" value="{{$item->anticipo}}" readonly>
                                         
                                     @endif
@@ -100,9 +100,9 @@
                                     @else
                                         @if($num > $item->personasMedio && $num <= $item->personasAlto)
                                         
-                                                <label for="titulo">Costo:</label>
+                                                <label for="titulo">Costo: (MXN pesos)</label>
                                                 <input type="text" name="cotizacion" class="form-control" value="{{$item->precioAlto}}.00" readonly><br>
-                                                <label for="titulo">Porcentaje de anticipo:</label>
+                                                <label for="titulo">Porcentaje de anticipo (%):</label>
                                                 <input type="text" name="anti" class="form-control" value="{{$item->anticipo}}" readonly>                           
                                         
                                     @endif
@@ -111,9 +111,9 @@
                                     @else
                                         @if($num > $item->personasAlto && $num <> $item->personasAlto)
                                             
-                                                <label for="titulo">Costo:</label>
+                                                <label for="titulo">Costo: (MXN pesos)</label>
                                                 <input type="text" name="cotizacion" class="form-control" value="{{$item->precioMax}}.00" readonly><br>
-                                                <label for="titulo">Porcentaje de anticipo:</label>
+                                                <label for="titulo">Porcentaje de anticipo (%):</label>
                                                 <input type="text" name="anti" class="form-control" value="{{$item->anticipo}}" readonly>
                                     
                                     @endif
