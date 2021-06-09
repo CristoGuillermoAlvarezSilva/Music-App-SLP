@@ -13,7 +13,7 @@
             <!-- ======= Contact Section ======= -->
             <section id="services" class="services">
             <div class="container" data-aos="fade-up">
-
+            
             <div class="section-title">
                 <p class="py-md-3"></p>
                 @guest
@@ -55,13 +55,13 @@
                                 <br>
                                 <div class="row ">
                                     <div class="col-6">
-                                        <p><a class="btn btn-info" href="/generos/{{$item->id}}/edit"><i class="fas fa-pencil-alt"></i></a></p>
+                                        <p><a class="btn btn-info editIcon" href="/generos/{{$item->id}}/edit"><i class="fas fa-pencil-alt"></i></a></p>
                                     </div>
                                     <div class="col-6">
                                         <form action="/generos/{{$item->id}}" method="POST">
                                             @csrf 
                                             @method('DELETE')
-                                            <button class="btn btn-danger" type="submit"><i class="fas fa-times"></i></button>
+                                            <button class="btn btn-danger editIcon" type="submit"><i class="fas fa-times"></i></button>
                                         </form>
                                     </div>
                                 </div>

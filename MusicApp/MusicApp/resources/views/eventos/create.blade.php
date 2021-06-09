@@ -20,7 +20,7 @@
 
                 <div class="section-title">
                 <h2>Evento</h2>
-                <p class="text-white">Crea un evento</p>
+                <p class="text-white">Crea tu publicación</p>
                 </div>
 
             </div>
@@ -86,7 +86,7 @@
        
         
         <div class="col-12 text-center">
-            <button class="btn btn-warning" type="submit">Crear evento</button>
+            <button class="btn btn-warning" type="submit">Publicar</button>
         </div>
         </div>
     </form>

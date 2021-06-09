@@ -57,7 +57,7 @@
         @csrf
         @method('POST')
         <div class="form-group col-4">
-            <labe for="genero">Genero</labe>
+            <labe for="genero">Nombre del género</labe>
             <input type="text" name="genero" class="form-control">
 
         </div>

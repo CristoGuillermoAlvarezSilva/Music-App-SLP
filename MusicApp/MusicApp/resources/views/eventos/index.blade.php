@@ -26,7 +26,7 @@
     <div class="col-6">
     <section id="services" class="services">
         <div class="container" data-aos="fade-up">
-
+            <p class="py-md-5"></p>
             <div class="section-title">
                 <p></p>
                 @guest
@@ -70,7 +70,7 @@
                             @if($item->idR == $item2->idU)
                                    
                                     <h5>{{$item2->nombre}}</h5>
-                                    <img src="/{{$item2->path}}" alt="" width="150px" height="100px">
+                                    <img src="/{{$item2->path}}" alt="" width="150px" height="150px">
                                     <br>
                                     <br>
                             @endif
@@ -102,12 +102,12 @@
                                 @if(Auth::user()->id == $item->idR)
                                 <div class="row">
                                     <div class="col-5">
-                                        <p><a class="btn btn-warning" href="/eventos/{{$item->id}}/edit">Editar</a></p></div>
+                                        <p><a class="btn btn-info editIcon" href="/eventos/{{$item->id}}/edit"><i class="fas fa-pencil-alt"></i></a></p></div>
                                     <div class="col-2">
                                         <form action="/eventos/{{$item->id}}" method="POST">
                                             @csrf 
                                             @method('DELETE')
-                                            <button class="btn btn-danger" type="submit">Eliminar</button>
+                                            <button class="btn btn-danger editIcon" type="submit"><i class="fas fa-times"></i></button>
                                         </form>
                                     </div>
                                     
