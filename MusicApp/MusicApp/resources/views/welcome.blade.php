@@ -23,7 +23,7 @@
         <div class="col-xl-2 col-md-4 col-6 ">
           <div class="icon-box">
             <i class="ri-database-2-line"></i>
-            <h3><a href="/pago">Suscribete</a></h3>
+            <h3><a href="/pago">Suscríbete</a></h3>
           </div>
         </div>
         @endguest

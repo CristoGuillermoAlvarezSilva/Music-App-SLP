@@ -35,14 +35,13 @@
     
 
 </head>
-<body>
    <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-inner-pages">
     <div class="container d-flex align-items-center justify-content-between">
 
       <!--<h1 class="logo"><a href="index.html">RecFilms<span>.</span></a></h1>-->
       <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="/" class="logo"><img src="assets/img/logo.jpg" class="img-fluid" ></a> 
+      <a href="/" class="logo"><img src="/assets/img/logo.jpg" class="img-fluid" ></a> 
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>

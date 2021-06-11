@@ -82,7 +82,7 @@
                                         </div>
                                         <div class="col-12 text-center">
                                             <a class="btn btn-warning" type="button" href="/parametros/{{$item->id}}/edit">
-                                                Editar parametros
+                                                Editar
                                             </a>
                                         </div>
 
