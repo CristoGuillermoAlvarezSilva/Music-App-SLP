@@ -87,7 +87,7 @@
                              
                                                     @guest  
                                                         @else
-                                                            @if( $item->idU == $item2->idR )
+                                                            @if($item->idU == $item2->idR )
                                                                 <form action="/cotizar" method="GET">
                                                                     <input type="text" name="idR" class="form-control" value="{{$item->idU}}" hidden>
                                                                     <div class="col-12 text-center">
@@ -128,15 +128,16 @@
                                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video_id ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                 </div>
                                                 <div class="container">
-                                                   
+                                                <br>
+                                                                            <h3>Agenda</h3>
+                                                                             <br>
                                                     <div class="row">
+                                                   
                                                     @foreach($calendarios as $cale)
                                                                 @guest  
                                                                     @else
                                                                         @if( $item->idU == $cale->idR)
-                                                                            <br>
-                                                                            <h3>Agenda</h3>
-                                                                             <br>
+                                                                            
                                                                         <div class="iconbox busyDate">
                                                                             <div class="">
                                                                                 <h10>Fecha ocupada</h10><br>

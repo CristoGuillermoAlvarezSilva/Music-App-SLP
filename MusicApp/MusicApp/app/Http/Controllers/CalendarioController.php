@@ -130,6 +130,6 @@ class CalendarioController extends Controller
         //
         Calendario::destroy($id);
        
-        return redirect()->route('generos.index');
+        return redirect()->route('users.pefil');
     }
 }

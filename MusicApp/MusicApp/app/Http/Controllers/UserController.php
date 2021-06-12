@@ -127,7 +127,7 @@ class UserController extends Controller
         //
         User::destroy($id);
        
-        return redirect()->route('users.index');
+        return redirect()->route('welcome');
     }
 
     public function admin()

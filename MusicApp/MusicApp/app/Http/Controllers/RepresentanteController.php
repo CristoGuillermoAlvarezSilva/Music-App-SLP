@@ -190,7 +190,7 @@ class RepresentanteController extends Controller
         //
         Representante::destroy($id);
        
-        return redirect()->route('generos.index');
+        return redirect()->route('users.pefil');
 
     }
 

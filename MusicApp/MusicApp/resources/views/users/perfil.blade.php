@@ -58,26 +58,20 @@
                                         </div>
                                         <div class="card-body">
                                             <img src="/{{$r->path}}" class="img-fluid" width="300" height="300">
-                                            @foreach($representantes as $r)
-                                                @guest
-                                                    @else
-                                                        @if( Auth::user()->id == $r->idU)
-                                                            <div class="margen">
-                                                            <br>
-                                                                <a class="btn btn-warning" href="/parametros">Parámetros</a>     
-                                                            </div>
-                                                    @endif
-                                                @endguest
-                                            @endforeach
+                                         
+                                            <div class="margen">
+                                                <br>
+                                                <a class="btn btn-warning" href="/parametros">Parámetros</a>     
+                                            </div>
                                             <div class="row">
                                                 <div class="col-6">
-                                                    <form novalidate action="/representantes/{{$r->idU}}/edit" >
+                                                    <form novalidate action="/representantes/{{$r->id}}/edit" >
                                                     <br>
                                                     <button class="btn btn-info editIcon" type="submit"><i class="far fa-edit"></i></button>
                                                     </form>
                                                 </div>
                                                 <div class="col-6">
-                                                    <form action="/representantes/{{$r->idU}}" method="POST">
+                                                    <form action="/representantes/{{$r->id}}" method="POST">
                                                         @csrf 
                                                         @method('DELETE')
                                                         <br>
@@ -92,9 +86,9 @@
                                     </div>
                                 </div>
 
-        @endif
-                        @endguest  
-                @endforeach
+                        @endif
+                    @endguest  
+        @endforeach
     </div>
 
         @foreach($representantes as $r)
