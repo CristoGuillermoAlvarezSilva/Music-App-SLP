@@ -49,12 +49,22 @@ class CotizacioneController extends Controller
         $item->idR = $request->idR;
         $item->idU = $request->idU;
         $item->num = $request->num;
+        if($item->num == "" ){
+         
+            $item->num = '0';
+        }
         $item->ciudad = $request->ciudad;
+        if($item->ciudad == "" ){
+         
+            $item->ciudad = "San Luis Potosí";
+        }
+
+
         $item->cotizacion = $request->cotizacion;
         $item->anticipo = $request->anti;
         
         $item->save();
-        return redirect()->route('generos.index');
+        return redirect()->route('users.pefil');
     }
 
     /**

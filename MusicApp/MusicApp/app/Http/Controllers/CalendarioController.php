@@ -40,15 +40,34 @@ class CalendarioController extends Controller
     public function store(Request $request)
     {
         //
+        $error = "";
         $item = new Calendario; 
         $item->idR = $request->idR;
-        $item->fecha = $request->fecha;
+        $item->fecha = $request->fecha; 
+        if($item->fecha == ""){
+         
+            echo '<script language="javascript">alert("Debe llenar todos los campos");</script>';
+            return view('calendarios.create', compact('error'));
+            
+        }
         $item->inicio = $request->inicio;
+        if($item->inicio == ""){
+         
+            echo '<script language="javascript">alert("Debe llenar todos los campos");</script>';
+            return view('calendarios.create', compact('error'));
+            
+        }
         $item->fin = $request->fin;
+        if($item->fin == ""){
+         
+            echo '<script language="javascript">alert("Debe llenar todos los campos");</script>';
+            return view('calendarios.create', compact('error'));
+            
+        }
         $item->disp = $request->disp;
 
         $item->save();
-        return redirect()->route('generos.index');
+        return redirect()->route('users.pefil');
     }
 
     /**
@@ -96,7 +115,7 @@ class CalendarioController extends Controller
         $item->disp = $request->disp;
 
         $item->save();
-        return redirect()->route('generos.index');
+        return redirect()->route('users.pefil');
 
     }
 

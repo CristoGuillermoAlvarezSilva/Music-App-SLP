@@ -43,6 +43,7 @@ class ParametroController extends Controller
     public function store(Request $request)
     {
         //
+        $error = "";
         $item = new Parametro; 
 
         $item->idR = $request->idR;
@@ -51,13 +52,13 @@ class ParametroController extends Controller
         if($item->precioBase == ""){
          
             echo "<script>alert('Debe ingresar al menos el costo base');</script>";
-            return view('parametros.create');
+            return view('parametros.create', compact('error'));
         }
         $item->personasBase = $request->personasBase;
         if($item->personasBase == ""){
          
             echo "<script>alert('Debe ingresar al menos un número de personas base');</script>";
-            return view('parametros.create');
+            return view('parametros.create', compact('error'));
         }
 
 
@@ -68,7 +69,7 @@ class ParametroController extends Controller
         }
         $item->personasMedio = $request->personasMedio;
         if($item->personasMedio == ""){
-            $item->personasMedio = "0";
+            $item->personasMedio = "100000000";
           
         }
 
@@ -80,7 +81,7 @@ class ParametroController extends Controller
         }
         $item->personasAlto = $request->personasAlto;
         if($item->personasAlto == ""){
-            $item->personasAlto = "0";
+            $item->personasAlto = "100000000";
           
         }
 
@@ -91,7 +92,7 @@ class ParametroController extends Controller
         }
         $item->personasMax = $request->personasMax;
         if($item->personasMax == ""){
-            $item->personasMax = "0";
+            $item->personasMax = "100000000";
           
         }
 
@@ -99,7 +100,7 @@ class ParametroController extends Controller
         if($item->anticipo == ""){
          
             echo "<script>alert('Debe ingresar un porcentaje de anticipo');</script>";
-            return view('parametros.create');
+            return view('parametros.create', compact('error'));
         }
         
         $respuesta = $item->save();
@@ -157,13 +158,13 @@ class ParametroController extends Controller
         if($item->precioBase == ""){
          
             echo "<script>alert('Debe ingresar al menos el costo base');</script>";
-            return view('parametros.create');
+            return view('parametros.editar', compact('item'));
         }
         $item->personasBase = $request->personasBase;
         if($item->personasBase == ""){
          
             echo "<script>alert('Debe ingresar al menos un número de personas base');</script>";
-            return view('parametros.create');
+            return view('parametros.editar', compact('item'));
         }
 
 
@@ -174,7 +175,7 @@ class ParametroController extends Controller
         }
         $item->personasMedio = $request->personasMedio;
         if($item->personasMedio == ""){
-            $item->personasMedio = "0";
+            $item->personasMedio = "100000000";
           
         }
 
@@ -186,7 +187,7 @@ class ParametroController extends Controller
         }
         $item->personasAlto = $request->personasAlto;
         if($item->personasAlto == ""){
-            $item->personasAlto = "0";
+            $item->personasAlto = "100000000";
           
         }
 
@@ -197,7 +198,7 @@ class ParametroController extends Controller
         }
         $item->personasMax = $request->personasMax;
         if($item->personasMax == ""){
-            $item->personasMax = "0";
+            $item->personasMax = "100000000";
           
         }
 
@@ -205,7 +206,7 @@ class ParametroController extends Controller
         if($item->anticipo == ""){
          
             echo "<script>alert('Debe ingresar un porcentaje de anticipo');</script>";
-            return view('parametros.create');
+            return view('parametros.editar', compact('item'));
         }
         
         $respuesta = $item->save();

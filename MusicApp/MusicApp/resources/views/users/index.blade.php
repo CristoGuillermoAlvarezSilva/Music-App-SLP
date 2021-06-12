@@ -38,7 +38,7 @@
             <td>{{$item->rol}}</td>
             @guest
                 @else
-                    @if(Auth::user()->rol == "super")
+                    @if(Auth::user()->rol == "Administrador")
             <td>
                 <div class="d-flex justify-content-end mb-2">
                     <a href="/users/{{$item->id}}/edit" class="btn btn-info">

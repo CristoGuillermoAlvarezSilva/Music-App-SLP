@@ -44,11 +44,6 @@
 
           <div class="col-lg-8 align-self-center">
 
-          @if($error != "")
-            <div class="alert alert-danger" role="alert">
-                {{$error}}
-            </div>
-            @endif
             <form action="/users/{{$item->id}}" class="form-row" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT') 
@@ -57,7 +52,7 @@
         
         @guest
             @else
-                @if(Auth::user()->rol == "super")
+                @if(Auth::user()->rol == "Administrador")
                     <div class="form-group col-1">
                         <input type="text" name="name" class="form-control" value="{{$item->name}}" hidden>
                     </div>
@@ -83,7 +78,8 @@
         <!--Hacer que los usuarios cambien su informacion-->
         @guest 
             @else
-                @if(Auth::user()->rol=="normal")
+                @if(Auth::user()->id == $item->id)
+                    
                     <div class="form-group col-4">
                         <label for="nombre">Nombre</label>
                         <input type="text" name="name" class="form-control" value="{{$item->name}}">
@@ -99,14 +95,7 @@
 
             @endif
         @endguest
-        @guest 
-            @else
-                @if(Auth::user()->rol=="normal")
-                <input type="text" name="rol" class="form-control" value="{{$item->rol}}" hidden>
-        
-                @endif
-        @endguest
-
+    
         <div class="col-12 text-center">
             <button class="btn btn-warning" type="submit">Actualizar</button>
         </div>

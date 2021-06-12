@@ -89,15 +89,31 @@ class UserController extends Controller
         $item->rol = $request->rol;
        
         $item->name = $request->name;
+        if($item->name == ""){
+            echo "<script>alert('Debe llenar todos los campos');</script>";
+            return view('users.editar', compact('item'));
+            
+        }
+
         $item->email = $request->email;
+        if($item->email == ""){
+            echo "<script>alert('Debe llenar todos los campos');</script>";
+            return view('users.editar', compact('item'));
+            
+        }
         $item->password = Hash::make($request->password);
+        if($item->password == ""){
+            echo "<script>alert('Debe llenar todos los campos');</script>";
+            return view('users.editar', compact('item'));
+            
+        }
         $respuesta = $item->save();
         
         if($respuesta == 0){
             $error= "Erros al actualizar";
             return view('users.editar', compact('error', 'item'));
         }
-        return redirect()->route('users.index');
+        return redirect()->route('users.pefil');
     }
 
     /**

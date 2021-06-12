@@ -71,6 +71,7 @@
         </div>
       <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=MXN" data-sdk-integration-source="button-factory"></script>
       <script>
+    
         function initPayPalButton() {
           paypal.Buttons({
             style: {
@@ -88,7 +89,10 @@
             },
 
             onApprove: function(data, actions) {
+            
+           
                  location.href = "/representantes/create";
+                
 
             },
 

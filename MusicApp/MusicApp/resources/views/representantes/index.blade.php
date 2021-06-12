@@ -31,33 +31,21 @@
 <section id="portfolio" class="portfolio">
       <div class="container" data-aos="fade-up">
 
-      <div class="section-title">
-                <p class="py-md-5"></p>
-                @guest
-                <h2>Disponibles </h2>
-                @else
-                    @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
-                    <!--Administrador-->
-                <h2>SuperUsuario </h2>
+        <div class="section-title">
+                    <p class="py-md-5"></p>
+                    @guest
+                    <h2>Disponibles </h2>
+                    @else
+                        @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
+                        <!--Administrador-->
+                    <h2>SuperUsuario </h2>
+                    
+                    @endif
+                        @endguest
                 
-                @endif
-                    @endguest
-            
-            <p>Grupos</p>
-            @guest
-                @else
-                    @if(Auth::user()->rol == "super" || Auth::user()->rol == "Administrador")
-                    <!--Administrador-->
-                <div class="d-flex justify-content-end mb-2">
-                    <a href="/representantes/create" class="btn btn-warning">
-                        Agregar artista
-                    <i class="fas fa-plus"></i>
-                    </a>
-                </div>
-                
-                @endif
-                    @endguest
-            </div>
+                <p>Grupos</p>
+        
+        </div>
 
         
 

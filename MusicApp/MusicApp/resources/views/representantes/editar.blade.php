@@ -5,11 +5,7 @@
 @endsection
 
 @section('content')
-    @if($error != "")
-    <div class="alert alert-danger" role="alert">
-        {{$error}}
-    </div>
-    @endif
+ 
 
 <div class="container-fluid">
     <div class="row">
@@ -63,29 +59,44 @@
                                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video_id ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                 </div>
                                                 <div class="container">
-                                                    <br>
-                                                    <h3>Agenda</h3>
-                                                    <br>
+                                                 
                                                     <div class="row">
                                                     @foreach($calendarios as $cale)
                                                                 @guest  
                                                                     @else
                                                                         @if( $item->idU == $cale->idR)
-                                                                        <div class="icon-box foSAgenda">
-                                                                            <div class="foAgenda">
-                                                                                <h4>Fecha ocupada</h4>
-                                                                                <label><b>Fecha:&nbsp;</b></label><label >{{$cale->fecha}}</label><br>
-                                                                                <label><b>Hora inicio:&nbsp;</b></label><label >{{$cale->inicio}}</label><br>
-                                                                                <label><b>Hora fin:&nbsp;</b></label><label >{{$cale->fin}}</label><br>
-                                                                            </div>
-                                                                            
-                                                                        </div>   
-                                                                        @endif
+                                                                            <br>
+                                                                            <h3>Agenda</h3>
+                                                                            <br>
+                                                                            <div class="icon-box foSAgenda">
+                                                                                <div class="foAgenda">
+                                                                                    <h4>Fecha ocupada</h4>
+                                                                                    <label><b>Fecha:&nbsp;</b></label><label >{{$cale->fecha}}</label><br>
+                                                                                    <label><b>Hora inicio:&nbsp;</b></label><label >{{$cale->inicio}}</label><br>
+                                                                                    <label><b>Hora fin:&nbsp;</b></label><label >{{$cale->fin}}</label><br>
+                                                                                </div>
+                                                                                
+                                                                            </div>   
+                                                                            @endif
                                                                 @endguest
                                                             @endforeach
  
                                                     </div>
-                                                </div>     
+                                                </div> 
+                                                @foreach($parametros as $item2)
+                             
+                                                    @guest  
+                                                        @else
+                                                            @if( $item->idU == $item2->idR )
+                                                                <form action="/cotizar" method="GET">
+                                                                    <input type="text" name="idR" class="form-control" value="{{$item->idU}}" hidden>
+                                                                    <div class="col-12 text-center">
+                                                                        <button class="btn btn-warning" type="submit">Cotizar evento</button>
+                                                                    </div>
+                                                                </form>
+                                                        @endif
+                                                    @endguest
+                                                @endforeach     
                             </div>
             </div>                         
     </div>
@@ -117,14 +128,15 @@
                                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video_id ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                 </div>
                                                 <div class="container">
-                                                    <br>
-                                                    <h3>Agenda</h3>
-                                                    <br>
+                                                   
                                                     <div class="row">
                                                     @foreach($calendarios as $cale)
                                                                 @guest  
                                                                     @else
                                                                         @if( $item->idU == $cale->idR)
+                                                                            <br>
+                                                                            <h3>Agenda</h3>
+                                                                             <br>
                                                                         <div class="iconbox busyDate">
                                                                             <div class="">
                                                                                 <h10>Fecha ocupada</h10><br>
@@ -136,7 +148,7 @@
                                                                         </div>   
                                                                         @endif
                                                                 @endguest
-                                                            @endforeach
+                                                    @endforeach
  
                                                     </div>
                                                 </div>
@@ -195,17 +207,7 @@
                     @endif
                 @endguest
             </form>
-            @guest  
-                @else
-                    @if( Auth::user()->id != $item->idU)
-                        <form action="/cotizar" method="GET">
-                            <input type="text" name="idR" class="form-control" value="{{$item->idU}}" hidden>
-                            <div class="col-12 text-center">
-                                <button class="btn btn-warning" type="submit">Cotizar evento</button>
-                            </div>
-                        </form>
-                @endif
-            @endguest
+           
       
 
             

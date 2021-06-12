@@ -77,7 +77,7 @@
                                                     </form>
                                                 </div>
                                                 <div class="col-6">
-                                                    <form action="/representantes/{{$r->id}}" method="POST">
+                                                    <form action="/representantes/{{$r->idU}}" method="POST">
                                                         @csrf 
                                                         @method('DELETE')
                                                         <br>
@@ -178,7 +178,7 @@
                                             @endif
                                         @endguest
                                     @endforeach
-
+        
                                     <h5 class="card-title"><b>Costo: </b> ${{$c->cotizacion}}.00 MXN</h5>    
                                     
                                     <div class="row">

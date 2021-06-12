@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Genero;
 use App\Representante;
 use App\User;
+use App\Parametro;
 use App\Calendario;
 
 class RepresentanteController extends Controller
@@ -45,6 +46,8 @@ class RepresentanteController extends Controller
     public function store(Request $request)
     {
         //
+        $generos = Genero::all();
+        $error = "";
         $item = new Representante; 
 
         $item->idU = $request->idU;
@@ -55,14 +58,15 @@ class RepresentanteController extends Controller
         if($item->nombre == ""){
          
             echo "<script>alert('El nombre de la banda no puede estar vacio');</script>";
-            return view('representantes.create');
+            return view('representantes.create', compact('generos','error'));
         }
         $item->descripcion = $request->descripcion;
         if($item->descripcion == ""){
          
             echo "<script>alert('Poner una breve descripción');</script>";
-            return view('representantes.create');
+            return view('representantes.create', compact('generos','error'));
         }
+      
         if($imagen = $request->file('imagen')){
             $nombre_imagen = $item->nombre . "_" . date("Y_m_d_H_i_s") . "." . $imagen->extension();
              $imagen->move("imgenes", $nombre_imagen);
@@ -77,12 +81,12 @@ class RepresentanteController extends Controller
         if($item->telefono == ""){
          
             $item->telefono = " ";
-            echo "<script>alert('Poner una breve descripción');</script>";
-            return view('representantes.create');
+            echo "<script>alert('Debe llenar todos los campos');</script>";
+            return view('representantes.create', compact('generos','error'));
         }
         
         $item->save();
-        return redirect()->route('generos.index');
+        return redirect()->route('users.pefil');
  
      
     }
@@ -112,8 +116,9 @@ class RepresentanteController extends Controller
         $generos = Genero::all();
         $item = Representante::find($id);
         $calendarios = Calendario::all();
+        $parametros = Parametro::all();
         $error = "";
-        return view('representantes.editar', compact('generos','error', 'item', 'calendarios'));
+        return view('representantes.editar', compact('generos', 'item', 'calendarios', 'parametros'));
     }
 
     /**
@@ -126,6 +131,10 @@ class RepresentanteController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $generos = Genero::all();
+        $item = Representante::find($id);
+        $calendarios = Calendario::all();
+
         $item = Representante::find($id);
         $item->idU = $request->idU;
         $item->genero = $request->genero;
@@ -135,37 +144,37 @@ class RepresentanteController extends Controller
         if($item->nombre == ""){
          
             echo "<script>alert('El nombre de la banda no puede estar vacio');</script>";
-            return view('representantes.editar');
+            return view('representantes.editar', compact('generos', 'item', 'calendarios'));
         }
         $item->descripcion = $request->descripcion;
         if($item->descripcion == ""){
          
             echo "<script>alert('Poner una breve descripción');</script>";
-            return view('representantes.editar');
+            return view('representantes.editar', compact('generos', 'item', 'calendarios'));
         }
+   
         if($imagen = $request->file('imagen')){
             $nombre_imagen = $item->nombre . "_" . date("Y_m_d_H_i_s") . "." . $imagen->extension();
              $imagen->move("imgenes", $nombre_imagen);
              $item->path = "imgenes/" . $nombre_imagen;
         }
+
         $item->video = $request->video;
         if($item->video == ""){
          
             $item->video = " ";
-            echo "<script>alert('Poner una breve descripción');</script>";
-            return view('representantes.editar');
+          
         }
         $item->telefono = $request->telefono;
         if($item->telefono == ""){
          
-            $item->telefono = " ";
-            echo "<script>alert('Poner una breve descripción');</script>";
-            return view('representantes.editar');
+            echo "<script>alert('Debe llenar todos los campos');</script>";
+            return view('representantes.editar', compact('generos', 'item', 'calendarios'));
         }
         
         
         $item->save();
-        return redirect()->route('generos.index');
+        return redirect()->route('users.pefil');
  
         
     }

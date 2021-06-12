@@ -137,31 +137,31 @@ class EventoController extends Controller
         if($item->titulo == ""){
          
             echo "<script>alert('Debe ingresar un titulo del evento');</script>";
-            return view('eventos.create');
+            return view('eventos.editar', compact('item'));
         }
         $item->descripcion = $request->descripcion;
         if($item->descripcion == ""){
          
             echo "<script>alert('Debe ingresar una descripcion del evento');</script>";
-            return view('eventos.create');
+            return view('eventos.editar', compact('item'));
         }
         $item->lugar = $request->lugar;
         if($item->lugar == ""){
          
             echo "<script>alert('Debe ingresar un lugar del evento');</script>";
-            return view('eventos.create');
+            return view('eventos.editar', compact('item'));
         }
         $item->fecha = $request->fecha;
         if($item->fecha == ""){
          
             echo "<script>alert('Debe ingresar una fecha del evento');</script>";
-            return view('eventos.create');
+            return view('eventos.editar', compact('item'));
         }
         $item->hora = $request->hora;
         if($item->hora == ""){
          
             echo "<script>alert('Debe ingresar una hora del evento');</script>";
-            return view('eventos.create');
+            return view('eventos.editar', compact('item'));
         }
         $item->costo = $request->costo;
         if($item->costo == ""){
