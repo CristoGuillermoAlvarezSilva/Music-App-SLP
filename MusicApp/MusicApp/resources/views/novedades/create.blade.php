@@ -20,7 +20,7 @@
 
                 <div class="section-title">
                 <h2>Eventos</h2>
-                <p class="text-white">Crea evento!</p>
+                <p class="text-white">Crea evento</p>
                 </div>
 
                 

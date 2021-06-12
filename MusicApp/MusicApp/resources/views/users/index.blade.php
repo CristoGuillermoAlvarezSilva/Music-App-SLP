@@ -42,7 +42,7 @@
             <td>
                 <div class="d-flex justify-content-end mb-2">
                     <a href="/users/{{$item->id}}/edit" class="btn btn-info">
-                        Editar Rol
+                        Editar rol
                     </a>
                 </div>
                 

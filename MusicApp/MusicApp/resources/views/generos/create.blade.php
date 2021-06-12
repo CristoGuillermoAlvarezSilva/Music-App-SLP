@@ -22,7 +22,7 @@
 
                 <div class="section-title">
                 <h2>Generos</h2>
-                <p class="text-white">Crea un Genero</p>
+                <p class="text-white">Crea un genero</p>
                 </div>
 
                 
@@ -57,7 +57,7 @@
         @csrf
         @method('POST')
         <div class="form-group col-4">
-            <labe for="genero">Genero</labe>
+            <labe for="genero">Nombre del género</labe>
             <input type="text" name="genero" class="form-control">
 
         </div>

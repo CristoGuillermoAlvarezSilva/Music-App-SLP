@@ -55,7 +55,7 @@
          @csrf
         @method('PUT') 
     <div class="form-group col-4">
-            <labe for="genero">Genero</labe>
+            <labe for="genero">Nuevo nombre</labe>
             <input type="text" name="genero" class="form-control" value="{{$item->genero}}">
 
         </div>

@@ -49,17 +49,6 @@ class GenerosController extends Controller
             return view('generos.create');
         }
 
-        if($imagen = $request->file('imagen')){
-            $nombre_imagen = $item->nombre . "_" . date("Y_m_d_H_i_s") . "." . $imagen->extension();
-             $imagen->move("imagenes", $nombre_imagen);
-             $item->path = "imagenes/" . $nombre_imagen;
-        }
-        if($item->path == ""){
-            echo "<script>alert('Debe agregar una imagen');</script>";
-            return view('generos.create');
-
-        }
-
         $item->save();
         return redirect()->route("generos.index");
     }
@@ -105,18 +94,6 @@ class GenerosController extends Controller
         $item->genero = $request->genero;
         if($item->genero == ""){
          
-            echo '<script language="javascript">alert("Llenar todos los campos");</script>';
-
-            return view('generos.editar', compact('item'));
-        }
-
-        if($imagen = $request->file('imagen')){
-            $nombre_imagen = $item->nombre . "_" . date("Y_m_d_H_i_s") . "." . $imagen->extension();
-             $imagen->move("imagenes", $nombre_imagen);
-             $item->path = "imagenes/" . $nombre_imagen;
-        }
-        if($item->path == ""){
-           
             echo '<script language="javascript">alert("Llenar todos los campos");</script>';
 
             return view('generos.editar', compact('item'));

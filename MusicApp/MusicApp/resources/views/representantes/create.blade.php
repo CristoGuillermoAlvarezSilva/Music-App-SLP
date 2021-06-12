@@ -5,6 +5,10 @@
 @endsection
 
 @section('content')
+<?php 
+header('HTTP/1.0 403 Forbidden');
+exit();
+?>
 <div class="container-fluid">
   <div class="row">
     <div class="col-6">

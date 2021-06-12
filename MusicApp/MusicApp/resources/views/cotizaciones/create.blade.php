@@ -57,10 +57,10 @@
                             <div class="section-title">
                                 <p for="fecha">{{$item->nombre}}</p>
                                 
-                                <img src="/{{$item->path}}" width="300px" height="200px"><br>
-                                <label for="telefono">Telefono para contactar el grupo: {{$item->telefono}}</label><br>
-                                <label for="titulo">Cotización para {{$num}} personas</label>
-                                <label for="titulo">En la ciudad de {{$ciudad}}</label>
+                                <img src="/{{$item->path}}" width="300px" height="300px"><br>
+                                <br><label for="telefono">Telefono para contactar: <b>{{$item->telefono}}</b></label>
+                                <br><label for="titulo">Cotización para <b>{{$num}} personas</b> </label>
+                                <br><label for="titulo">En la ciudad de <b>{{$ciudad}}</b> </label>
                                 <br>
 
                             @endif
@@ -75,9 +75,9 @@
                                     @else
                                         @if($num <= $item->personasBase)
                                             
-                                                <label for="titulo">Costo:</label>
-                                                <input type="text" name="cotizacion" class="form-control" value="{{$item->precioBase}}" readonly>
-                                                <label for="titulo">Porcentaje de anticipo:</label>
+                                                <label for="titulo">Costo: (MXN pesos)</label>
+                                                <input type="text" name="cotizacion" class="form-control" value="{{$item->precioBase}}.00" readonly><br>
+                                                <label for="titulo">Porcentaje de anticipo (%):</label>
                                                 <input type="text" name="anti" class="form-control" value="{{$item->anticipo}}" readonly>  
                                             
                                     @endif
@@ -87,9 +87,9 @@
                                     @else
                                         @if($num > $item->personasBase && $num <= $item->personasMedio)
                                     
-                                                <label for="titulo">Costo:</label>
-                                                <input type="text" name="cotizacion" class="form-control" value="{{$item->precioMedio}}.00" readonly>
-                                                <label for="titulo">Porcentaje de anticipo:</label>
+                                                <label for="titulo">Costo: (MXN pesos)</label>
+                                                <input type="text" name="cotizacion" class="form-control" value="{{$item->precioMedio}}.00" readonly><br>
+                                                <label for="titulo">Porcentaje de anticipo (%):</label>
                                                 <input type="text" name="anti" class="form-control" value="{{$item->anticipo}}" readonly>
                                         
                                     @endif
@@ -100,9 +100,9 @@
                                     @else
                                         @if($num > $item->personasMedio && $num <= $item->personasAlto)
                                         
-                                                <label for="titulo">Costo:</label>
-                                                <input type="text" name="cotizacion" class="form-control" value="{{$item->precioAlto}}.00" readonly>
-                                                <label for="titulo">Porcentaje de anticipo:</label>
+                                                <label for="titulo">Costo: (MXN pesos)</label>
+                                                <input type="text" name="cotizacion" class="form-control" value="{{$item->precioAlto}}.00" readonly><br>
+                                                <label for="titulo">Porcentaje de anticipo (%):</label>
                                                 <input type="text" name="anti" class="form-control" value="{{$item->anticipo}}" readonly>                           
                                         
                                     @endif
@@ -111,9 +111,9 @@
                                     @else
                                         @if($num > $item->personasAlto && $num <> $item->personasAlto)
                                             
-                                                <label for="titulo">Costo:</label>
-                                                <input type="text" name="cotizacion" class="form-control" value="{{$item->precioMax}}.00" readonly>
-                                                <label for="titulo">Porcentaje de anticipo:</label>
+                                                <label for="titulo">Costo: (MXN pesos)</label>
+                                                <input type="text" name="cotizacion" class="form-control" value="{{$item->precioMax}}.00" readonly><br>
+                                                <label for="titulo">Porcentaje de anticipo (%):</label>
                                                 <input type="text" name="anti" class="form-control" value="{{$item->anticipo}}" readonly>
                                     
                                     @endif
@@ -128,7 +128,7 @@
                 <input type="text" name="num" class="form-control" value="{{$num}}" hidden>
                 <input type="text" name="ciudad" class="form-control" value="{{$ciudad}}" hidden><br>
                 
-                <button class="btn btn-warning" type="submit">Guardar cotización</button>
+                <button class="btn btn-warning" type="submit">Guardar</button>
             
             </div>
             

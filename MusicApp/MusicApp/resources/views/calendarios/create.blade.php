@@ -44,7 +44,7 @@
                                 <input type="text" name="idR" class="form-control" value="{{Auth::user()->id}}" hidden>
                                 <input type="text" name="disp" class="form-control" value="Ocupado" hidden>
                             </div>
-                            <div class="row">
+                            
                                 <div class="col-4">
                                     <label for="fecha">Fecha ocupada</label>
                                     <input type="date" name="fecha" class="form-control">
@@ -59,12 +59,12 @@
                                     <label for="fin">Fin</label>
                                     <input type="time" name="fin" class="form-control">
                                 </div>
-                            </div>
+                          
                             
                             
                             <div class="col-12 text-center">
                             <br>
-                                <button class="btn btn-warning" type="submit">Guardar fecha</button>
+                                <button class="btn btn-warning" type="submit">Guardar</button>
                             </div>
                         </form>
 

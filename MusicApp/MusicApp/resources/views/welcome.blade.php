@@ -23,7 +23,7 @@
         <div class="col-xl-2 col-md-4 col-6 ">
           <div class="icon-box">
             <i class="ri-database-2-line"></i>
-            <h3><a href="/pago">Suscribete</a></h3>
+            <h3><a href="/pago">Suscríbete</a></h3>
           </div>
         </div>
         @endguest
@@ -36,7 +36,7 @@
         <div class="col-xl-2 col-md-4 col-6 mt-4 mt-md-0">
           <div class="icon-box">
             <i class="fas fa-compact-disc"></i>
-            <h3><a href="/generos">Artisas</a></h3>
+            <h3><a href="/generos">Artistas</a></h3>
           </div>
         </div>
         
@@ -56,7 +56,7 @@
         <div class="text-center">
           <br><br><br><br>
           <h1 class="susTitle">Subscribete</h1>
-          <p class="susDesc"> Accede a los beneficios de MusicApp SLP y logra inscribir a tu grupo para organizar eventos, darte a conocer y obtener ingresos por contratacion.</p>
+          <p class="susDesc"> Disfruta los beneficios de MusicApp SLP y logra inscribir a tu grupo para organizar eventos, darte a conocer y obtener ingresos por contratacion.</p>
             
           @guest
           @else

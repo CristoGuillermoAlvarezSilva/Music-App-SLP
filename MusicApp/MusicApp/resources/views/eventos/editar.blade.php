@@ -20,7 +20,7 @@
 
                 <div class="section-title">
                 <h2>Eventos</h2>
-                <p class="text-white">Editar evento!</p>
+                <p class="text-white">Editar evento</p>
                 </div>
 
             </div>
@@ -57,7 +57,7 @@
         </div>
        
         <div class="form-group col-4">
-            <labe for="descripcion">Descripcion del evento:</labe>
+            <labe for="descripcion">Descripción del evento:</labe>
             <input type="text" name="descripcion" class="form-control" value="{{$item->descripcion}}">
 
         </div>
@@ -84,7 +84,7 @@
        
      
         <div class="col-12 text-center">
-            <button class="btn btn-warning" type="submit">Registrar!</button>
+            <button class="btn btn-warning" type="submit">Actualizar</button>
         </div>
     </form>
 

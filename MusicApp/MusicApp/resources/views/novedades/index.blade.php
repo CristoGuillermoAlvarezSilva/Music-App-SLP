@@ -37,9 +37,6 @@
         <?php
             $ban=0;
         ?>
-
-        
-
               </p>
                 <div class="section-title">
                     <p class="py-md-5"></p>

@@ -30,13 +30,13 @@
                     
                     <div class="row">
                         <form novalidate action="/users/{{Auth::user()->id}}/edit" >
-                            <button class="btn btn-info" type="submit"><i class="far fa-edit"></i></button>
+                            <button class="btn btn-info editIcon" type="submit"><i class="far fa-edit"></i></button>
                         </form>
                         &nbsp;
                         <form action="/users/{{Auth::user()->id}}" method="POST">
                         @csrf 
                         @method('DELETE')
-                            <button class="btn btn-danger" type="submit"><i class="fas fa-times"></i></button>
+                            <button class="btn btn-danger editIcon" type="submit"><i class="fas fa-times"></i></button>
                         </form>
                     </div>          
                 </div>
@@ -52,9 +52,9 @@
                             @if( Auth::user()->id == $r->idU)
         
                                 <div class="margen">
-                                    <div class="icon-box">
+                                    <div class="">
                                         <div class="card-title">
-                                            <h3>{{$r->nombre}}</h3>
+                                            <h3 class="whiteClr">{{$r->nombre}}</h3>
                                         </div>
                                         <div class="card-body">
                                             <img src="/{{$r->path}}" class="img-fluid" width="300" height="300">
@@ -73,7 +73,7 @@
                                                 <div class="col-6">
                                                     <form novalidate action="/representantes/{{$r->idU}}/edit" >
                                                     <br>
-                                                    <button class="btn btn-info" type="submit"><i class="far fa-edit"></i></button>
+                                                    <button class="btn btn-info editIcon" type="submit"><i class="far fa-edit"></i></button>
                                                     </form>
                                                 </div>
                                                 <div class="col-6">
@@ -81,7 +81,7 @@
                                                         @csrf 
                                                         @method('DELETE')
                                                         <br>
-                                                        <button class="btn btn-danger" type="submit">
+                                                        <button class="btn btn-danger editIcon" type="submit">
                                                         <i class="fas fa-times"></i>
                                                         </button>
                                             
@@ -104,19 +104,18 @@
                        
                         <div class="container">
                         <br>
-                            <div class="icon-box">
+                            <div class="">
                                 <div class="card-title">
-                                    <h3 class="text-center">  Agenda  </h3>
+                                    <h3 class="text-center whiteClr">  Agenda  </h3>
                                 </div>
                                 <div class="container row">
                                 @foreach($calendarios as $cale)
                                     @guest  
                                         @else
                                             @if(Auth::user()->id == $cale->idR )
-                                                
-                                                <div class="icon-box fechaOcupada">
+                                                <div class="icon-box foSAgenda">
                                                     <div class="foRelat">
-                                                        <h4>Fecha ocupada</h4>
+                                                        <h6>Fecha ocupada</h6>
                                                         <label><b>Fecha:&nbsp;</b></label><label >{{$cale->fecha}}</label><br>
                                                         <label><b>Hora inicio:&nbsp;</b></label><label >{{$cale->inicio}}</label><br>
                                                         <label><b>Hora fin:&nbsp;</b></label><label >{{$cale->fin}}</label><br>
@@ -124,28 +123,31 @@
                                                         <div class="row">
                                                             <div class="col-6">
                                                                 <form novalidate action="/calendarios/{{$cale->id}}/edit" >
-                                                                    <button class="btn btn-info" type="submit"><i class="far fa-edit"></i></button>
+                                                                    <button class="btn btn-info editIcon" type="submit"><i class="far fa-edit"></i></button>
                                                                 </form>
                                                             </div>
                                                             <div class="col-6">
                                                                 <form action="/calendarios/{{$cale->id}}" method="POST">
                                                                 @csrf 
                                                                 @method('DELETE')
-                                                                    <button class="btn btn-danger" type="submit">
+                                                                    <button class="btn btn-danger editIcon" type="submit">
                                                                     <i class="fas fa-times"></i>
                                                                     </button>
+                                                                    
                                                                 </form>
+                                                                
                                                             </div>
+                                                            
                                                         </div>
-                                                    </div>
+                                                       
+                                                    </div> 
                                                 </div>
-                                            
-                                                
                                         @endif
                                     @endguest
                                 @endforeach
                                 </div>
-                                <div class="card-body">
+                                
+                                <div class="card-body"><br>
                                     <label><a class="btn btn-warning" href="/calendarios/create">Agregar fecha</a></label>
                                 </div>
                             </div>
@@ -155,8 +157,8 @@
         @endforeach
 
         <div class="container margen">
-            <div class="icon-box">
-                <h3 class="text-center">Cotizaciones</h3>
+            <div class="">
+                <h3 class="text-center whiteClr">Cotizaciones</h3>
                     <div class="container row">
                     @foreach($cotizaciones as $c)
                         @guest
@@ -177,24 +179,24 @@
                                         @endguest
                                     @endforeach
 
-                                    <h5 class="card-title"><b>Costo: </b> {{$c->cotizacion}}</h5>    
+                                    <h5 class="card-title"><b>Costo: </b> ${{$c->cotizacion}}.00 MXN</h5>    
                                     
                                     <div class="row">
                                         <div class="col-6">
                                             <form novalidate action="/cotizaciones/{{$c->id}}/edit" >
-                                                <button class="btn btn-info" type="submit"><i class="fas fa-info-circle"></i></button>
+                                                <button class="btn btn-info editIcon" type="submit"><i class="fas fa-info-circle"></i></button>
                                             </form>
                                         </div>
                                         <div class="col-6">
                                             <form action="/cotizaciones/{{$c->id}}" method="POST">
                                             @csrf 
                                             @method('DELETE')
-                                                <button class="btn btn-danger" type="submit">
+                                                <button class="btn btn-danger editIcon" type="submit">
                                                     <i class="fas fa-times"></i>
                                                 </button>
                                             </form>
                                         </div>
-                                </div>
+                                </div> 
                             </div>
                     </div>                  
                 @endif

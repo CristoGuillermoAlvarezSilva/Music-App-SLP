@@ -50,7 +50,7 @@
                     <!--Administrador-->
                 <div class="d-flex justify-content-end mb-2">
                     <a href="/representantes/create" class="btn btn-warning">
-                        Agregar representante
+                        Agregar artista
                     <i class="fas fa-plus"></i>
                     </a>
                 </div>

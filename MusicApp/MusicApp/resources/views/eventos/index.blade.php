@@ -26,7 +26,7 @@
     <div class="col-6">
     <section id="services" class="services">
         <div class="container" data-aos="fade-up">
-
+            <p class="py-md-5"></p>
             <div class="section-title">
                 <p></p>
                 @guest
@@ -56,13 +56,13 @@
                     @endforeach 
             </div>
 
-        <div class="row">
+        <div class="row ">
             <!------------------------------------------------------------------------------------------------------------------------------>
             @foreach($eventos as $item)
 
               
 
-                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="10">
                         <div class="icon-box eventCard">
                         @foreach($representantes as $item2)
                         @guest
@@ -70,33 +70,48 @@
                             @if($item->idR == $item2->idU)
                                    
                                     <h5>{{$item2->nombre}}</h5>
-                                    <img src="/{{$item2->path}}" alt="" width="150px" height="100px">
+                                    <img src="/{{$item2->path}}" alt="" width="150px" height="150px">
+                                    <br>
+                                    <br>
                             @endif
                         @endguest
                 @endforeach 
-                    
-                        <div class="form-row">
+                        
+                        <div class="form-row ">
+                            <div class="row">
+                                <label><b>Titulo del evento: &nbsp;</b></label><p>{{$item->titulo}}</p>
+                            </div>
+                            <div class="row">
+                                <label><b>Descripción: &nbsp;</b></label><p>{{$item->descripcion}}</p>
+                            </div>
+                            <div class="row">
+                                <label><b>Lugar: &nbsp;</b></label><p>{{$item->lugar}}</p>
+                            </div>
                             
-                            <label><b>Titulo del evento: &nbsp;</b></label><p>{{$item->titulo}}</p>
-                            <label><b>Descripcion: &nbsp;</b></label><p>{{$item->descripcion}}</p>
-                            <label><b>Lugar: &nbsp;</b></label><p>{{$item->lugar}}</p>
-                            <label><b>Fecha: &nbsp;</b></label><p>{{$item->fecha}}</p>
-                            <label><b>Hora: &nbsp;</b></label><p>{{$item->hora}}</p>
-                            <label><b>Costo: &nbsp;</b></label><p>${{$item->costo}} MXN</p>
+                            
+                                    
+                            
+                            
+                            <div class="row">
+                                <label><b>Hora: &nbsp;</b></label><p>{{$item->hora}}</p>
+                                &nbsp;<label><b>Costo: &nbsp;</b></label><p>${{$item->costo}} MXN</p>
+                            </div>
+                            
                         @guest
                             @else
                                 @if(Auth::user()->id == $item->idR)
                                 <div class="row">
-                                    <div class="col-5">
-                                        <p><a class="btn btn-warning" href="/eventos/{{$item->id}}/edit">Editar</a></p></div>
-                                    <div class="col-2">
+                                    <div class="col-4"></div>
+                                    <div class="col-4">
+                                        <p><a class="btn btn-info editIcon" href="/eventos/{{$item->id}}/edit"><i class="fas fa-pencil-alt"></i></a></p></div>
+                                    <div class="col-4">
                                         <form action="/eventos/{{$item->id}}" method="POST">
                                             @csrf 
                                             @method('DELETE')
-                                            <button class="btn btn-danger" type="submit">Eliminar</button>
+                                            <button class="btn btn-danger editIcon" type="submit"><i class="fas fa-times"></i></button>
                                         </form>
                                     </div>
-                                    
+                                    <div class="col-2"></div>
                                     
                                 </div>
                                 @endif

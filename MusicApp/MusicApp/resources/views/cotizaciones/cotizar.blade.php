@@ -50,7 +50,7 @@
                             <div>
                                 <div class="section-title">
                                     <p for="fecha">{{$item->nombre}}</p><br>
-                                    <img src="/{{$item->path}}" width="300px" height="200px">
+                                    <img src="/{{$item->path}}" width="300px" height="300px">
                                 </div>
                                 
                             
