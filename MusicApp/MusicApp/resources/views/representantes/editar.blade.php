@@ -84,20 +84,7 @@
  
                                                     </div>
                                                 </div> 
-                                                @foreach($parametros as $item2)
-                             
-                                                    @guest  
-                                                        @else
-                                                            @if($item->idU == $item2->idR )
-                                                                <form action="/cotizar" method="GET">
-                                                                    <input type="text" name="idR" class="form-control" value="{{$item->idU}}" hidden>
-                                                                    <div class="col-12 text-center">
-                                                                        <button class="btn btn-warning" type="submit">Cotizar evento</button>
-                                                                    </div>
-                                                                </form>
-                                                        @endif
-                                                    @endguest
-                                                @endforeach     
+                                                   
                             </div>
             </div>                         
     </div>
@@ -210,7 +197,20 @@
                 @endguest
             </form>
            
-      
+            @foreach($parametros as $item2)
+                             
+                                                    @guest  
+                                                        @else
+                                                            @if($item->idU == $item2->idR )
+                                                                <form action="/cotizar" method="GET">
+                                                                    <input type="text" name="idR" class="form-control" value="{{$item->idU}}" hidden>
+                                                                    <div class="col-12 text-center">
+                                                                        <button class="btn btn-warning" type="submit">Cotizar evento</button>
+                                                                    </div>
+                                                                </form>
+                                                        @endif
+                                                    @endguest
+                                                @endforeach                                              
 
             
         </div>
