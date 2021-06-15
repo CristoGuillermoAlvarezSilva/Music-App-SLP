@@ -26,9 +26,10 @@ body {
 }
 
 .busyDate {
-  height: 120px;
+  height: 120px !important;
   margin: 5px;
-  /*border: 3px dotted black;*/
+  
+  border: 1px solid rgb(226, 226, 226);
 }
 
 /*

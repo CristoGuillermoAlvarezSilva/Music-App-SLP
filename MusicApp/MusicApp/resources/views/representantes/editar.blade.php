@@ -59,18 +59,19 @@
                                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video_id ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                 </div>
                                                 <div class="container">
-                                                 
+                                                <h3>Agenda</h3>
+                                                                            <br>
                                                     <div class="row">
+                                                    <br>
+                                                            
                                                     @foreach($calendarios as $cale)
                                                                 @guest  
                                                                     @else
                                                                         @if( $item->idU == $cale->idR)
-                                                                            <br>
-                                                                            <h3>Agenda</h3>
-                                                                            <br>
-                                                                            <div class="icon-box foSAgenda">
-                                                                                <div class="foAgenda">
-                                                                                    <h4>Fecha ocupada</h4>
+                                                                            
+                                                                            <div class="busyDate">
+                                                                                <div class="">
+                                                                                    <h10>Fecha ocupada</h10><br>
                                                                                     <label><b>Fecha:&nbsp;</b></label><label >{{$cale->fecha}}</label><br>
                                                                                     <label><b>Hora inicio:&nbsp;</b></label><label >{{$cale->inicio}}</label><br>
                                                                                     <label><b>Hora fin:&nbsp;</b></label><label >{{$cale->fin}}</label><br>
@@ -138,7 +139,7 @@
                                                                     @else
                                                                         @if( $item->idU == $cale->idR)
                                                                             
-                                                                        <div class="iconbox busyDate">
+                                                                        <div class="busyDate">
                                                                             <div class="">
                                                                                 <h10>Fecha ocupada</h10><br>
                                                                                 <label><b>Fecha:&nbsp;</b></label><label >{{$cale->fecha}}</label><br>
