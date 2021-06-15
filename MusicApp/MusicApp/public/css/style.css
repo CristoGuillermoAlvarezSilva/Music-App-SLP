@@ -952,6 +952,11 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+#portfolio {
+  height: 100vh;
+  overflow-y: auto;
+}
+
 .portfolio .portfolio-item {
   margin-bottom: 30px;
 }
