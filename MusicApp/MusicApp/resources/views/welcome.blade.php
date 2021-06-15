@@ -11,8 +11,8 @@
 
       <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
         <div class="col-xl-6 col-lg-8">
-          <h1>LSMX  RecFilms<span>.</span></h1>
-          <h2>La música es la vida emocional de la mayoría de la gente<span>.</span></h2>
+          <h1 class="font-italic">LSMX  RecFilms<span>.</span></h1>
+          <h2>La música se siente en el aire<span>.</span></h2>
         </div>
       </div>
 
@@ -56,7 +56,7 @@
         <div class="text-center">
           <br><br><br><br>
           <h1 class="susTitle">Subscribete</h1>
-          <p class="susDesc"> Disfruta los beneficios de MusicApp SLP y logra inscribir a tu grupo para organizar eventos, darte a conocer y obtener ingresos por contratacion.</p>
+          <h3 class="susDesc"> Disfruta los beneficios de LSMX y logra inscribir a tu grupo para organizar eventos, darte a conocer y obtener ingresos por contratacion.</p>
             
           @guest
           @else
